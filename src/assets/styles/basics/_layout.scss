@@ -1,6 +1,6 @@
 .main-container {
     display: grid;
-    grid-template-columns: 1fr minmax(0, 1400px) 1fr;
+    grid-template-columns: auto minmax(0, 1400px) auto;
 
     > * {
         grid-column: 2;
