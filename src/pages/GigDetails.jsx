@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadGig, addGigMsg } from '../store/actions/gig.actions'
 
+import { AppHeader } from '../cmps/AppHeader'
+import { ReviewList } from '../cmps/ReviewList'
+import { AppFooter } from '../cmps/AppFooter'
 
 export function GigDetails() {
 
@@ -28,28 +31,28 @@ export function GigDetails() {
 
   return (
     <section className="gig-details">
+      <aside>
+        <article className="interaction-bar">
+          Add to Favorites ♥
+        </article>
+        <article className="purchase-modal">
+          buy
+        </article>
+      </aside>
       <section className="gig-info">
         <nav className="breadcrumbs">
           <Link to="/">Home</Link>
           <Link to="/gig">Back to list</Link>
         </nav>
         <h1>Gig Title</h1>
-        <article className="mini-user"></article>
-        <article className="img-carousel"></article>
-        <article className="about-section"></article>
-        <article className="about-user"></article>
+        <article className="mini-user">mini user</article>
+        <article className="img-carousel">img</article>
+        <article className="about-section">about</article>
+        <article className="about-user">user</article>
         <section className="reviews">
-          <article className="review-statistics"></article>
+          <article className="review-statistics">stats</article>
           <ReviewList />
         </section>
-      </section>
-      <section className="purchase-modal">
-        <article>
-          Add to Favorites ♥
-        </article>
-        <article className="purchase-modal">
-          buy 
-        </article>
       </section>
     </section>
   )
