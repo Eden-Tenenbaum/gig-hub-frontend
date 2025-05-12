@@ -2,6 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { makeId } from '../util.service'
 import { userService } from '../user'
+import { mockGigs } from './mockGigs.js'
 
 const STORAGE_KEY = 'gig'
 
@@ -15,28 +16,27 @@ export const gigService = {
 window.cs = gigService
 
 
-async function query(filterBy = { txt: '', minPrice: 0 }) {
-    var gigs = await storageService.query(STORAGE_KEY)
+async function query(filterBy = { txt: '', minPrice: 0, sortField: '', sortDir: 1 }) {
+    const useLocal = import.meta.env.VITE_LOCAL === 'true'
+    let gigs = useLocal ? [...mockGigs] : await storageService.query(STORAGE_KEY)
     const { txt, minPrice, sortField, sortDir } = filterBy
 
     if (txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
+        const regex = new RegExp(txt, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
     if (minPrice) {
         gigs = gigs.filter(gig => gig.price >= minPrice)
     }
-    if(sortField === 'title'){
-        gigs.sort((gig1, gig2) => 
-            gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
+    if (sortField) {
+        const dir = +sortDir
+        gigs.sort((a, b) => {
+            if (sortField === 'title') return a.title.localeCompare(b.title) * dir
+            if (sortField === 'price') return (a.price - b.price) * dir
+            return 0
+        })
     }
-    if(sortField === 'price'){
-        gigs.sort((gig1, gig2) => 
-            (gig1[sortField] - gig2[sortField]) * +sortDir)
-    }
-    
-    gigs = gigs.map(({ _id, title, price, owner }) => ({ _id, title, price, owner }))
-    return gigs
+    return gigs.map(({ _id, title, price, owner }) => ({ _id, title, price, owner }))
 }
 
 function getById(gigId) {
@@ -49,13 +49,9 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-    var savedGig
     if (gig._id) {
-        const gigToSave = {
-            _id: gig._id,
-            price: gig.price
-        }
-        savedGig = await storageService.put(STORAGE_KEY, gigToSave)
+        const gigToSave = { _id: gig._id, price: gig.price }
+        return await storageService.put(STORAGE_KEY, gigToSave)
     } else {
         const gigToSave = {
             title: gig.title,
@@ -64,22 +60,15 @@ async function save(gig) {
             owner: userService.getLoggedinUser(),
             msgs: []
         }
-        savedGig = await storageService.post(STORAGE_KEY, gigToSave)
+        return await storageService.post(STORAGE_KEY, gigToSave)
     }
-    return savedGig
 }
 
 async function addGigMsg(gigId, txt) {
     // Later, this is all done by the backend
     const gig = await getById(gigId)
-
-    const msg = {
-        id: makeId(),
-        by: userService.getLoggedinUser(),
-        txt
-    }
+    const msg = { id: makeId(), by: userService.getLoggedinUser(), txt }
     gig.msgs.push(msg)
     await storageService.put(STORAGE_KEY, gig)
-
     return msg
 }

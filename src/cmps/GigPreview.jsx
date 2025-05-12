@@ -6,7 +6,7 @@ export function GigPreview({ gig }) {
             <Link to={`/gig/${gig._id}`}>{gig.title}</Link>
         </header>
 
-        <p>Speed: <span>{gig.speed.toLocaleString()} Km/h</span></p>
+        <p>Price: <span>{gig.price.toLocaleString()} ₪</span></p>
         {gig.owner && <p>Owner: <span>{gig.owner.fullname}</span></p>}
         
     </article>

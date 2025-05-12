@@ -46,9 +46,9 @@ export function GigFilter({ filterBy, setFilterBy }) {
             <input
                 type="number"
                 min="0"
-                name="minSpeed"
-                value={filterToEdit.minSpeed}
-                placeholder="min. speed"
+                name="minPrice"
+                value={filterToEdit.minPrice}
+                placeholder="min. price"
                 onChange={handleChange}
                 required
             />
@@ -58,12 +58,12 @@ export function GigFilter({ filterBy, setFilterBy }) {
             <h3>Sort:</h3>
             <div className="sort-field">
                 <label>
-                    <span>Speed</span>
+                    <span>Price</span>
                     <input
                         type="radio"
                         name="sortField"
-                        value="speed"
-                        checked={filterToEdit.sortField === 'speed'}
+                        value="price"
+                        checked={filterToEdit.sortField === 'price'}
                         onChange={handleChange}
                     />
                 </label>
