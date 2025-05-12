@@ -32,6 +32,7 @@ export function RootCmp() {
             </main>
             <AppFooter />
         </div>
+
     )
 }
 
