@@ -11,7 +11,7 @@ export function AppHeader() { //get logged in status from home page
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
 	const [showSearchBar, SetShowSearchBar] = useState(true)
-	const [loggedIn, setLoggedIn] = useState(true) // band aid function, 
+	const [isLoggedIn, setIsLoggedIn] = useState(true) // band aid function, 
 	// should get logged in state from another cmp
 
 	async function onLogout() {
@@ -26,12 +26,12 @@ export function AppHeader() { //get logged in status from home page
 
 	function toggleLoggedIn(status) { //another band-aid function until log in status is set up
 		if (status === true) {
-			setLoggedIn(false)
+			setIsLoggedIn(false)
 			SetShowSearchBar(false)
 			return
 		}
 		if (status === false) {
-			setLoggedIn(true)
+			setIsLoggedIn(true)
 			SetShowSearchBar(true)
 			return
 		}
@@ -39,8 +39,8 @@ export function AppHeader() { //get logged in status from home page
 
 	return (
 		<>
-			<div className='header-row-wrapper'>
-				<div className="app-header full">
+			<div className='header-row-wrapper full'>
+				<div className="app-header ">
 					<NavLink to="/" className="logo">
 						Diverr<span>.</span>
 					</NavLink>
@@ -55,21 +55,37 @@ export function AppHeader() { //get logged in status from home page
 							<i className="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</div>
-					<ul>
-						<NavLink to="about">Upgrade to Pro</NavLink>
-						<div className='header-btns'>
-							<button><i className="far fa-bell"></i></button>
-							<button><i className="far fa-envelope"></i></button>
-							<button><i className="far fa-heart"></i></button>
-						</div>
-						<NavLink to="chat">Chat</NavLink>
-						<NavLink to="review">Review</NavLink>
-
-						<div className='login-bandaid'>
-							<button onClick={() => toggleLoggedIn(loggedIn)}>Join</button>
-							<span className={`login-circle ${loggedIn ? 'active' : ''}`}><i className="fa-solid fa-circle"></i></span>
-						</div>
-					</ul>
+					<nav className='header-nav'>
+						<ul>
+							<li>
+								<button className='upgrade-to-pro'>Upgrade to Pro</button>
+							</li>
+							<li>
+								<button className='header-btn'><i className="far fa-bell"></i><span></span></button>
+							</li>
+							<li>
+								<button className='header-btn'><i className="far fa-envelope"></i></button>
+							</li>
+							<li>
+								<button className='header-btn'><i className="far fa-heart"></i></button>
+							</li>
+							<li>
+								<div className='header-orders'>Orders</div>
+							</li>
+							<li>
+								<div className='header-try-diverr-go'>Try Diverr Go</div>
+							</li>
+							<li>
+								<div className='login-bandaid'>
+									{isLoggedIn ? (
+										<button className='header-user-options-btn'>U</button>
+									) : (
+										<button className='header-join-btn' onClick={() => toggleLoggedIn(isLoggedIn)}>Join</button>
+									)}
+								</div>
+							</li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 			<div className='categories-row-wrapper'>
