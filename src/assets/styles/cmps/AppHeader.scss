@@ -2,6 +2,7 @@
     border-bottom: 0.1px solid #e4e5e7; //temporary until hero
     display: grid;
     grid-template-columns: auto minmax(0, 1400px) auto;
+    font-family: Macan;
 
     .app-header {
         grid-column: 2;
@@ -83,6 +84,11 @@
                 li:nth-child(2),
                 li:nth-child(3) {
                     margin-right: 4px;
+                    border-radius: 50%;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                    }
                 }
 
                 li:nth-child(4),
@@ -102,6 +108,10 @@
                 .header-orders,
                 .header-try-diverr-go {
                     font-weight: 600;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
 
                 .upgrade-to-pro {
@@ -109,6 +119,11 @@
                     color: $textclr3;
                     margin: 0;
                     padding: 8px 16px;
+                    border-radius: 8px;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                    }
                 }
 
 
@@ -119,13 +134,8 @@
                     margin: 0;
                     position: relative;
 
-                    :hover {
-                        background-color: grey;
-                    }
-
                     * {
                         font-size: 1.2rem;
-
                     }
 
                     span {
@@ -139,15 +149,40 @@
                 }
 
                 .header-orders {
-                    // font-weight: 600;
-                    color: $textclr4
+                    color: $textclr4;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover {
+                        color: #1dbf73;
+
+                    }
                 }
 
                 .header-try-diverr-go {
-                    // font-weight: 600;
                     background-image: linear-gradient(84deg, rgb(240, 166, 166) 3%, rgb(6, 93, 127) 73%);
                     -webkit-background-clip: text;
                     color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        animation: colorPulse 2.5s infinite;
+                        background-image: none;
+                    }
+
+                    @keyframes colorPulse {
+                        0% {
+                            background-color: rgb(6, 93, 127);
+                        }
+
+                        50% {
+                            background-color: rgb(240, 166, 166);
+                        }
+
+                        100% {
+                            background-color: rgb(6, 93, 127);
+                        }
+                    }
                 }
 
                 .login-bandaid {
