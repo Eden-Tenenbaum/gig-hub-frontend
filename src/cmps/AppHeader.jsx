@@ -47,13 +47,15 @@ export function AppHeader() { //get logged in status from home page
 
 					<div className='header-search-bar'>
 						{showSearchBar &&
-							<input
-								type='text'
-								placeholder='What service are you looking for today?'
-							/>}
-						<button>
-							<i className="fa-solid fa-magnifying-glass"></i>
-						</button>
+							<>
+								<input
+									type='text'
+									placeholder='What service are you looking for today?'
+								/>
+								<button>
+									<i className="fa-solid fa-magnifying-glass"></i>
+								</button>
+							</>}
 					</div>
 					<ul>
 						<NavLink to="about">Upgrade to Pro</NavLink>
