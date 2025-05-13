@@ -30,17 +30,36 @@ export function GigDetails() {
   }
 
   return (
-    <section className="gig-details">
-      <aside className='user-interaction'>
+    <section className="gig-details grid">
+      <aside className="user-interaction grid">
         <article className="interaction-bar">
-          Add to Favorites ♥
+          ♥
         </article>
         <article className="purchase-modal">
-          buy
+          <section className="flex space-between">
+            <p className="caps">offer</p>
+            <p className="caps">70$</p>
+          </section>
+          <section className="content">
+            1 logo design option with Jpeg, PNG files and 3 revisions (No mascot or complex work)
+            <section className="way-of-work flex">
+              <section className="delivary-time">2-day delivery</section>
+              <section className="revisions">3 Revisions</section>
+            </section>
+            <ul className="checklist">
+              <li>1 concept included</li>
+              <li>Logo transparency</li>
+              <li>Vector file</li>
+              <li>Printable file</li>
+              <li>Include 3D mockup</li>
+              <li>Include source file</li>
+            </ul>
+            Continue
+          </section>
         </article>
       </aside>
-      <section className="gig-info">
-        <nav className="breadcrumbs">
+      <section className="gig-info grid">
+        <nav className="breadcrumbs flex">
           <Link to="/">Home</Link>
           <Link to="/gig">Back to list</Link>
         </nav>
@@ -49,7 +68,7 @@ export function GigDetails() {
         <article className="img-carousel">img</article>
         <article className="about-section">about</article>
         <article className="about-user">user</article>
-        <section className="reviews">
+        <section className="reviews grid">
           <article className="review-statistics">stats</article>
           <ReviewList />
         </section>
