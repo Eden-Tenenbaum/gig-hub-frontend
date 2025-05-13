@@ -46,15 +46,15 @@ export function GigDetails() {
               <section className="delivary-time">2-day delivery</section>
               <section className="revisions">3 Revisions</section>
             </section>
-            <ul className="checklist">
+            {/* <ul className="whats-included">
               <li>1 concept included</li>
               <li>Logo transparency</li>
               <li>Vector file</li>
               <li>Printable file</li>
               <li>Include 3D mockup</li>
               <li>Include source file</li>
-            </ul>
-            Continue
+            </ul> */}
+            <button className="order-request">Request to order</button>
           </section>
         </article>
       </aside>
