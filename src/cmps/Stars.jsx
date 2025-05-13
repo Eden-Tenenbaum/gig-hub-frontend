@@ -1,14 +1,18 @@
-export function Stars({ rating, showStars = false }) {
+import { StarIcon } from '../assets/svgs/StarIcon'
 
+export function Stars({ rating, showStars = false }) {
+  const stars = Array(Math.round(rating) - 1).fill()
   return (
     <section className="stars-display">
       {showStars && (
         <span className="stars">
-          {'★'.repeat(Math.round(rating) - 1)}
+          {stars.map((_, idx) => (
+            <StarIcon key={idx} />
+          ))}
         </span>
       )}
       <span className="rating-number">
-        ★ {rating.toFixed(1)}
+        <StarIcon /> {rating.toFixed(1)}
       </span>
     </section>
   )
