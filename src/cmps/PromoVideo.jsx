@@ -25,6 +25,15 @@ export function PromoVideo() {
                         <button>video editing <span><i className="fa-solid fa-arrow-right"></i></span></button>
                     </div>
                 </div>
+                <div className='trusted-by'>
+                    Trusted by: 
+                    <span>Meta icon</span>
+                    <span>Google icon</span>
+                    <span>Netflix icon</span>
+                    <span>Proctor & Gamble icon</span>
+                    <span>Paypal icon</span>
+                    <span>Payoneer icon</span>
+                </div>
             </section>
         </section>
     )
