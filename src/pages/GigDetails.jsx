@@ -9,7 +9,11 @@ import { loadGig, addGigMsg } from '../store/actions/gig.actions'
 import { ReviewList } from '../cmps/ReviewList'
 
 import { mockGigs } from '../services/gig/mockGigs'
-import { Stars } from '../cmps/Stars'
+
+import { UserInteraction } from '../cmps/gigDetails/UserInteraction'
+import { BreadCrumb } from '../cmps/BreadCrumb'
+import { MiniUser } from '../cmps/gigDetails/MiniUser'
+import { AboutUser } from '../cmps/gigDetails/AboutUser'
 
 export function GigDetails() {
 
@@ -37,66 +41,16 @@ export function GigDetails() {
   if (!gig._id) return
   return (
     <section className="gig-details grid">
-      <aside className="user-interaction grid">
-        <article className="interaction-bar">
-          ♥
-        </article>
-        <article className="purchase-modal">
-          <section className="flex space-between">
-            <p className="caps">offer</p>
-            <p className="caps">{gig.price}$</p>
-          </section>
-          <section className="content">
-            1 logo design option with Jpeg, PNG files and 3 revisions (No mascot or complex work)
-            <section className="way-of-work flex">
-              <section className="delivary-time">2-day delivery</section>
-              <section className="revisions">3 Revisions</section>
-            </section>
-            {/* <ul className="whats-included">
-              <li>1 concept included</li>
-              <li>Logo transparency</li>
-              <li>Vector file</li>
-              <li>Printable file</li>
-              <li>Include 3D mockup</li>
-              <li>Include source file</li>
-            </ul> */}
-            <button className="order-request">Request to order</button>
-          </section>
-        </article>
-      </aside>
+      <UserInteraction gig={gig} />
       <section className="gig-info grid">
-        <nav className="breadcrumbs flex">
-          <Link to="/">Home</Link>
-          <Link to="/gig">Back to list</Link>
-        </nav>
-        <h1>{gig.title}</h1>
-        <article className="mini-user flex">
-          <section className="img-container square-ratio">
-            <img src={gig.owner.imgUrl} alt="img" />
-          </section>
-          <section>
-            <p className="fullname">{gig.owner.fullname}</p>
-            <Stars rating={gig.rating} showStars={true} />
-          </section>
-        </article>
+        <BreadCrumb path={['back to list']} />
+        <h2>{gig.title}</h2>
+        <MiniUser gig={gig} />
         <article className="img-carousel">
           <img src={gig.imgUrl} alt="img" />
         </article>
         <article className="description">{gig.description}</article>
-        <article className="about-user">
-          <article className="mini-user flex" style={{ '--scale': 1.5 }}>
-            <section className="img-container square-ratio">
-              <img src={gig.owner.imgUrl} alt="img" />
-            </section>
-            <section>
-              <p className="fullname">{gig.owner.fullname}</p>
-              <Stars rating={gig.rating} />
-            </section>
-          </article>
-          <article className="user-description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio impedit corrupti nam quia facilis fugiat corporis nesciunt ad veritatis nisi autem laudantium nobis, neque minus natus culpa exercitationem id nulla!
-          </article>
-        </article>
+        <AboutUser gig={gig} />
         <section className="reviews grid">
           <article className="review-statistics">stats</article>
           <ReviewList />

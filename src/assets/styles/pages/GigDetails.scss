@@ -1,11 +1,7 @@
 .gig-details {
     align-content: center;
     gap: clamp(2.5rem, 5vw, 7rem);
-    padding: 2rem;
-
-    * {
-        margin-bottom: 1rem;
-    }
+    padding: 2rem 5rem 2rem;
 
     @media (min-width: $narrow-breakpoint) {
         grid-template-columns: 2fr 1fr;
@@ -15,15 +11,6 @@
 
         @media (min-width: $narrow-breakpoint) {
             grid-row: 1;
-        }
-
-        .breadcrumbs {
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        h1 {
-            font-size: 2rem;
         }
 
         .mini-user {
