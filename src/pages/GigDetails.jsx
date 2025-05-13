@@ -31,7 +31,7 @@ export function GigDetails() {
 
   return (
     <section className="gig-details">
-      <aside>
+      <aside className='user-interaction'>
         <article className="interaction-bar">
           Add to Favorites ♥
         </article>
