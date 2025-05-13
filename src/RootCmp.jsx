@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
+import { useLocation } from 'react-router-dom';
 
 import { HomePage } from './pages/HomePage'
 import { Explore } from './pages/Explore.jsx'
@@ -10,14 +11,19 @@ import { Purchase } from './pages/Purchase'
 import { UserDetails } from './pages/UserDetails'
 
 import { AppHeader } from './cmps/AppHeader'
+import { PromoVideo } from './cmps/PromoVideo'
 import { AppFooter } from './cmps/AppFooter'
 import { UserMsg } from './cmps/UserMsg'
 
 
 export function RootCmp() {
+    const location = useLocation()
+    const isHomePage = location.pathname === '/'
+
     return (
         <div className="main-container">
-            <AppHeader />
+            <AppHeader isSticky={isHomePage}/>
+            {isHomePage && <PromoVideo />}
             <UserMsg />
 
             <main>

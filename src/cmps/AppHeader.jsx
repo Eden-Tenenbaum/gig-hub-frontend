@@ -6,7 +6,7 @@ import { logout } from '../store/actions/user.actions'
 import { useEffect, useState } from 'react'
 import { Categories } from './Categories'
 
-export function AppHeader() { //get logged in status from home page
+export function AppHeader({ isSticky }) { //get logged in status from home page
 	const location = useLocation()
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
@@ -38,8 +38,8 @@ export function AppHeader() { //get logged in status from home page
 	}
 
 	return (
-		<>
-			<div className='header-row-wrapper full'>
+		<div className={`${isSticky ? 'sticky' : ''}`}>
+			<div className='header-row-wrapper full '>
 				<div className="app-header ">
 					<NavLink to="/" className="logo">
 						Diverr<span>.</span>
@@ -93,6 +93,6 @@ export function AppHeader() { //get logged in status from home page
 			<div className='categories-row-wrapper'>
 				<Categories />
 			</div>
-		</>
+		</div>
 	)
 }
