@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router'
 import { useLocation } from 'react-router-dom';
 
 import { HomePage } from './pages/HomePage'
-import { Explore } from './pages/Explore.jsx'
+import { ExplorePage } from './pages/ExplorePage.jsx'
 import { GigIndex } from './pages/GigIndex'
 
 import { GigDetails } from './pages/GigDetails'
@@ -31,7 +31,7 @@ export function RootCmp() {
             <main>
                 <Routes>
                     <Route path="" element={<HomePage />} />
-                    <Route path="explore" element={<Explore />} />
+                    <Route path="explore" element={<ExplorePage />} />
                     <Route path="gig" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="user/:id" element={<UserDetails />} />
