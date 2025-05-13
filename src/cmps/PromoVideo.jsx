@@ -12,10 +12,12 @@ export function PromoVideo() {
                     <input
                         type='text'
                         placeholder='Search for any service'
+
                     />
-                    <button>
+                    <button className='promo-video-search-bar-btn'>
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </button>
+
                     <div className='over-video-filter-btns'>
                         <button>website development <span><i className="fa-solid fa-arrow-right"></i></span></button>
                         <button>architecture & interior design <span><i className="fa-solid fa-arrow-right"></i></span></button>
