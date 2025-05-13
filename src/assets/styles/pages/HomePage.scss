@@ -1,6 +1,79 @@
+.over-promo-video {
+    color: white;
+    padding: 160px 64px 32px 0px;
+    width: fit-content;
+    font-family: MacanLight;
+    // font-weight: 280; not working
+    box-sizing: border-box;
+    display: grid;
+
+    p {
+        font-size: 72px;
+        margin: 0;
+        letter-spacing: -4.32px;
+
+        &:nth-child(2) {
+            margin-top: -30px;
+        }
+    }
+
+    .searchbar-over-promo-video {
+        position: relative;
+        height: 60px;
+        margin-bottom: 28px;
+        margin-top: 13px;
+        
+        input {
+            color: $textclr1;
+            padding: 10px 58px 10px 16px;
+            border-radius: 12px;
+            border: 1px $textclr5 solid;
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 1rem;
+        }
+
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 80%;
+            aspect-ratio: 1 / 1;
+            border-radius: 8px;
+            background-color: $textclr3;
+            font-size: 1rem;
+        }
+    }
+
+    .over-video-filter-btns {
+        display: flex;
+        gap: 16px;
+        width: fit-content;
+        margin-bottom: 106px; //kinda band-aid look to change if possible
+
+        div {
+            background-color: $transparent;
+            border-radius: 8px;
+            padding: 8px 16px;
+            border: 1px solid white;
+            font-size: 1rem;
+            margin: 0;
+            display: flex;
+            gap: 12px;
+        }
+    }
+
+    .trusted-by{
+
+    }
+
+
+}
+
 .homepage-categories {
     height: 165px;
-    padding: 0 32px;
+    padding: 0 10px;
     border: 1px solid black;
     margin-top: 16px;
     margin-bottom: 40px;

@@ -12,6 +12,11 @@
     font-family: Macan;
     src: url(/macan-regular.woff2);
   }
+
+  @font-face {
+    font-family: MacanLight;
+    src: url(/macan-light.woff2);
+  }
   
 //   src: url('../../fonts/macan-regular.woff2') format('truetype');
 //   src: url('../../fonts/MacanPanWeb-Book.ttf') format('truetype');
