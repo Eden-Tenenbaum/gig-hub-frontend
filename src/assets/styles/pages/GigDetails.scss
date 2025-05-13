@@ -1,5 +1,4 @@
 .gig-details {
-    display: grid;
     align-content: center;
     gap: clamp(2.5rem, 5vw, 7rem);
     padding: 2rem;
@@ -13,14 +12,12 @@
     }
 
     .gig-info {
-        display: grid;
 
         @media (min-width: $narrow-breakpoint) {
             grid-row: 1;
         }
 
         .breadcrumbs {
-            display: flex;
             gap: 0.5rem;
             font-size: 0.9rem;
         }
@@ -53,7 +50,6 @@
         }
 
         .reviews {
-            display: grid;
             gap: 1rem;
         }
     }
