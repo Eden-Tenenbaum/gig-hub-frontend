@@ -32,6 +32,10 @@
     text-transform: uppercase;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 // flex helpers
 
 .flex {
@@ -76,4 +80,9 @@
 
 .portrait-ratio {
     @include aspect-ratio(9, 16);
+}
+
+.circle {
+    border-radius: 50%;
+    overflow: hidden;
 }
