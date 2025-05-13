@@ -90,9 +90,9 @@ export function AppHeader({ isSticky }) { //get logged in status from home page
 					</nav>
 				</div>
 			</div>
-			<div className='categories-row-wrapper'>
+			{/* <div className='categories-row-wrapper'>
 				<Categories />
-			</div>
+			</div> */}
 		</>
 	)
 }
