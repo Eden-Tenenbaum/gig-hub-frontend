@@ -57,15 +57,26 @@
 
         .interaction-bar {
             display: none;
+            margin-bottom: 1rem;
         }
 
         >.purchase-modal {
-            background: #e0f7fa;
             padding: 1rem;
-            border: 1px solid #4dd0e1;
-            border-radius: 8px;
             text-align: center;
             grid-column: 1;
+            color: #62646a;
+            border: 1px solid #dadbdd;
+            line-height: 24px;
+
+            button {
+                background-color: $clr6;
+                color: $clr1;
+                padding: .75rem 1.5rem;
+                transition: 70ms cubic-bezier(.75,0,.25,1);
+                &:hover {
+                    background: $clr5;
+                }
+            }
         }
 
 
