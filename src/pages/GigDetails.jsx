@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -6,18 +6,24 @@ import { Link } from 'react-router-dom'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadGig, addGigMsg } from '../store/actions/gig.actions'
 
-import { AppHeader } from '../cmps/AppHeader'
 import { ReviewList } from '../cmps/ReviewList'
-import { AppFooter } from '../cmps/AppFooter'
+
+import { mockGigs } from '../services/gig/mockGigs'
+import { Stars } from '../cmps/Stars'
 
 export function GigDetails() {
 
   const { gigId } = useParams()
-  const gig = useSelector(storeState => storeState.gigModule.gig)
+  const [gig, setGig] = useState({})
 
   useEffect(() => {
     loadGig(gigId)
   }, [gigId])
+
+  function loadGig(gigId) {
+    const findGig = mockGigs.find(g => g._id === gigId)
+    setGig(findGig)
+  }
 
   async function onAddGigMsg(gigId) {
     try {
@@ -28,7 +34,7 @@ export function GigDetails() {
     }
 
   }
-
+  if (!gig._id) return
   return (
     <section className="gig-details grid">
       <aside className="user-interaction grid">
@@ -38,7 +44,7 @@ export function GigDetails() {
         <article className="purchase-modal">
           <section className="flex space-between">
             <p className="caps">offer</p>
-            <p className="caps">70$</p>
+            <p className="caps">{gig.price}$</p>
           </section>
           <section className="content">
             1 logo design option with Jpeg, PNG files and 3 revisions (No mascot or complex work)
@@ -63,11 +69,34 @@ export function GigDetails() {
           <Link to="/">Home</Link>
           <Link to="/gig">Back to list</Link>
         </nav>
-        <h1>Gig Title</h1>
-        <article className="mini-user">mini user</article>
-        <article className="img-carousel">img</article>
-        <article className="about-section">about</article>
-        <article className="about-user">user</article>
+        <h1>{gig.title}</h1>
+        <article className="mini-user flex">
+          <section className="img-container square-ratio">
+            <img src={gig.owner.imgUrl} alt="img" />
+          </section>
+          <section>
+            <p className="fullname">{gig.owner.fullname}</p>
+            <Stars rating={gig.rating} showStars={true} />
+          </section>
+        </article>
+        <article className="img-carousel">
+          <img src={gig.imgUrl} alt="img" />
+        </article>
+        <article className="description">{gig.description}</article>
+        <article className="about-user">
+          <article className="mini-user flex" style={{ '--scale': 1.5 }}>
+            <section className="img-container square-ratio">
+              <img src={gig.owner.imgUrl} alt="img" />
+            </section>
+            <section>
+              <p className="fullname">{gig.owner.fullname}</p>
+              <Stars rating={gig.rating} />
+            </section>
+          </article>
+          <article className="user-description">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio impedit corrupti nam quia facilis fugiat corporis nesciunt ad veritatis nisi autem laudantium nobis, neque minus natus culpa exercitationem id nulla!
+          </article>
+        </article>
         <section className="reviews grid">
           <article className="review-statistics">stats</article>
           <ReviewList />
