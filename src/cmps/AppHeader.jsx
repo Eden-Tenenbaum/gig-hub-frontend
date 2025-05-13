@@ -38,7 +38,7 @@ export function AppHeader({ isSticky }) { //get logged in status from home page
 	}
 
 	return (
-		<div className={`${isSticky ? 'sticky' : ''}`}>
+		<>
 			<div className='header-row-wrapper full '>
 				<div className="app-header ">
 					<NavLink to="/" className="logo">
@@ -93,6 +93,6 @@ export function AppHeader({ isSticky }) { //get logged in status from home page
 			<div className='categories-row-wrapper'>
 				<Categories />
 			</div>
-		</div>
+		</>
 	)
 }

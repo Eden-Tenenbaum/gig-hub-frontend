@@ -22,7 +22,9 @@ export function RootCmp() {
 
     return (
         <div className="main-container">
-            <AppHeader isSticky={isHomePage}/>
+            <div className={`app-header-wrapper full ${isHomePage ? 'sticky' : ''}`}>
+            <AppHeader />
+            </div>
             {isHomePage && <PromoVideo />}
             <UserMsg />
 

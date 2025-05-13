@@ -1,10 +1,8 @@
-
-
 export function HomePage() {
     return (
-        <section className="homepage-main-content">
-            
-        </section >        
+        <section>
+            <h1>Home sweet Home</h1>
+        </section >
     )
 }
 
