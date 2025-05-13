@@ -1,18 +1,18 @@
-import { StarIcon } from '../assets/svgs/StarIcon'
+import StarIcon from '../../public/img/StarIcon.svg'
 
 export function Stars({ rating, showStars = false }) {
-  const stars = Array(Math.round(rating) - 1).fill()
+  const stars = Array(Math.round(rating)).fill()
   return (
     <section className="stars-display">
       {showStars && (
         <span className="stars">
-          {stars.map((_, idx) => (
-            <StarIcon key={idx} />
+          {stars.map(() => (
+            <img src={StarIcon} alt="" />
           ))}
         </span>
       )}
-      <span className="rating-number">
-        <StarIcon /> {rating.toFixed(1)}
+      <span className="rating-num stars">
+        {!showStars && <img src={StarIcon} alt="" />} {rating}
       </span>
     </section>
   )

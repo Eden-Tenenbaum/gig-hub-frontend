@@ -1,5 +1,10 @@
 .stars {
-    svg {
-        margin-right: .25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+
+    &.rating-num {
+        margin-left: .25rem;
+        font-weight: 600;
     }
 }
