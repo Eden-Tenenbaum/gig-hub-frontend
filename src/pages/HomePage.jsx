@@ -53,22 +53,75 @@ export function HomePage() {
                     <span>Payoneer icon</span>
                 </div>
             </section>
-            <div className="homepage-categories">
+            <section className="homepage-categories">
                 {fiverrMainCategories.map(category =>
                     <div key={category.id}>
                         <a>{category.name}</a>
                     </div>
                 )}
-            </div>
-            <div className="homepage-popular-services">
+            </section>
+            <section className="homepage-popular-services">
                 <p>Popular services</p>
-                <div className="popular-service-card">
-                    <a>
-                        <p>Website Development</p>
-                        <img src={WebsiteDevelopment}/>
-                    </a>
-                </div>
-            </div>
+                <section>
+                    <div className="popular-service-card">
+                        <a>
+                            <p>Website Development</p>
+                            <img src={WebsiteDevelopment} />
+                        </a>
+                    </div>
+                    <div className="popular-service-card">
+                        <a>
+                            <p>Video Editing</p>
+                            <img src={WebsiteDevelopment} />
+                        </a>
+                    </div>
+                    <div className="popular-service-card">
+                        <a>
+                            <p>Software Development</p>
+                            <img src={WebsiteDevelopment} />
+                        </a>
+                    </div>
+                    <div className="popular-service-card">
+                        <a>
+                            <p>SEO</p>
+                            <img src={WebsiteDevelopment} />
+                        </a>
+                    </div>
+                    <div className="popular-service-card">
+                        <a>
+                            <p>Architecture & Interior Design</p>
+                            <img src={WebsiteDevelopment} />
+                        </a>
+                    </div>
+                    <div className="popular-service-card">
+                        <a>
+                            <p>Book Design</p>
+                            <img src={WebsiteDevelopment} />
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section className='mid-homepage-join-ad'>
+                <p>Make it all happen with freelancers</p>
+                <ul>
+                    <li>
+                        <a>icon</a>
+                        <p>Access a pool of top talent across 700 categories</p>
+                    </li>
+                    <li>
+                        <a>icon</a>
+                        <p>Enjoy a simple, easy-to-use matching experience</p>
+                    </li>
+                    <li>
+                        <a>icon</a>
+                        <p>Get quality work done quickly and within budget</p>
+                    </li>
+                    <li>
+                        <a>icon</a>
+                        <p>Only pay when you're happy</p>
+                    </li>
+                </ul>
+            </section>
         </section >
     )
 }

@@ -22,7 +22,7 @@
         height: 60px;
         margin-bottom: 28px;
         margin-top: 13px;
-        
+
         input {
             color: $textclr1;
             padding: 10px 58px 10px 16px;
@@ -64,9 +64,7 @@
         }
     }
 
-    .trusted-by{
-
-    }
+    .trusted-by {}
 
 
 }
@@ -74,11 +72,44 @@
 .homepage-categories {
     height: 165px;
     padding: 0 10px;
-    border: 1px solid black;
-    margin-top: 16px;
+    border-block: 1px solid black;
+    margin-top: 1rem;
     margin-bottom: 40px;
 
     div {
         display: inline;
+    }
+}
+
+.homepage-popular-services {
+    height: 452.4px;
+    margin: 40px 0;
+    border-block: 1px solid black;
+
+    section {
+        display: flex;
+        flex-direction: row;
+    }
+
+    div {
+        display: flex;
+        width: fit-content;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            width: min-content;
+        }
+    }
+}
+
+.mid-homepage-join-ad {
+    height: 422px;
+    margin-block: 40px;
+    border-block: 1px solid black;
+
+    ul {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
     }
 }
