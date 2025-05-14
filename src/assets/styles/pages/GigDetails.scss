@@ -13,7 +13,8 @@
             grid-row: 1;
         }
 
-        .breadcrumb-container, h2 {
+        .breadcrumb-container,
+        h2 {
             margin-bottom: 1rem;
         }
 
@@ -63,21 +64,50 @@
         .interaction-bar {
             display: none;
             margin-bottom: 1rem;
+
+            .heart-wrapper {
+                display: inline-block;
+                cursor: pointer;
+
+                .tooltip {
+                    position: absolute;
+                    top: -3rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: $clr5;
+                    color: $clr1;
+                    padding: .75rem;
+                    border-radius: .25rem;
+                    opacity: 0;
+                    transition: opacity .15s ease-in;
+
+                }
+                
+                &:hover .tooltip {
+                    opacity: 0.9;
+                }
+                
+                &.saved .tooltip {
+                    opacity: 0;
+                }
+            }
+
         }
 
         >.purchase-modal {
             padding: 1rem;
             text-align: center;
             grid-column: 1;
-            color: #62646a;
-            border: 1px solid #dadbdd;
+            color: $textclr1;
+            border: 1px solid $gray1;
             line-height: 24px;
 
             button {
                 background-color: $clr6;
                 color: $clr1;
                 padding: .75rem 1.5rem;
-                transition: 70ms cubic-bezier(.75,0,.25,1);
+                transition: 70ms cubic-bezier(.75, 0, .25, 1);
+
                 &:hover {
                     background: $clr5;
                 }
@@ -91,7 +121,6 @@
 
             .interaction-bar {
                 display: block;
-                background: #fff8e1;
                 border: 1px solid #ffe082;
                 border-radius: 8px;
                 text-align: center;

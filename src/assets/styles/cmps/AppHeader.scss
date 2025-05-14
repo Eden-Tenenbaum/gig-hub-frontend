@@ -5,7 +5,7 @@
     background-color: $textclrwhite;
 }
 
-.header-row-wrapper {
+.header-row-wrapper { 
     border-bottom: 0.1px solid $textclr7;
     display: grid;
     grid-template-columns: auto minmax(0, 1400px) auto;
@@ -36,5 +36,263 @@
                 color: green;
             }
         } 
+    }
+}
+
+.header-search-bar {
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    * {
+        margin: 0;
+    }
+
+    input {
+        flex: 1;
+        padding: 0.625rem 0.125rem 0.625rem 1rem;
+        border-color: $textclr5;
+        border-radius: 0.25rem 0 0 0.25rem;
+        border-width: 0.05rem 0 0.05rem 0.05rem;
+        border-style: solid;
+        color: #62646a;
+    }
+
+    button {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        background-color: $textclr3;
+        font-size: 0.8rem;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        color: $textclrwhite;
+
+        i {
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.header-nav-logged-in {
+    margin-left: 2rem;
+
+    ul {
+        font-size: 1rem;
+        display: grid;
+        grid-auto-flow: column;
+        white-space: nowrap;
+        margin: 0;
+
+        li:nth-child(1) {
+            padding-right: 1rem;
+        }
+
+        li:nth-child(2),
+        li:nth-child(3) {
+            margin-right: 0.25rem;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: #f5f5f5;
+            }
+        }
+
+        li:nth-child(4),
+        li:nth-child(5),
+        li:nth-child(6) {
+            padding-right: 1.5rem;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        .upgrade-to-pro,
+        .header-orders,
+        .header-try-diverr-go {
+            font-weight: 600;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .upgrade-to-pro {
+            background-color: $transparent;
+            color: $textclr3;
+            margin: 0;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+
+            &:hover {
+                background-color: #f5f5f5;
+            }
+        }
+
+        .header-btn {
+            background-color: $transparent;
+            color: $textclr4;
+            border-radius: 50%;
+            margin: 0;
+            position: relative;
+
+            * {
+                font-size: 1.2rem;
+            }
+
+            span {
+                position: absolute;
+                background-color: #c14a83;
+                border-radius: 50%;
+                width: 0.25rem;
+                height: 0.25rem;
+                top: -0.0625rem;
+            }
+        }
+
+        .header-orders {
+            color: $textclr4;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                color: #1dbf73;
+            }
+        }
+
+        .header-try-diverr-go {
+            background-image: linear-gradient(84deg, rgb(240, 166, 166) 3%, rgb(6, 93, 127) 73%);
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                animation: colorPulse 2.5s infinite;
+                background-image: none;
+            }
+
+            @keyframes colorPulse {
+                0% {
+                    background-color: rgb(6, 93, 127);
+                }
+
+                50% {
+                    background-color: rgb(240, 166, 166);
+                }
+
+                100% {
+                    background-color: rgb(6, 93, 127);
+                }
+            }
+        }
+
+        .login-bandaid {
+            .header-user-options-btn {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1rem;
+                border-radius: 50%;
+                background-color: $textclrloggedin;
+                color: $textclrwhite;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                margin: 0;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.header-nav-logged-out {
+    margin-left: 2rem;
+
+    ul {
+        font-size: 1rem;
+        display: grid;
+        grid-auto-flow: column;
+        white-space: nowrap;
+        margin: 0;
+
+        li:nth-child(1),
+        li:nth-child(2),
+        li:nth-child(3) {
+            padding-right: 1.5rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-become-a-seller,
+        .header-sign-in,
+        .header-try-diverr-go {
+            font-weight: 600;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .header-become-a-seller,
+        .header-sign-in {
+            color: $textclr4;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                color: #1dbf73;
+            }
+        }
+
+        .header-try-diverr-go {
+            background-image: linear-gradient(84deg, rgb(240, 166, 166) 3%, rgb(6, 93, 127) 73%);
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                animation: colorPulse 2.5s infinite;
+                background-image: none;
+            }
+
+            @keyframes colorPulse {
+                0% {
+                    background-color: rgb(6, 93, 127);
+                }
+
+                50% {
+                    background-color: rgb(240, 166, 166);
+                }
+
+                100% {
+                    background-color: rgb(6, 93, 127);
+                }
+            }
+        }
+
+        .login-bandaid {
+            .header-join-btn {
+                background-color: $transparent;
+                border: 0.1px solid black;
+                border-radius: 0.25rem;
+                color: $textclr3;
+                margin: 0;
+                font-size: 0.875rem;
+                font-weight: 600;
+                padding: 0.625rem 1rem;
+                font-family: Macan;
+            }
+        }
     }
 }

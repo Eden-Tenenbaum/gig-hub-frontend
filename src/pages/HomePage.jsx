@@ -3,6 +3,7 @@ import { OverPromoVideo } from '../cmps/OverPromoVideo'
 import { HomePageCategories } from '../cmps/HomePageCategories'
 import { PopularServices } from '../cmps/PopularServices'
 import { MidHomePageAd } from '../cmps/MidHomePageAd'
+import { BottomHomePageAd } from '../cmps/BottomHomePageAd'
 
 
 
@@ -14,6 +15,7 @@ export function HomePage() {
             <PopularServices />
             <VontelleVideo />
             <MidHomePageAd />
+            <BottomHomePageAd />
         </section >
     )
 }
