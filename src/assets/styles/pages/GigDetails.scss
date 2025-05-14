@@ -13,7 +13,12 @@
             grid-row: 1;
         }
 
+        .breadcrumb-container, h2 {
+            margin-bottom: 1rem;
+        }
+
         .mini-user {
+            margin-bottom: 1rem;
             --scale: 1;
             gap: calc(1rem * (0.5 + var(--scale) * 0.5));
 
@@ -25,7 +30,7 @@
             }
 
             .fullname {
-                font-size: calc(1rem * var(--scale));
+                font-weight: $weight2;
             }
         }
 
@@ -42,7 +47,7 @@
         .review-statistics {
             background: #f9f9f9;
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: .5rem;
         }
 
         .reviews {
