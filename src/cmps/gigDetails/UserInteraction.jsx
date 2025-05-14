@@ -1,8 +1,23 @@
+import { useState } from 'react'
+
+import HeartIcon from '../../../public/img/icons/HeartIcon.svg'
+import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
+
 export function UserInteraction({ gig }) {
+  
+  const [isSaved, setIsSaved] = useState(false)
+
+  function toggleSave() {
+    setIsSaved(prev => !prev)
+  }
+
   return (
     <aside className="user-interaction grid">
       <article className="interaction-bar">
-        ♥
+        <div className={`heart-wrapper ${isSaved ? 'saved' : ''}`}>
+          <span className="tooltip fs14">Save to list</span>
+          <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" />
+        </div>
       </article>
       <article className="purchase-modal">
         <section className="flex space-between">
