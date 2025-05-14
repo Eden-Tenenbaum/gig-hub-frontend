@@ -13,7 +13,7 @@ export function AppHeader({ isSticky }) { //get logged in status from home page
 	const location = useLocation()
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
-	const [showSearchBar, SetShowSearchBar] = useState(true)
+	const [showSearchBar, SetShowSearchBar] = useState(false)
 	const [isLoggedIn, setIsLoggedIn] = useState(false) // band aid function, 
 	// should get logged in state from another cmp
 

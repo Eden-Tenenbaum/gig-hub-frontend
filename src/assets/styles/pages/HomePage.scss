@@ -56,6 +56,10 @@
         width: fit-content;
         margin-bottom: 6.625rem; //kinda band-aid look to change if possible
 
+        &:hover {
+            cursor: pointer;
+        }
+
         div {
             background-color: $transparent;
             border-radius: 0.5rem;
@@ -69,15 +73,4 @@
     }
 
     .trusted-by {}
-}
-
-.mid-homepage-join-ad {
-    height: 26.375rem;
-    margin-block: 2.5rem;
-    border-block: 1px solid black;
-
-    ul {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-    }
 }

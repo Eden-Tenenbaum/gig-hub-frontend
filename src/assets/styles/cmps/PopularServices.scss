@@ -1,21 +1,54 @@
 .homepage-popular-services {
     height: 28.275rem;
     margin: 2.5rem 0;
-    border-block: 1px solid black;
 
-    section {
-        display: flex;
-        flex-direction: row;
+        section {
+            background-color: $textclr6;
+            width: fit-content;
+            margin: 0.75rem 0.25rem;
+            border-radius: 1rem;
+            color: $textclrwhite;
+            font-size: 1.125rem;
+            font-weight: 700;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.88;
+            }
+
+            div {
+                padding: 1.5625rem 0.5625rem 0.5625rem 0.5625rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+                // width: fit-content;
+
+                &.small {
+                    gap: 3.3rem;
+                }
+
+                p {
+                    padding: 0 10px;
+                    margin: 0;
+                    width: 188px;
+                }
+
+                div {
+                    padding: 0;
+
+                    img {
+                        border-radius: 8px;
+                        height: 157px;
+                        width: 188px;
+                        display: block;
+                    }
+                }
+            }
     }
+}
 
-    div {
-        display: flex;
-        width: fit-content;
-
-        a {
-            display: flex;
-            flex-direction: column;
-            width: min-content;
-        }
-    }
+.popular-services-header {
+    font-size: 3rem;
+    color: $textclr2;
 }
