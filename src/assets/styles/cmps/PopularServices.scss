@@ -1,0 +1,21 @@
+.homepage-popular-services {
+    height: 28.275rem;
+    margin: 2.5rem 0;
+    border-block: 1px solid black;
+
+    section {
+        display: flex;
+        flex-direction: row;
+    }
+
+    div {
+        display: flex;
+        width: fit-content;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            width: min-content;
+        }
+    }
+}
