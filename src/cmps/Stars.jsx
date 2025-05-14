@@ -6,8 +6,8 @@ export function Stars({ rating, showStars = false }) {
     <section className="stars-display">
       {showStars && (
         <span className="stars">
-          {stars.map(() => (
-            <img src={StarIcon} alt="" />
+          {stars.map((_, idx) => (
+            <img key={idx} src={StarIcon} alt="" />
           ))}
         </span>
       )}

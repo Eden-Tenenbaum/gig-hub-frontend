@@ -29,15 +29,6 @@ export function GigDetails() {
     setGig(findGig)
   }
 
-  async function onAddGigMsg(gigId) {
-    try {
-      await addGigMsg(gigId, 'bla bla ' + parseInt(Math.random() * 10))
-      showSuccessMsg(`Gig msg added`)
-    } catch (err) {
-      showErrorMsg('Cannot add gig msg')
-    }
-
-  }
   if (!gig._id) return
   return (
     <section className="gig-details grid">
