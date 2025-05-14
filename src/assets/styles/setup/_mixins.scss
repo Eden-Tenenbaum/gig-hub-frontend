@@ -28,31 +28,45 @@
 @mixin aspect-ratio($width, $height) {
     position: relative;
     overflow: hidden;
+
     &::before {
-      display: block;
-      content: "";
-      width: 100%;
-      padding-top: calc(($height / $width) * 100%);
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: calc(($height / $width) * 100%);
     }
-    > * {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
-  
-    > img {
-      height: 100%;
-      object-fit: cover;
+
+    >img {
+        height: 100%;
+        object-fit: cover;
     }
-  }
-  
-  // Mixin for removing hover efects on iphone screen
-  @mixin hover-supported {    
+}
+
+@mixin icon-for-text($icon-url) {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    background-image: url($icon-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
     @media not all and (pointer: coarse) {
         &:hover {
             @content;
         }
     }
-  }
+}
