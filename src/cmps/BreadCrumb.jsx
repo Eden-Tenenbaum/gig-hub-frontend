@@ -1,5 +1,5 @@
 import React from "react"
-import HomeIconUrl from '../../public/img/HomeIcon3.svg'
+import HomeIconUrl from '../../public/img/icons/HomeIcon.svg'
 import { Link } from "react-router-dom"
 
 
