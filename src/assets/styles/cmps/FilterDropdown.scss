@@ -3,17 +3,25 @@
     display: inline-block;
 
 
-
     .trigger {
-        font-family: Macan;
+        font-family: Macan, sans-serif;
         color: black;
         padding: 8px 12px;
         border: 1px solid #ddd;
         border-radius: 4px;
         background: #fff;
-        cursor: pointer;
-        display: flex;
         align-items: center;
+        display: inline-flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+
+        // added hover/focus state for trigger button
+        &:hover,
+        &:focus {
+            background: #F5F5F5;
+            cursor: pointer;
+            outline: none;
+        }
 
         .caret {
             margin-left: 6px;
@@ -24,6 +32,7 @@
     .panel {
         position: absolute;
         top: 100%;
+        left: 0;
         margin-top: 4px;
         width: 320px;
         background: #fff;
@@ -53,7 +62,7 @@
                 .option {
                     display: flex;
                     align-items: center;
-                    background: #f9f9f9;
+                    background: #ffffff;
                     padding: 6px 8px;
                     border-radius: 4px;
 
@@ -63,11 +72,21 @@
 
                     .label-text {
                         flex: 1;
+                        font-size: 0.875rem; // 14px
+                        line-height: 1.3125rem; // 21px
+                        color: #555555;
+                        cursor: pointer;
                     }
 
                     .count {
                         color: #999;
                         margin-left: 4px;
+                    }
+
+                    // added lighter hover state for individual options
+                    &:hover {
+                        background: #F7F7F7;
+                        cursor: pointer;
                     }
                 }
             }
@@ -81,23 +100,24 @@
 
         .actions {
             display: flex;
+            // flex-wrap: nowrap;
             justify-content: space-between;
             padding-top: 8px;
 
-            .clear {
-                background: none;
-                border: none;
-                color: #666;
-                cursor: pointer;
-            }
-
+            .clear,
             .apply {
-                background: #333;
-                color: #fff;
-                border: none;
-                padding: 6px 16px;
-                border-radius: 4px;
+                width: 10rem; // ~160px
+                font-size: 1rem; // 16px
+                line-height: 1.5rem; // 24px
+                color: #222325;
+                font-weight: 600;
                 cursor: pointer;
+
+                &:hover,
+                &:focus {
+                    background: #F5F5F5;
+                    outline: none;
+                }
             }
         }
     }
