@@ -14,6 +14,7 @@ import { UserInteraction } from '../cmps/gigDetails/UserInteraction'
 import { BreadCrumb } from '../cmps/BreadCrumb'
 import { MiniUser } from '../cmps/gigDetails/MiniUser'
 import { AboutUser } from '../cmps/gigDetails/AboutUser'
+import { ImgCarousel } from '../cmps/gigDetails/ImgCarousel'
 
 export function GigDetails() {
 
@@ -35,11 +36,9 @@ export function GigDetails() {
       <UserInteraction plan={gig.purchasePlan} />
       <section className="gig-info grid">
         <BreadCrumb path={['back to list']} />
-        <h2>{gig.title}</h2>
-        <MiniUser gig={gig} showStars={true}/>
-        <article className="img-carousel">
-          <img src={gig.imgUrl} alt="img" />
-        </article>
+        <h2 className="fs28">{gig.title}</h2>
+        <MiniUser gig={gig} showStars={true} />
+        <ImgCarousel gig={gig} />
         <article className="description">{gig.description}</article>
         <AboutUser gig={gig} />
         <section className="reviews grid">

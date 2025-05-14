@@ -15,30 +15,33 @@
 
         .breadcrumb-container,
         h2 {
-            margin-bottom: 1rem;
+            margin-top: rem(6.6px);
+            margin-bottom: rem(13.5px);
         }
 
         .mini-user {
-            margin-bottom: 1rem;
+            margin-bottom: rem(23px);
             --scale: 1;
             gap: calc(1rem * (0.5 + var(--scale) * 0.5));
 
             .img-container {
                 border-radius: 10%;
-                background-color: #eee;
+                background-color: $clr2;
                 width: calc(4rem * var(--scale));
                 height: calc(4rem * var(--scale));
             }
 
             .fullname {
+                margin-block: rem(-2px) rem(2px);
                 font-weight: $weight2;
             }
         }
 
-        .img-carousel {
+        .img-container-carousel {
             width: 100%;
-            height: 300px;
-            background-color: #eee;
+            height: rem(427px);
+            max-width: rem(712px);
+            background-color: $clr2;
             display: grid;
             place-items: center;
         }
@@ -60,12 +63,14 @@
         align-self: flex-start;
         display: grid;
         gap: 1rem;
+        padding-top: rem(8px);
+        max-width: rem(415px);
 
         .interaction-bar {
             display: none;
-            margin-bottom: 1rem;
+            margin-bottom: rem(14px);
             text-align: center;
-            
+
             .heart-wrapper {
                 display: inline-block;
                 cursor: pointer;
@@ -82,11 +87,11 @@
                     opacity: 0;
                     transition: opacity .15s ease-in;
                 }
-                
+
                 &:hover .tooltip {
                     opacity: 0.9;
                 }
-                
+
                 &.saved .tooltip {
                     opacity: 0;
                 }
@@ -94,13 +99,29 @@
 
         }
 
-        >.purchase-modal {
+        .purchase-modal {
             padding: 1rem;
             text-align: center;
             grid-column: 1;
             color: $textclr1;
             border: 1px solid $gray1;
             line-height: 24px;
+
+            .offer {
+                color: $textclr3;
+
+                :first-child {
+                    font-weight: $weight2;
+                }
+            }
+
+            .delivery-time::before {
+                @include icon-for-text('/public/img/icons/ClockIcon.svg');
+            }
+
+            .revisions::before {
+                @include icon-for-text('/public/img/icons/LoopIcon.svg');
+            }
 
             button {
                 background-color: $clr6;

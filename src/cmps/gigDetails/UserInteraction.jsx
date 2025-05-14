@@ -20,14 +20,14 @@ export function UserInteraction({ plan }) {
         </div>
       </article>
       <article className="purchase-modal">
-        <section className="flex space-between">
-          <p className="caps">offer</p>
-          <p className="caps">{plan.price}$</p>
+        <section className="offer flex space-between">
+          <p className="capitalize">offer</p>
+          <p className="fs20">{plan.price}$</p>
         </section>
         <section className="content">
           <span>{plan.content}</span>
           <section className="way-of-work flex">
-            <section className="delivary-time">{plan.deliveryDay}-day delivery</section>
+            <section className="delivery-time">{plan.deliveryDay}-day delivery</section>
             <section className="revisions">{plan.revisions} Revision{plan.revisions !== 1 && 's'}</section>
           </section>
           <ul className="whats-included">
