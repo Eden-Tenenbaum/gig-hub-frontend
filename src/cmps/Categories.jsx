@@ -36,14 +36,22 @@ const responsive = {
     }
 }
 
+// const save = navigate(`/explore/${category.id}`)
+
 export function Categories() {
     const navigate = useNavigate()
+    
     return (
         <section className="categories-menu-package">
             <ul>
                 {fiverrMainCategories.map(category =>
                     <li key={category.id}>
-                        <a onClick={() => navigate(`/explore/${category.id}`)}>{category.name}</a>
+                        <a onClick={() => 
+                            {
+                                // setParamsForIndex(category.id)
+                                navigate('/gig', { state: { category } })
+                            }}
+                            >{category.name}</a>
                     </li>)
                 }
             </ul>

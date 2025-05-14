@@ -7,11 +7,10 @@
     padding: 10rem 4rem 2rem 0rem;
     width: fit-content;
     font-family: MacanLight;
-    // font-weight: 280; not working
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    // grid-template-rows: auto auto;
+
 
     div {
         height: max-content;
@@ -96,6 +95,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-inline: 0.75rem;
 
     section {
         width: min-content;
@@ -121,6 +121,7 @@
                 img {
                     height: 1.875rem;
                     width: 1.875rem;
+                    mix-blend-mode: darken;
                 }
             }
 

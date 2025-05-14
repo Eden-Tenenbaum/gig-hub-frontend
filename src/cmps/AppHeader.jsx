@@ -9,7 +9,7 @@ import { HeaderSearchbar } from './HeaderSearchbar'
 import { HeaderNavLoggedIn } from './HeaderNavLoggedIn'
 import { HeaderNavLoggedOut } from './HeaderNavLoggedOut'
 
-export function AppHeader({ isSticky }) { //get logged in status from home page
+export function AppHeader() { //get logged in status from home page
 	const location = useLocation()
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()

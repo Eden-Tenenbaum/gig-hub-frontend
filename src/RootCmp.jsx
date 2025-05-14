@@ -35,7 +35,7 @@ export function RootCmp() {
                     <Route path="gig" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="user/:id" element={<UserDetails />} />
-                    <Route path="gig/:gigId/buy" element={<Purchase />} />
+                    <Route path="purchase/:gigId" element={<Purchase />} />
                 </Routes>
             </main>
             <AppFooter />
