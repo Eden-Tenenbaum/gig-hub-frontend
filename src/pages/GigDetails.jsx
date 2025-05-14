@@ -45,7 +45,7 @@ export function GigDetails() {
       <section className="gig-info grid">
         <BreadCrumb path={['back to list']} />
         <h2>{gig.title}</h2>
-        <MiniUser gig={gig} />
+        <MiniUser gig={gig} showStars={true}/>
         <article className="img-carousel">
           <img src={gig.imgUrl} alt="img" />
         </article>
