@@ -2,14 +2,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: .5em;
+    width: 100%;
+    max-width: calc(4 * 220px + 3 * 0.5em);
+    margin: 0 auto;
 
     li {
-        display: grid;
-        grid-template-columns: max-content auto;
-        padding: .5em;
-        background-color: $clr2;
+        // padding: .5em;
+        // background-color: $clr2;
+        // color: $clr6;
 
-        color: $clr6;
 
         .actions {
             justify-self: end;

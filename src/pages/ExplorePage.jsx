@@ -19,6 +19,7 @@ export function ExplorePage() {
                 subtitle="Stand out from the crowd with a logo that fits your brand personality."
             />
             <FilterBar />
+            {/* <GigList /> */}
             <GigIndex />
         </main>
     )

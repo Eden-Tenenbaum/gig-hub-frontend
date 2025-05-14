@@ -6,30 +6,30 @@ export const mockGigs = [
     title: 'Minimalist Logo Design',
     description: 'I will create a clean, modern minimalist logo tailored to your brand identity and vision.',
     price: 45,
-    imageUrl: '/assets/gig-images/logo1.png',
+    imageUrl: 'https://picsum.photos/550/250?random=1',
     rating: 4.9,
     tags: ['design', 'logo', 'minimalist'],
-    owner: { _id: 'u1', fullname: 'Alice Johnson', imgUrl: '/assets/user-images/alice.jpg' }
+    owner: { _id: 'u1', fullname: 'Alice Johnson', imgUrl: 'https://picsum.photos/550/250?random=2' }
   },
   {
     _id: 'g102',
     title: 'Custom WordPress Website',
     description: 'Full setup and customization of a responsive WordPress website with your choice of theme.',
     price: 250,
-    imageUrl: '/assets/gig-images/wordpress.png',
+    imageUrl: 'https://picsum.photos/550/250?random=3',
     rating: 4.7,
     tags: ['wordpress', 'web', 'development'],
-    owner: { _id: 'u2', fullname: 'Bob Smith', imgUrl: '/assets/user-images/bob.jpg' }
+    owner: { _id: 'u2', fullname: 'Bob Smith', imgUrl: 'https://picsum.photos/550/250?random=4' }
   },
   {
     _id: 'g103',
     title: 'SEO Content Writing',
     description: 'High-quality SEO blog posts and website content to help you rank higher on search engines.',
     price: 80,
-    imageUrl: '/assets/gig-images/seo-writing.png',
+    imageUrl: 'https://picsum.photos/550/250?random=5',
     rating: 4.8,
     tags: ['writing', 'seo', 'content'],
-    owner: { _id: 'u3', fullname: 'Carla Mills', imgUrl: '/assets/user-images/carla.jpg' }
+    owner: { _id: 'u3', fullname: 'Carla Mills', imgUrl: 'https://picsum.photos?random=6' }
   },
   {
     _id: 'g104',
@@ -39,27 +39,27 @@ export const mockGigs = [
     imageUrl: '/assets/gig-images/social-media.png',
     rating: 4.6,
     tags: ['marketing', 'social media', 'management'],
-    owner: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: '/assets/user-images/daniel.jpg' }
+    owner: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/?random=7' }
   },
   {
     _id: 'g105',
     title: 'E-commerce Product Photography',
     description: 'Professional product photos with white background, ready for Shopify, Amazon, and more.',
     price: 100,
-    imageUrl: '/assets/gig-images/product-photography.png',
+    imageUrl: 'https://picsum.photos/550/250?random=8',
     rating: 4.9,
     tags: ['photography', 'e-commerce', 'product'],
-    owner: { _id: 'u5', fullname: 'Ella White', imgUrl: '/assets/user-images/ella.jpg' }
+    owner: { _id: 'u5', fullname: 'Ella White', imgUrl: 'https://picsum.photos/550/250?random=9' }
   },
   {
     _id: 'g106',
     title: 'Mobile App UI/UX Design',
     description: 'Design engaging and user-friendly mobile app interfaces using Figma or Sketch.',
     price: 300,
-    imageUrl: '/assets/gig-images/ui-ux.png',
+    imageUrl: 'https://picsum.photos/550/250?random=10',
     rating: 4.8,
     tags: ['ui', 'ux', 'mobile'],
-    owner: { _id: 'u6', fullname: 'Frank Zhao', imgUrl: '/assets/user-images/frank.jpg' }
+    owner: { _id: 'u6', fullname: 'Frank Zhao', imgUrl: 'https://picsum.photos/550/250?random=11' }
   },
   {
     _id: 'g107',
