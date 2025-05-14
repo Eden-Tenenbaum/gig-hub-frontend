@@ -1,4 +1,4 @@
-import StarIcon from '../../public/img/StarIcon.svg'
+import StarIcon from '../../public/img/icons/StarIcon.svg'
 
 export function Stars({ rating, showStars = false }) {
   const stars = Array(Math.round(rating)).fill()
