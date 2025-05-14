@@ -1,5 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useNavigate } from "react-router";
 
 const fiverrMainCategories = [
     { name: "Graphics & Design", id: "graphics-design" },
@@ -36,12 +37,13 @@ const responsive = {
 }
 
 export function Categories() {
+    const navigate = useNavigate()
     return (
         <section className="categories-menu-package">
             <ul>
                 {fiverrMainCategories.map(category =>
                     <li key={category.id}>
-                        <a>{category.name}</a>
+                        <a onClick={() => navigate(`/explore/${category.id}`)}>{category.name}</a>
                     </li>)
                 }
             </ul>
