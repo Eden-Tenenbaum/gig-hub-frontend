@@ -1,21 +1,11 @@
 @font-face {
-  font-family: caveat;
-  src: url(../../fonts/Caveat/Caveat-Regular.ttf);
-}
-
-@font-face {
-  font-family: montserrat;
-  src: url(../../fonts/Montserrat/Montserrat-Regular.ttf);
-}
-
-@font-face {
   font-family: Macan;
-  src: url(/macan-regular.woff2);
+  src: url(/src/assets/fonts/macan-regular.woff2);
 }
 
 @font-face {
   font-family: MacanLight;
-  src: url(/macan-light.woff2);
+  src: url(/src/assets/fonts/MacanPanWeb-Light.ttf);
 }
 
 //   src: url('../../fonts/macan-regular.woff2') format('truetype');
@@ -28,5 +18,4 @@
 @font-face {
   font-family: 'MacanPanWeb-Semibold';
   src: url('../../fonts/MacanPanWeb-Semibold.ttf');
-
 }
