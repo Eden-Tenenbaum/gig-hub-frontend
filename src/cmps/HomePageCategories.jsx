@@ -8,6 +8,8 @@ import MusicIcon from '../../public/img/icons/music-audio-icon.svg'
 import BusinessIcon from '../../public/img/icons/business-icon.svg'
 import ConsultingIcon from '../../public/img/icons/consulting-icon.svg'
 
+import { useNavigate } from 'react-router'
+
 const fiverrHomePageCategories = [
     { name: "Programming & Tech", id: "programming-tech", icon: ProgIcon },
     { name: "Graphics & Design", id: "graphics-design", icon: GraphicsIcon },
@@ -21,11 +23,13 @@ const fiverrHomePageCategories = [
 ];
 
 export function HomePageCategories() {
+    const navigate = useNavigate()
+
     return (
         <section className="homepage-categories">
             {fiverrHomePageCategories.map(category =>
                 <section key={category.id}>
-                    <a>
+                    <a onClick={() => navigate(`/explore/${category.id}`)}>
                         <div>
                             <img src={category.icon} />
                         </div>
