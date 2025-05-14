@@ -9,7 +9,13 @@
     font-family: MacanLight;
     // font-weight: 280; not working
     box-sizing: border-box;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    // grid-template-rows: auto auto;
+
+    div {
+        height: max-content;
+    }
 
     p {
         font-size: 4.5rem;
@@ -54,7 +60,7 @@
         display: flex;
         gap: 1rem;
         width: fit-content;
-        margin-bottom: 6.625rem; //kinda band-aid look to change if possible
+        margin-bottom: 4.625rem; //kinda band-aid look to change if possible
 
         &:hover {
             cursor: pointer;
@@ -72,5 +78,11 @@
         }
     }
 
-    .trusted-by {}
+    .trusted-by {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
 }

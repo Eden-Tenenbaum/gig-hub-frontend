@@ -1,3 +1,6 @@
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 const fiverrMainCategories = [
     { name: "Graphics & Design", id: "graphics-design" },
     { name: "Programming & Tech", id: "programming-tech" },
@@ -8,22 +11,40 @@ const fiverrMainCategories = [
     { name: "Business", id: "business" },
     { name: "Finance", id: "finance" },
     { name: "AI Services", id: "ai-services" },
-    { name: "Personal Growth", id: "personal-growth" },
-    { name: "Consulting", id: "consulting" },
-    { name: "Data", id: "data" },
-    { name: "Photography", id: "photography" }
-  ];
+    // { name: "Personal Growth", id: "personal-growth" },
+    // { name: "Consulting", id: "consulting" },
+    // { name: "Data", id: "data" },
+    // { name: "Photography", id: "photography" }
+];
+
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 6,
+        slidesToSlide: 6 // optional, default to 1.
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        slidesToSlide: 1 // optional, default to 1.
+    }
+}
 
 export function Categories() {
     return (
-        <section className="categiries-menu-package">
-            <ul className="list">
-            {fiverrMainCategories.map(category =>
-                <li key={category.id}> 
-                    <a>{category.name}</a>
-                </li>)
-            }
-        </ul>
+        <section className="categories-menu-package">
+            <ul>
+                {fiverrMainCategories.map(category =>
+                    <li key={category.id}>
+                        <a>{category.name}</a>
+                    </li>)
+                }
+            </ul>
         </section >
     )
 }

@@ -1,3 +1,10 @@
+import MetaIcon from '../../public/img/icons/over-promo-icons/meta.svg' 
+import GoogleIcon from '../../public/img/icons/over-promo-icons/google.svg' 
+import NetflixIcon from '../../public/img/icons/over-promo-icons/netflix.svg' 
+import PGIcon from '../../public/img/icons/over-promo-icons/p&g.svg' 
+import PayPalIcon from '../../public/img/icons/over-promo-icons/paypal.svg' 
+import PayoneerIcon from '../../public/img/icons/over-promo-icons/payoneer.svg' 
+
 export function OverPromoVideo() {
     return (
         <section className='over-promo-video'>
@@ -26,12 +33,12 @@ export function OverPromoVideo() {
                         </div>
                         <div className='trusted-by'>
                             Trusted by:
-                            <span>Meta icon</span>
-                            <span>Google icon</span>
-                            <span>Netflix icon</span>
-                            <span>Proctor & Gamble icon</span>
-                            <span>Paypal icon</span>
-                            <span>Payoneer icon</span>
+                            <span><img src={MetaIcon}/></span>
+                            <span><img src={GoogleIcon}/></span>
+                            <span><img src={NetflixIcon}/></span>
+                            <span><img src={PGIcon}/></span>
+                            <span><img src={PayPalIcon}/></span>
+                            <span><img src={PayoneerIcon}/></span>
                         </div>
                     </section>
     )

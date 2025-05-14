@@ -11,8 +11,14 @@ import AIDevelopment from '../../public/popservice/ai-development.webp';
 import LogoDesign from '../../public/popservice/logo-design.png';
 import WebsiteDesign from '../../public/popservice/website-design.webp';
 
+// import tester from '../../public/img/react.svg'
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+// const CustomRightArrow = ({ onClick }) => {
+//     return <img src={tester} onClick={() => onClick()} />
+//   }
 
 const popularServices = [
     {
@@ -76,7 +82,6 @@ const popularServices = [
         img: WebsiteDesign
     },
 ];
-
 
 const responsive = {
     desktop: {
