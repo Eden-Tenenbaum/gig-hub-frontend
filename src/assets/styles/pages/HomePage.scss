@@ -1,32 +1,42 @@
+.home-page {
+    font-family: Macan; //temp until merging
+}
+
 .over-promo-video {
-    color: white;
-    padding: 160px 64px 32px 0px;
+    color: $textclrwhite;
+    padding: 10rem 4rem 2rem 0rem;
     width: fit-content;
     font-family: MacanLight;
     // font-weight: 280; not working
     box-sizing: border-box;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    // grid-template-rows: auto auto;
+
+    div {
+        height: max-content;
+    }
 
     p {
-        font-size: 72px;
+        font-size: 4.5rem;
         margin: 0;
-        letter-spacing: -4.32px;
+        letter-spacing: -0.27rem;
 
         &:nth-child(2) {
-            margin-top: -30px;
+            margin-top: -1.875rem;
         }
     }
 
     .searchbar-over-promo-video {
         position: relative;
-        height: 60px;
-        margin-bottom: 28px;
-        margin-top: 13px;
-        
+        height: 3.75rem;
+        margin-bottom: 1.75rem;
+        margin-top: 0.8125rem;
+
         input {
             color: $textclr1;
-            padding: 10px 58px 10px 16px;
-            border-radius: 12px;
+            padding: 0.625rem 3.625rem 0.625rem 1rem;
+            border-radius: 0.75rem;
             border: 1px $textclr5 solid;
             display: block;
             width: 100%;
@@ -40,7 +50,7 @@
             right: 0;
             height: 80%;
             aspect-ratio: 1 / 1;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             background-color: $textclr3;
             font-size: 1rem;
         }
@@ -48,37 +58,31 @@
 
     .over-video-filter-btns {
         display: flex;
-        gap: 16px;
+        gap: 1rem;
         width: fit-content;
-        margin-bottom: 106px; //kinda band-aid look to change if possible
+        margin-bottom: 4.625rem; //kinda band-aid look to change if possible
+
+        &:hover {
+            cursor: pointer;
+        }
 
         div {
             background-color: $transparent;
-            border-radius: 8px;
-            padding: 8px 16px;
-            border: 1px solid white;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid $textclrwhite;
             font-size: 1rem;
             margin: 0;
             display: flex;
-            gap: 12px;
+            gap: 0.75rem;
         }
     }
 
-    .trusted-by{
-
+    .trusted-by {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
-
-}
-
-.homepage-categories {
-    height: 165px;
-    padding: 0 10px;
-    border: 1px solid black;
-    margin-top: 16px;
-    margin-bottom: 40px;
-
-    div {
-        display: inline;
-    }
 }

@@ -5,13 +5,16 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
 import { useEffect, useState } from 'react'
 import { Categories } from './Categories'
+import { HeaderSearchbar } from './HeaderSearchbar'
+import { HeaderNavLoggedIn } from './HeaderNavLoggedIn'
+import { HeaderNavLoggedOut } from './HeaderNavLoggedOut'
 
 export function AppHeader({ isSticky }) { //get logged in status from home page
 	const location = useLocation()
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
-	const [showSearchBar, SetShowSearchBar] = useState(true)
-	const [isLoggedIn, setIsLoggedIn] = useState(true) // band aid function, 
+	const [showSearchBar, SetShowSearchBar] = useState(false)
+	const [isLoggedIn, setIsLoggedIn] = useState(false) // band aid function, 
 	// should get logged in state from another cmp
 
 	async function onLogout() {
@@ -45,54 +48,22 @@ export function AppHeader({ isSticky }) { //get logged in status from home page
 						Diverr<span>.</span>
 					</NavLink>
 
-					<div className='header-search-bar'>
-						{showSearchBar &&
-							<>
-								<input
-									type='text'
-									placeholder='What service are you looking for today?'
-								/>
-								<button>
-									<i className="fa-solid fa-magnifying-glass"></i>
-								</button>
-							</>}
-					</div>
-					<nav className='header-nav'>
-						<ul>
-							<li>
-								<button className='upgrade-to-pro'>Upgrade to Pro</button>
-							</li>
-							<li>
-								<button className='header-btn'><i className="far fa-bell"></i><span></span></button>
-							</li>
-							<li>
-								<button className='header-btn'><i className="far fa-envelope"></i></button>
-							</li>
-							<li>
-								<button className='header-btn'><i className="far fa-heart"></i></button>
-							</li>
-							<li>
-								<div className='header-orders'>Orders</div>
-							</li>
-							<li>
-								<div className='header-try-diverr-go'>Try Diverr Go</div>
-							</li>
-							<li>
-								<div className='login-bandaid'>
-									{isLoggedIn ? (
-										<button className='header-user-options-btn'>U</button>
-									) : (
-										<button className='header-join-btn' onClick={() => toggleLoggedIn(isLoggedIn)}>Join</button>
-									)}
-								</div>
-							</li>
-						</ul>
-					</nav>
+					<HeaderSearchbar showSearchBar={showSearchBar} />
+					{isLoggedIn ?
+						<HeaderNavLoggedIn
+							isLoggedIn={isLoggedIn}
+							toggleLoggedIn={toggleLoggedIn}
+						/>
+						:
+						<HeaderNavLoggedOut
+							isLoggedIn={isLoggedIn}
+							toggleLoggedIn={toggleLoggedIn}
+						/>}
 				</div>
 			</div>
-			{/* <div className='categories-row-wrapper'>
+			<div className='categories-row-wrapper'>
 				<Categories />
-			</div> */}
+			</div>
 		</>
 	)
 }
