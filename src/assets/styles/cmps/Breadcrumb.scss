@@ -39,36 +39,4 @@
     }
   }
 
-  .page-title {
-    font-family: 'MacanPanWeb-Semibold';
-    font-weight: 800;
-    margin-top: 0.2;
-    margin: 0;
-    font-size: 1.4rem;
-    color: #222325;
-  }
-
-  .page-subtitle {
-    font-family: 'MacanPanWeb-Semibold';
-    font-weight: 400;
-    font-size: 0.7rem;
-    color: #74767d;
-    display: flex;
-    align-items: center;
-
-
-    .sep {
-      margin: 0 0.3rem;
-      color: #ccc;
-    }
-
-    a {
-      color: #0073bf;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  }
 }

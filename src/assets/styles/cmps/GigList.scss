@@ -1,10 +1,7 @@
 .gig-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: .5em;
-    width: 100%;
-    max-width: calc(4 * 220px + 3 * 0.5em);
-    margin: 0 auto;
+    gap: 1rem;
 
     li {
         // padding: .5em;

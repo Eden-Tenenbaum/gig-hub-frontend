@@ -3,7 +3,7 @@ import HomeIconUrl from '../../public/img/HomeIcon3.svg'
 import { Link } from "react-router-dom"
 
 
-export function BreadCrumb({ path, title, subtitle, infoLink }) {
+export function BreadCrumb({ path, infoLink }) {
     return (
         <div className="breadcrumb-container">
             <ul className="breadcrumb">
@@ -24,14 +24,7 @@ export function BreadCrumb({ path, title, subtitle, infoLink }) {
                     </React.Fragment>
                 ))}
             </ul>
-            <h1 className="page-title">{title}</h1>
 
-            {subtitle && (
-                <p className="page-subtitle">
-                    {subtitle}
-
-                </p>
-            )}
         </div >
     )
 }

@@ -36,7 +36,7 @@ export const mockGigs = [
     title: 'Social Media Management',
     description: 'Complete social media strategy, posting schedule, and community engagement for your brand.',
     price: 150,
-    imageUrl: '/assets/gig-images/social-media.png',
+    imageUrl: 'https://picsum.photos/550/250?random=20',
     rating: 4.6,
     tags: ['marketing', 'social media', 'management'],
     owner: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/?random=7' }
@@ -66,39 +66,39 @@ export const mockGigs = [
     title: 'Explainer Video Animation',
     description: '2D animated explainer video (up to 60 seconds) with script, voiceover, and background music.',
     price: 200,
-    imageUrl: '/assets/gig-images/animation.png',
+    imageUrl: 'https://picsum.photos/550/250?random=12',
     rating: 4.7,
     tags: ['video', 'animation', 'explainer'],
-    owner: { _id: 'u7', fullname: 'Grace Kim', imgUrl: '/assets/user-images/grace.jpg' }
+    owner: { _id: 'u7', fullname: 'Grace Kim', imgUrl: 'https://picsum.photos/550/250?random=12' }
   },
   {
     _id: 'g108',
     title: 'Professional Voice Over',
     description: 'Clear, emotive voiceover in English or Spanish for videos, ads, and presentations.',
     price: 60,
-    imageUrl: '/assets/gig-images/voiceover.png',
+    imageUrl: 'https://picsum.photos/550/250?random=13',
     rating: 4.5,
     tags: ['voiceover', 'audio', 'voice'],
-    owner: { _id: 'u8', fullname: 'Hector Ramirez', imgUrl: '/assets/user-images/hector.jpg' }
+    owner: { _id: 'u8', fullname: 'Hector Ramirez', imgUrl: 'https://picsum.photos/550/250?random=14' }
   },
   {
     _id: 'g109',
     title: 'English to Spanish Translation',
     description: 'Accurate and culturally adapted translation of documents, websites, or marketing materials.',
     price: 90,
-    imageUrl: '/assets/gig-images/translation.png',
+    imageUrl: 'https://picsum.photos/550/250?random=23',
     rating: 4.8,
     tags: ['translation', 'english', 'spanish'],
-    owner: { _id: 'u9', fullname: 'Isabel Gomez', imgUrl: '/assets/user-images/isabel.jpg' }
+    owner: { _id: 'u9', fullname: 'Isabel Gomez', imgUrl: 'https://picsum.photos/550/250?random=18' }
   },
   {
     _id: 'g110',
     title: 'Digital Marketing Strategy',
     description: 'Custom digital marketing plan including SEO, PPC, and social media tactics.',
     price: 180,
-    imageUrl: '/assets/gig-images/marketing.png',
+    imageUrl: 'https://picsum.photos/550/250?random=16',
     rating: 4.6,
     tags: ['marketing', 'strategy', 'digital'],
-    owner: { _id: 'u10', fullname: 'Jack Wilson', imgUrl: '/assets/user-images/jack.jpg' }
+    owner: { _id: 'u10', fullname: 'Jack Wilson', imgUrl: 'https://picsum.photos/550/250?random=15' }
   }
 ];

@@ -1,5 +1,7 @@
 .gig-preview {
-
+    border: 1px solid #222325;
+    border-radius: 8px;
+    padding: 1rem;
     // display: flex;
     // flex-direction: column;
     // gap: .5em;
@@ -10,6 +12,7 @@
         display: block;
         border-radius: 4px;
         object-fit: cover;
+        margin-bottom: 1.2rem;
     }
 
     width: 100%;
