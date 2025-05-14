@@ -32,7 +32,7 @@ export function GigDetails() {
   if (!gig._id) return
   return (
     <section className="gig-details grid">
-      <UserInteraction gig={gig} />
+      <UserInteraction plan={gig.purchasePlan} />
       <section className="gig-info grid">
         <BreadCrumb path={['back to list']} />
         <h2>{gig.title}</h2>
