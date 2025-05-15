@@ -2,6 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { makeId } from '../util.service'
 import { userService } from '../user'
+import { mockGigs } from './mockGigs'
 
 const STORAGE_KEY = 'gig'
 
@@ -26,15 +27,15 @@ async function query(filterBy = { txt: '', minPrice: 0 }) {
     if (minPrice) {
         gigs = gigs.filter(gig => gig.price >= minPrice)
     }
-    if(sortField === 'title'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'title') {
+        gigs.sort((gig1, gig2) =>
             gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
     }
-    if(sortField === 'price'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'price') {
+        gigs.sort((gig1, gig2) =>
             (gig1[sortField] - gig2[sortField]) * +sortDir)
     }
-    
+
     gigs = gigs.map(({ _id, title, price, owner }) => ({ _id, title, price, owner }))
     return gigs
 }
@@ -83,3 +84,5 @@ async function addGigMsg(gigId, txt) {
 
     return msg
 }
+
+// storageService.post(STORAGE_KEY, mockGigs)
