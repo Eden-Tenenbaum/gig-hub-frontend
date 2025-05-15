@@ -1,10 +1,11 @@
 .stars {
     display: inline-flex;
     align-items: center;
-    gap: .25rem;
+    gap: rem(4px);
+    color: $textclr3;
 
     &.rating-num {
-        margin-left: .25rem;
-        font-weight: 600;
+        margin-left: rem(4px);
+        font-weight: $weight1;
     }
 }

@@ -4,7 +4,7 @@ import HeartIcon from '../../../public/img/icons/HeartIcon.svg'
 import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
 
 export function UserInteraction({ plan }) {
-  
+
   const [isSaved, setIsSaved] = useState(false)
 
   function toggleSave() {
@@ -16,7 +16,7 @@ export function UserInteraction({ plan }) {
       <article className="interaction-bar">
         <div className={`heart-wrapper ${isSaved ? 'saved' : ''}`}>
           <span className="tooltip fs14">Save to list</span>
-          <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" onClick={toggleSave}/>
+          <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" onClick={toggleSave} />
         </div>
       </article>
       <article className="purchase-modal">
@@ -25,16 +25,16 @@ export function UserInteraction({ plan }) {
           <p className="fs20">{plan.price}$</p>
         </section>
         <section className="content">
-          <span>{plan.content}</span>
-          <section className="way-of-work flex">
+          <span className="content-text">{plan.content}</span>
+          <section className="way-of-work flex fs14">
             <section className="delivery-time">{plan.deliveryDay}-day delivery</section>
             <section className="revisions">{plan.revisions} Revision{plan.revisions !== 1 && 's'}</section>
           </section>
           <ul className="whats-included">
-                  {plan.includes.map((criteria, idx) => {
-                    <li key={idx}>{criteria}</li>
-                  })}
-                </ul>
+            {plan.includes.map((criteria, idx) => {
+              <li key={idx}>{criteria}</li>
+            })}
+          </ul>
           <button className="order-request">Request to order</button>
         </section>
       </article>

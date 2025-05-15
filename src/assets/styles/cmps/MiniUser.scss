@@ -1,0 +1,18 @@
+.mini-user {
+    margin-bottom: rem(23px);
+    --scale: 1;
+    gap: calc(1rem * (0.5 + var(--scale) * 0.5));
+
+    color: $textclr2;
+
+    .img-container {
+        border-radius: 10%;
+        width: calc(4rem * var(--scale));
+        height: calc(4rem * var(--scale));
+    }
+
+    .fullname {
+        margin-block: rem(-2px) rem(2px);
+        font-weight: $weight2;
+    }
+}

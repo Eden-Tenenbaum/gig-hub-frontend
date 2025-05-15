@@ -36,11 +36,17 @@ export function GigDetails() {
       <UserInteraction plan={gig.purchasePlan} />
       <section className="gig-info grid">
         <BreadCrumb path={['back to list']} />
-        <h2 className="fs28">{gig.title}</h2>
+        <h2 className="title fs28">{gig.title}</h2>
         <MiniUser gig={gig} showStars={true} />
         <ImgCarousel gig={gig} />
-        <article className="description">{gig.description}</article>
-        <AboutUser gig={gig} />
+        <article className="description">
+          <h2 className="fs20">About this gig</h2>
+          {gig.description}
+        </article>
+        <article className="description">
+          <h2 className="fs20">Get to know {gig.owner.fullname}</h2>
+          <AboutUser gig={gig} />
+        </article>
         <section className="reviews grid">
           <article className="review-statistics">stats</article>
           <ReviewList />

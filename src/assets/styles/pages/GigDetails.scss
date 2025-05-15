@@ -14,39 +14,76 @@
         }
 
         .breadcrumb-container,
-        h2 {
+        .title {
             margin-top: rem(6.6px);
             margin-bottom: rem(13.5px);
         }
 
-        .mini-user {
-            margin-bottom: rem(23px);
-            --scale: 1;
-            gap: calc(1rem * (0.5 + var(--scale) * 0.5));
-
-            .img-container {
-                border-radius: 10%;
-                background-color: $clr2;
-                width: calc(4rem * var(--scale));
-                height: calc(4rem * var(--scale));
-            }
-
-            .fullname {
-                margin-block: rem(-2px) rem(2px);
-                font-weight: $weight2;
-            }
-        }
-
-        .img-container-carousel {
+        .img-carousel {
             width: 100%;
-            height: rem(427px);
             max-width: rem(712px);
-            background-color: $clr2;
-            display: grid;
-            place-items: center;
+            margin-bottom: rem(64px);
+
+            .img-container-carousel {
+                width: 100%;
+                height: rem(427px);
+                background-color: $clr2;
+            }
+
+            .thumbnails {
+                width: 100%;
+                height: rem(60px);
+                padding: 5px 0 5px 5px;
+
+                li {
+                    max-width: rem(100px);
+                    height: rem(60px);
+                }
+            }
         }
 
-        .about-gig,
+        .description {
+            color: $textclr1;
+            margin-bottom: rem(64px);
+
+            h2 {
+                color: $textclr2;
+                height: rem(41px);
+            }
+        }
+
+        .user-stats {
+            grid-template-areas: 
+            "from memb"
+            "resp last"
+            "lang _"
+            "desc desc";
+
+            >.from {
+                grid-area: from;
+            }
+
+            >.member-since {
+                grid-area: memb;
+            }
+
+            >.response-time {
+                grid-area: resp;
+            }
+
+            >.last-delivery {
+                grid-area: last;
+            }
+
+            >.languages {
+                grid-area: lang;
+            }
+
+            >.user-description {
+                grid-area: desc;
+            }
+        }
+
         .about-user,
         .review-statistics {
             background: #f9f9f9;
@@ -105,28 +142,42 @@
             grid-column: 1;
             color: $textclr1;
             border: 1px solid $gray1;
-            line-height: 24px;
+            line-height: rem(24px);
 
             .offer {
                 color: $textclr3;
+                margin-bottom: rem(8px);
 
                 :first-child {
                     font-weight: $weight2;
                 }
             }
 
-            .delivery-time::before {
-                @include icon-for-text('/public/img/icons/ClockIcon.svg');
+            .content-text {
+                padding-bottom: rem(10px);
             }
 
-            .revisions::before {
-                @include icon-for-text('/public/img/icons/LoopIcon.svg');
+            .way-of-work {
+                font-weight: $weight2;
+
+                .delivery-time::before {
+                    @include icon-for-text('/public/img/icons/ClockIcon.svg');
+                }
+
+                .revisions {
+                    margin-left: rem(16.5px);
+
+                    &::before {
+                        @include icon-for-text('/public/img/icons/LoopIcon.svg');
+                    }
+                }
             }
 
-            button {
+            .order-request {
+                width: 100%;
                 background-color: $clr6;
                 color: $clr1;
-                padding: .75rem 1.5rem;
+                padding: rem(12px) rem(24px);
                 transition: 70ms cubic-bezier(.75, 0, .25, 1);
 
                 &:hover {
@@ -134,7 +185,6 @@
                 }
             }
         }
-
 
         @media (min-width: $narrow-breakpoint) {
             position: sticky;
