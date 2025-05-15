@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 import HeartIcon from '../../../public/img/icons/HeartIcon.svg'
 import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
 
 export function UserInteraction({ plan }) {
-  
+  const navigate = useNavigate()
   const [isSaved, setIsSaved] = useState(false)
 
   function toggleSave() {
@@ -35,7 +36,7 @@ export function UserInteraction({ plan }) {
                     <li key={idx}>{criteria}</li>
                   })}
                 </ul>
-          <button className="order-request">Request to order</button>
+          <button className="order-request" onClick={() => navigate(`/purchase`)}>Request to order</button>
         </section>
       </article>
     </aside>

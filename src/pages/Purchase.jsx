@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router'
 import { PayFormContainer } from '../cmps/PayFromContainer.jsx'
 
 export function Purchase() {
+    const navigate = useNavigate()
     return (
         <section className="purchase-wrapper">
             <div className="purchase-information-page">
@@ -20,7 +22,7 @@ export function Purchase() {
                 <section className="billing-information"></section>
             </div>
             <div className="purchase-confirmation-page">
-                <div>filler content</div>
+                <button onClick={() => navigate(`/`)}>purchase</button>
             </div>
         </section >
     )
