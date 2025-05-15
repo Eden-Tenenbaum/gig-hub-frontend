@@ -1,20 +1,17 @@
 .gig-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+@media (max-width: 900px) {
+    .gig-list {
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+    }
+}
 
-    li {
-        // padding: .5em;
-        // background-color: $clr2;
-        // color: $clr6;
 
-
-        .actions {
-            justify-self: end;
-
-            button {
-                padding: .3em .5em;
-            }
-        }
+@media (max-width: 600px) {
+    .gig-list {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
     }
 }
