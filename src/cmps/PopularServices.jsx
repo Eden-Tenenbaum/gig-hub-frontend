@@ -116,7 +116,7 @@ export function PopularServices() {
                     <section key={category.id}>
                         <div 
                         className={category.name.length <= small ? 'small' : ''}
-                        onClick={() => navigate(`explore/${category.id}`)}
+                        onClick={() => navigate('/gig', { state: { category } })}
                         >
                             <p>{category.name}</p>
                             <div>
