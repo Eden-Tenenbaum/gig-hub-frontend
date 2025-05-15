@@ -27,15 +27,15 @@ async function query(filterBy = { txt: '', minPrice: 0 }) {
     if (minPrice) {
         gigs = gigs.filter(gig => gig.price >= minPrice)
     }
-    if(sortField === 'title'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'title') {
+        gigs.sort((gig1, gig2) =>
             gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
     }
-    if(sortField === 'price'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'price') {
+        gigs.sort((gig1, gig2) =>
             (gig1[sortField] - gig2[sortField]) * +sortDir)
     }
-    
+
     gigs = gigs.map(({ _id, title, price, owner }) => ({ _id, title, price, owner }))
     return gigs
 }
