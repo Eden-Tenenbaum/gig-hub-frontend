@@ -6,7 +6,7 @@ export function GigPreview({ gig }) {
 
     const [isHovering, setIsHovering] = useState(false)
 
-    function onHover() {
+    function onMouseEnter() {
         setIsHovering(true)
     }
 
@@ -19,7 +19,7 @@ export function GigPreview({ gig }) {
             <img
                 className="gig-preview__img"
                 src={gig.imageUrl}
-                onMouseEnter={() => onHover()}
+                onMouseEnter={() => onMouseEnter()}
                 onMouseLeave={() => onMouseLeave()}
             /></Link>
         {gig.owner && <p className='gig-preview__name'>Ad by
@@ -35,7 +35,7 @@ export function GigPreview({ gig }) {
         <Link to={`/gig/${gig._id}`}>
             <p
                 className='gig-preview__price__label'
-                onMouseEnter={() => onHover()}
+                onMouseEnter={() => onMouseEnter()}
                 onMouseLeave={() => onMouseLeave()}
             >From:
                 <span className='gig-preview__price'>${gig.purchasePlan.price.toLocaleString()}</span>

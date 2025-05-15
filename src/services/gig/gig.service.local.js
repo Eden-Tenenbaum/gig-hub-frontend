@@ -2,6 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { makeId } from '../util.service'
 import { userService } from '../user'
+import { mockGigs } from './mockGigs'
 
 const STORAGE_KEY = 'gig'
 
@@ -83,3 +84,5 @@ async function addGigMsg(gigId, txt) {
 
     return msg
 }
+
+// storageService.post(STORAGE_KEY, mockGigs)

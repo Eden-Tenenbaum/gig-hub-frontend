@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation, useSearchParams } from 'react-router-dom'
-
 import { loadGigs, addGig, updateGig, removeGig, addGigMsg } from '../store/actions/gig.actions'
-
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig'
 import { userService } from '../services/user'
-
 import { GigList } from '../cmps/GigList'
 import { GigFilter } from '../cmps/GigFilter'
 import { mockGigs } from '../services/gig/mockGigs'
@@ -16,7 +13,6 @@ import { mockGigs } from '../services/gig/mockGigs'
 export function GigIndex() {
     const location = useLocation()
     const [searchParams, setSearchParams] = useSearchParams()
-
     const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
     // const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const gigs = mockGigs
