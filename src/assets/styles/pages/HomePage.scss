@@ -265,6 +265,10 @@
             margin: 0;
             font-weight: 700;
             color: $textclrwhite;
+
+            &:hover {
+                background-color: rgb(64,65,69);
+            }
         }
     }
 }
@@ -296,5 +300,9 @@
         font-size: 1rem;
         padding: 0.5rem 1rem;
         font-weight: 400;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, .9);
+        }
     }
 }

@@ -19,11 +19,12 @@ import { UserMsg } from './cmps/UserMsg'
 export function RootCmp() {
     const location = useLocation()
     const isHomePage = location.pathname === '/'
+    const isPurchasing = location.pathname.includes('/purchase')
 
     return (
         <div className="main-container">
             <div className={`app-header-wrapper full ${isHomePage ? 'sticky' : ''}`}>
-            <AppHeader />
+            <AppHeader isPurchasing={isPurchasing}/>
             </div>
             {isHomePage && <PromoVideo />}
             <UserMsg />
