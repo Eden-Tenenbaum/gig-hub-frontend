@@ -18,7 +18,7 @@ export function GigPreview({ gig }) {
         <Link to={`/gig/${gig._id}`}>
             <img
                 className="gig-preview__img"
-                src={gig.imageUrl}
+                src={gig.imgUrl}
                 onMouseEnter={() => onMouseEnter()}
                 onMouseLeave={() => onMouseLeave()}
             /></Link>
