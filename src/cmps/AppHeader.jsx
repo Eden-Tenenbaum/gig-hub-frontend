@@ -8,8 +8,9 @@ import { Categories } from './Categories'
 import { HeaderSearchbar } from './HeaderSearchbar'
 import { HeaderNavLoggedIn } from './HeaderNavLoggedIn'
 import { HeaderNavLoggedOut } from './HeaderNavLoggedOut'
+import { HeaderPurchase } from './HeaderPurchase'
 
-export function AppHeader({ isSticky }) { //get logged in status from home page
+export function AppHeader({ isPurchasing }) { //get logged in status from home page
 	const location = useLocation()
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
@@ -48,22 +49,31 @@ export function AppHeader({ isSticky }) { //get logged in status from home page
 						Diverr<span>.</span>
 					</NavLink>
 
-					<HeaderSearchbar showSearchBar={showSearchBar} />
-					{isLoggedIn ?
-						<HeaderNavLoggedIn
-							isLoggedIn={isLoggedIn}
-							toggleLoggedIn={toggleLoggedIn}
-						/>
+					{!isPurchasing && <HeaderSearchbar showSearchBar={showSearchBar} />}
+
+					{isPurchasing ?
+						<HeaderPurchase />
 						:
-						<HeaderNavLoggedOut
-							isLoggedIn={isLoggedIn}
-							toggleLoggedIn={toggleLoggedIn}
-						/>}
+						<>
+							{
+								isLoggedIn ?
+									<HeaderNavLoggedIn
+										isLoggedIn={isLoggedIn}
+										toggleLoggedIn={toggleLoggedIn}
+									/>
+									:
+									<HeaderNavLoggedOut
+										isLoggedIn={isLoggedIn}
+										toggleLoggedIn={toggleLoggedIn}
+									/>}
+						</>
+					}
 				</div>
 			</div>
+			{!isPurchasing &&
 			<div className='categories-row-wrapper'>
 				<Categories />
-			</div>
+			</div>}
 		</>
 	)
 }

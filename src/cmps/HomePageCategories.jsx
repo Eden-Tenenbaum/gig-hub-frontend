@@ -24,12 +24,12 @@ const fiverrHomePageCategories = [
 
 export function HomePageCategories() {
     const navigate = useNavigate()
-
+    
     return (
         <section className="homepage-categories">
             {fiverrHomePageCategories.map(category =>
                 <section key={category.id}>
-                    <a onClick={() => navigate(`/explore/${category.id}`)}>
+                    <a onClick={() => navigate('/gig', { state: { category } })}>
                         <div>
                             <img src={category.icon} />
                         </div>

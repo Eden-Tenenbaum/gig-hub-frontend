@@ -19,11 +19,12 @@ import { UserMsg } from './cmps/UserMsg'
 export function RootCmp() {
     const location = useLocation()
     const isHomePage = location.pathname === '/'
+    const isPurchasing = location.pathname.includes('/purchase')
 
     return (
         <div className="main-container">
             <div className={`app-header-wrapper full ${isHomePage ? 'sticky' : ''}`}>
-            <AppHeader />
+            <AppHeader isPurchasing={isPurchasing}/>
             </div>
             {isHomePage && <PromoVideo />}
             <UserMsg />
@@ -35,7 +36,7 @@ export function RootCmp() {
                     <Route path="gig" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="user/:id" element={<UserDetails />} />
-                    <Route path="gig/:gigId/buy" element={<Purchase />} />
+                    <Route path="purchase/:gigId" element={<Purchase />} />
                 </Routes>
             </main>
             <AppFooter />
