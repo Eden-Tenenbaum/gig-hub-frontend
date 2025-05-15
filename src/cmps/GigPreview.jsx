@@ -16,7 +16,7 @@ export function GigPreview({ gig }) {
         </div>
         <Link to={`/gig/${gig._id}`}>
             <p className='gig-preview__price__label'>From:
-                <span className='gig-preview__price'>${gig.price.toLocaleString()}</span>
+                <span className='gig-preview__price'>${gig.purchasePlan.price.toLocaleString()}</span>
             </p>
         </Link>
     </article>
