@@ -1,19 +1,19 @@
-import WebsiteDevelopment from '../../public/popservice/website-development.webp';
-import VideoEditing from '../../public/popservice/video-editing.webp';
-import SoftwareDevelopment from '../../public/popservice/software-development.webp';
-import SEO from '../../public/popservice/seo.webp';
-import ArchitectureInteriorDesign from '../../public/popservice/architecture-design.webp';
-import BookDesign from '../../public/popservice/book-design.webp';
-import UGCVideos from '../../public/popservice/ugc-videos.webp';
-import VoiceOver from '../../public/popservice/voice-over.webp';
-import SocialMediaMarketing from '../../public/popservice/social-media-marketing.webp';
-import AIDevelopment from '../../public/popservice/ai-development.webp';
-import LogoDesign from '../../public/popservice/logo-design.png';
-import WebsiteDesign from '../../public/popservice/website-design.webp';
+import WebsiteDevelopment from '../../../public/popservice/website-development.webp';
+import VideoEditing from '../../../public/popservice/video-editing.webp';
+import SoftwareDevelopment from '../../../public/popservice/software-development.webp';
+import SEO from '../../../public/popservice/seo.webp';
+import ArchitectureInteriorDesign from '../../../public/popservice/architecture-design.webp';
+import BookDesign from '../../../public/popservice/book-design.webp';
+import UGCVideos from '../../../public/popservice/ugc-videos.webp';
+import VoiceOver from '../../../public/popservice/voice-over.webp';
+import SocialMediaMarketing from '../../../public/popservice/social-media-marketing.webp';
+import AIDevelopment from '../../../public/popservice/ai-development.webp';
+import LogoDesign from '../../../public/popservice/logo-design.png';
+import WebsiteDesign from '../../../public/popservice/website-design.webp';
 
 import { useNavigate } from 'react-router';
 
-// import tester from '../../public/img/react.svg'
+// import tester from '../../../public/img/react.svg'
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";

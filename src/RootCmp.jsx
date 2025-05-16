@@ -11,7 +11,7 @@ import { Purchase } from './pages/Purchase'
 import { UserDetails } from './pages/UserDetails'
 
 import { AppHeader } from './cmps/AppHeader'
-import { PromoVideo } from './cmps/PromoVideo'
+import { PromoVideo } from './cmps/homePage/PromoVideo'
 import { AppFooter } from './cmps/AppFooter'
 import { UserMsg } from './cmps/UserMsg'
 

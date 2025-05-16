@@ -1,9 +1,9 @@
-import { VontelleVideo } from '../cmps/VontelleVideo'
-import { OverPromoVideo } from '../cmps/OverPromoVideo'
-import { HomePageCategories } from '../cmps/HomePageCategories'
-import { PopularServices } from '../cmps/PopularServices'
-import { MidHomePageAd } from '../cmps/MidHomePageAd'
-import { BottomHomePageAd } from '../cmps/BottomHomePageAd'
+import { VontelleVideo } from '../cmps/homePage/VontelleVideo'
+import { OverPromoVideo } from '../cmps/homePage/OverPromoVideo'
+import { HomePageCategories } from '../cmps/homePage/HomePageCategories'
+import { PopularServices } from '../cmps/homePage/PopularServices'
+import { MidHomePageAd } from '../cmps/homePage/MidHomePageAd'
+import { BottomHomePageAd } from '../cmps/homePage/BottomHomePageAd'
 
 
 

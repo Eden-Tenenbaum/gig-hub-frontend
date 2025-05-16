@@ -1,9 +1,9 @@
-import MetaIcon from '../../public/img/icons/over-promo-icons/meta.svg' 
-import GoogleIcon from '../../public/img/icons/over-promo-icons/google.svg' 
-import NetflixIcon from '../../public/img/icons/over-promo-icons/netflix.svg' 
-import PGIcon from '../../public/img/icons/over-promo-icons/p&g.svg' 
-import PayPalIcon from '../../public/img/icons/over-promo-icons/paypal.svg' 
-import PayoneerIcon from '../../public/img/icons/over-promo-icons/payoneer.svg' 
+import MetaIcon from '../../../public/img/icons/over-promo-icons/meta.svg' 
+import GoogleIcon from '../../../public/img/icons/over-promo-icons/google.svg' 
+import NetflixIcon from '../../../public/img/icons/over-promo-icons/netflix.svg' 
+import PGIcon from '../../../public/img/icons/over-promo-icons/p&g.svg' 
+import PayPalIcon from '../../../public/img/icons/over-promo-icons/paypal.svg' 
+import PayoneerIcon from '../../../public/img/icons/over-promo-icons/payoneer.svg' 
 
 export function OverPromoVideo() {
     return (

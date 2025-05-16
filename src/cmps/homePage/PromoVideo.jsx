@@ -1,4 +1,4 @@
-import promoVideo from '../../public/fiverr-vid.mp4'
+import promoVideo from '../../../public/fiverr-vid.mp4'
 
 export function PromoVideo() {
     return (

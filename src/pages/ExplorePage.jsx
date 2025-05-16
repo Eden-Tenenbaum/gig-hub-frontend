@@ -9,7 +9,7 @@ import { GigFilter } from "../cmps/GigFilter.jsx"
 import { GigList } from "../cmps/GigList.jsx"
 import { GigIndex } from "./GigIndex.jsx"
 import { FilterBar } from "../cmps/FilterBar.jsx"
-import { PopularServices } from "../cmps/PopularServices.jsx"
+import { PopularServices } from "../cmps/homePage/PopularServices.jsx"
 
 
 export function ExplorePage() {
