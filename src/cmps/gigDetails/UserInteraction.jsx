@@ -14,9 +14,9 @@ export function UserInteraction({ plan }) {
   return (
     <aside className="user-interaction grid">
       <article className="interaction-bar">
-        <div className={`heart-wrapper ${isSaved ? 'saved' : ''}`}>
-          <span className="tooltip fs14">Save to list</span>
+        <div className={`heart-wrapper grid ${isSaved && 'saved'}`}>
           <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" onClick={toggleSave} />
+          <span className="tooltip fs14">Save to list</span>
         </div>
       </article>
       <article className="purchase-modal">
