@@ -1,6 +1,6 @@
-import heartIcon from '../../public/img/heart-icon.png'
-import envelopeIcon from '../../public/img/envelope-icon.png'
-import bellIcon from '../../public/img/bell-icon.png'
+import heartIcon from '../../../public/img/heart-icon.png'
+import envelopeIcon from '../../../public/img/envelope-icon.png'
+import bellIcon from '../../../public/img/bell-icon.png'
 import { useNavigate } from 'react-router'
 
 export function HeaderNavLoggedIn({ isLoggedIn, toggleLoggedIn }) {

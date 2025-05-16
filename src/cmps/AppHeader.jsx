@@ -5,10 +5,10 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
 import { useEffect, useState } from 'react'
 import { Categories } from './Categories'
-import { HeaderSearchbar } from './HeaderSearchbar'
-import { HeaderNavLoggedIn } from './HeaderNavLoggedIn'
-import { HeaderNavLoggedOut } from './HeaderNavLoggedOut'
-import { HeaderPurchase } from './HeaderPurchase'
+import { HeaderSearchbar } from './appHeader/HeaderSearchbar'
+import { HeaderNavLoggedIn } from './appHeader/HeaderNavLoggedIn'
+import { HeaderNavLoggedOut } from './appHeader/HeaderNavLoggedOut'
+import { HeaderPurchase } from './appHeader/HeaderPurchase'
 
 export function AppHeader({ isPurchasing }) { //get logged in status from home page
 	const location = useLocation()
