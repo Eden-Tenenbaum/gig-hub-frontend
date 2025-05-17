@@ -45,6 +45,7 @@ export function GigDetails() {
         </article>
         <article className="description">
           <h2 className="fs20">Get to know {gig.owner.fullname}</h2>
+          <MiniUser gig={gig} scale={1.5} fs={16} showStars={true} includeUserMsg={true} />
           <AboutUser gig={gig} />
         </article>
         <section className="reviews grid">

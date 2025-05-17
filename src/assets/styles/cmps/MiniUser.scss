@@ -6,7 +6,7 @@
     color: $textclr2;
 
     .img-container {
-        border-radius: 10%;
+        border-radius: 50%;
         width: calc(4rem * var(--scale));
         height: calc(4rem * var(--scale));
     }
@@ -14,5 +14,13 @@
     .fullname {
         margin-block: rem(-2px) rem(2px);
         font-weight: $weight2;
+
+        &.ium {
+            margin-top: rem(5px);
+        }
+    }
+
+    .msg {
+        margin-block: rem(5px);
     }
 }
