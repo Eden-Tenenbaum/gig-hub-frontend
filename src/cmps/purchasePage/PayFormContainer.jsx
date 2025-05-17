@@ -1,4 +1,4 @@
-import Lock from '../../public/img/icons/purchase-icons/lock.svg'
+// import Lock from '../../public/img/icons/purchase-icons/lock.svg'
 import { PurchaseErrorMessage } from './PurchaseErrorMessage.jsx'
 import { useState } from 'react'
 

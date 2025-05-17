@@ -3,8 +3,8 @@ import { useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { orderService } from '../services/order/order.service.local.js'
 
-import { PayFormContainer } from '../cmps/PayFormContainer'
-import { PurchaseConfirmation } from '../cmps/PurchaseConfirmation'
+import { PayFormContainer } from '../cmps//purchasePage/PayFormContainer'
+import { PurchaseConfirmation } from '../cmps/purchasePage/PurchaseConfirmation.jsx'
 
 export function Purchase() {
     const navigate = useNavigate()

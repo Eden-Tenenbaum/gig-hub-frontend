@@ -1,4 +1,4 @@
-import Error from '../../public/img/icons/purchase-icons/error.svg'
+// import Error from '../../public/img/icons/purchase-icons/error.svg'
 
 export function PurchaseErrorMessage({ message }) {
     return (

@@ -1,4 +1,4 @@
-import { orderService } from "../services/order/order.service.local"
+import { orderService } from "../../services/order/order.service.local"
 import { useNavigate } from "react-router"
 
 export function PurchaseConfirmation({ order }) {
