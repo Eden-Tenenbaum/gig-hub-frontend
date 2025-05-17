@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router'
 import HeartIcon from '../../../public/img/icons/HeartIcon.svg'
 import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
 
-export function UserInteraction({ plan }) {
-  const navigate = useNavigate()
+export function UserInteraction({ plan, onPurchase }) {
   const [isSaved, setIsSaved] = useState(false)
 
   function toggleSave() {
@@ -17,13 +16,13 @@ export function UserInteraction({ plan }) {
       <article className="interaction-bar">
         <div className={`heart-wrapper ${isSaved ? 'saved' : ''}`}>
           <span className="tooltip fs14">Save to list</span>
-          <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" onClick={toggleSave}/>
+          <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" onClick={toggleSave} />
         </div>
       </article>
       <article className="purchase-modal">
         <section className="offer flex space-between">
           <p className="capitalize">offer</p>
-          <p className="fs20">{plan.price}$</p>
+          <p className="fs20">${plan.price}</p>
         </section>
         <section className="content">
           <span>{plan.content}</span>
@@ -32,11 +31,11 @@ export function UserInteraction({ plan }) {
             <section className="revisions">{plan.revisions} Revision{plan.revisions !== 1 && 's'}</section>
           </section>
           <ul className="whats-included">
-                  {plan.includes.map((criteria, idx) => {
-                    <li key={idx}>{criteria}</li>
-                  })}
-                </ul>
-          <button className="order-request" onClick={() => navigate(`/purchase`)}>Request to order</button>
+            {plan.includes.map((criteria, idx) => {
+              <li key={idx}>{criteria}</li>
+            })}
+          </ul>
+          <button className="order-request" onClick={() => onPurchase()}>Request to order</button>
         </section>
       </article>
     </aside>

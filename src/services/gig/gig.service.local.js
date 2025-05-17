@@ -11,7 +11,8 @@ export const gigService = {
     getById,
     save,
     remove,
-    addGigMsg
+    addGigMsg,
+    getDefaultFilter
 }
 window.cs = gigService
 
@@ -83,6 +84,19 @@ async function addGigMsg(gigId, txt) {
     await storageService.put(STORAGE_KEY, gig)
 
     return msg
+}
+
+function getDefaultFilter() {
+    return {
+        txt: '',
+        minPrice: 0,
+        maxPrice: Infinity, 
+        category: '',
+        minRating: 0,
+        deliveryDay: null,
+        sellerId: '',
+        sortBy: 'rating' //rating/price/deliveryday etc...
+    }
 }
 
 // storageService.post(STORAGE_KEY, mockGigs)
