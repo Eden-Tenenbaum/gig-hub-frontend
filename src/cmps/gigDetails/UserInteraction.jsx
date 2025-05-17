@@ -1,10 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 import HeartIcon from '../../../public/img/icons/HeartIcon.svg'
 import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
 
-export function UserInteraction({ plan }) {
-
+export function UserInteraction({ plan, onPurchase }) {
   const [isSaved, setIsSaved] = useState(false)
   const [activePlan, setActivePlan] = useState(1)
 
@@ -51,7 +51,7 @@ export function UserInteraction({ plan }) {
                 return <li className={`fs14 ${idx <= activePlan && 'active'}`} key={idx}>{criteria}</li>
               })}
             </ul>
-            <button className="order-request">Continue<span></span></button>
+            <button className="order-request" onClick={() => onPurchase()}>Continue<span></span></button>
           </section>
         </article>
       </article>
