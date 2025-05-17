@@ -6,9 +6,15 @@ import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
 export function UserInteraction({ plan }) {
 
   const [isSaved, setIsSaved] = useState(false)
+  const [activePlan, setActivePlan] = useState(1)
 
   function toggleSave() {
     setIsSaved(prev => !prev)
+    console.log(plan.includes)
+  }
+
+  function activatePlan(plan) {
+    setActivePlan(plan)
   }
 
   return (
@@ -20,23 +26,34 @@ export function UserInteraction({ plan }) {
         </div>
       </article>
       <article className="purchase-modal">
-        <section className="offer flex space-between">
-          <p className="capitalize">offer</p>
-          <p className="fs20">{plan.price}$</p>
+        <section className="plan-buttons flex space-between">
+          <span className={activePlan === 1 && 'active'} onClick={() => activatePlan(1)}>Basic</span>
+          <span className={activePlan === 1.5 && 'active'} onClick={() => activatePlan(1.5)}>Standard</span>
+          <span className={activePlan === 2 && 'active'} onClick={() => activatePlan(2)}>Premium</span>
         </section>
-        <section className="content">
-          <span className="content-text">{plan.content}</span>
-          <section className="way-of-work flex fs14">
-            <section className="delivery-time">{plan.deliveryDay}-day delivery</section>
-            <section className="revisions">{plan.revisions} Revision{plan.revisions !== 1 && 's'}</section>
+        <article className="plan">
+          <section className="offer flex space-between">
+            <p className="capitalize">
+              {activePlan === 1 && 'silver'}
+              {activePlan === 1.5 && 'gold'}
+              {activePlan === 2 && 'platinum'}
+            </p>
+            <p className="fs20">{plan.price * activePlan}$</p>
           </section>
-          <ul className="whats-included">
-            {plan.includes.map((criteria, idx) => {
-              <li key={idx}>{criteria}</li>
-            })}
-          </ul>
-          <button className="order-request">Request to order</button>
-        </section>
+          <section className="content">
+            <span className="content-text">{plan.content}</span>
+            <section className="way-of-work flex fs14">
+              <section className="delivery-time">{plan.deliveryDay}-day delivery</section>
+              <section className="revisions">{plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
+            </section>
+            <ul className="whats-included">
+              {plan.includes.map((criteria, idx) => {
+                return <li className={`fs14 ${idx <= activePlan && 'active'}`} key={idx}>{criteria}</li>
+              })}
+            </ul>
+            <button className="order-request">Continue<span></span></button>
+          </section>
+        </article>
       </article>
     </aside>
   )
