@@ -15,7 +15,7 @@ export function PurchaseConfirmation({ order }) {
             <section className="order-details-wrapper">
                 <span className="order-gig-header">
                     <span className="order-gig-image">
-                        <img src={order.gig.imageUrl} alt="" />
+                        <img src={order.gig.imgUrl} alt="" />
                     </span>
                     <span className="order-gig-title">
                         <p>{order.gig.title}</p>

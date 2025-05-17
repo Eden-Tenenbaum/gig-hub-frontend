@@ -37,7 +37,7 @@ export function GigDetails() {
     const gigToBuy = {
       _id: gig._id,
       title: gig.title,
-      imageUrl: gig.imageUrl,
+      imgUrl: gig.imgUrl,
       price: gig.purchasePlan.price,
       deliveryTime: gig.purchasePlan.deliveryDay
     }

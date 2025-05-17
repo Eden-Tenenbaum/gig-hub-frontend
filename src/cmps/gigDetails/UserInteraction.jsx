@@ -51,7 +51,7 @@ export function UserInteraction({ plan, onPurchase }) {
                 return <li className={`fs14 ${idx <= activePlan && 'active'}`} key={idx}>{criteria}</li>
               })}
             </ul>
-            <button className="order-request">Continue<span></span></button>
+            <button className="order-request" onClick={() => onPurchase()}>Continue<span></span></button>
           </section>
         </article>
       </article>
