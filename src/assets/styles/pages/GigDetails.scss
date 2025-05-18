@@ -47,6 +47,18 @@
             color: $textclr1;
             margin-bottom: rem(64px);
 
+            .gig-description {
+
+                span {
+                    font-weight: bold;
+                }
+
+                ul {
+                    list-style: square;
+                    margin-left: rem(24px);
+                }
+            }
+
             h2 {
                 color: $textclr2;
                 height: rem(42px);

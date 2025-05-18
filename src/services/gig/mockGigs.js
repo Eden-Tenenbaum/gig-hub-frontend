@@ -1,10 +1,12 @@
 // src/services/gig/mockGigs.js
 // Demo data for local development (mock gigs)
+import { gigDescriptions } from "./MockDesc" 
+
 export const mockGigs = [
   {
     _id: 'g101',
     title: 'Minimalist Logo Design',
-    description: 'I will create a clean, modern minimalist logo tailored to your brand identity and vision.',
+    description: gigDescriptions.g101(),
     imgUrl: 'https://picsum.photos/550/250?random=1',
     rating: 4.9,
     tags: ['design', 'logo', 'minimalist'],
@@ -25,7 +27,7 @@ export const mockGigs = [
   {
     _id: 'g102',
     title: 'Custom WordPress Website',
-    description: 'Full setup and customization of a responsive WordPress website with your choice of theme.',
+    description: gigDescriptions.g102(),
     imgUrl: 'https://picsum.photos/550/250?random=3',
     rating: 4.7,
     tags: ['wordpress', 'web', 'development'],
@@ -46,7 +48,7 @@ export const mockGigs = [
   {
     _id: 'g103',
     title: 'SEO Content Writing',
-    description: 'High-quality SEO blog posts and website content to help you rank higher on search engines.',
+    description: gigDescriptions.g103(),
     imgUrl: 'https://picsum.photos/550/250?random=5',
     rating: 4.8,
     tags: ['writing', 'seo', 'content'],
@@ -67,7 +69,7 @@ export const mockGigs = [
   {
     _id: 'g104',
     title: 'Social Media Management',
-    description: 'Complete social media strategy, posting schedule, and community engagement for your brand.',
+    description: gigDescriptions.g104(),
     imgUrl: 'https://picsum.photos/550/250?random=20',
     rating: 4.6,
     tags: ['marketing', 'social media', 'management'],
@@ -88,7 +90,7 @@ export const mockGigs = [
   {
     _id: 'g105',
     title: 'E-commerce Product Photography',
-    description: 'Professional product photos with white background, ready for Shopify, Amazon, and more.',
+    description: gigDescriptions.g105(),
     imgUrl: 'https://picsum.photos/550/250?random=8',
     rating: 4.9,
     tags: ['photography', 'e-commerce', 'product'],
@@ -109,7 +111,7 @@ export const mockGigs = [
   {
     _id: 'g106',
     title: 'Mobile App UI/UX Design',
-    description: 'Design engaging and user-friendly mobile app interfaces using Figma or Sketch.',
+    description: gigDescriptions.g106(),
     imgUrl: 'https://picsum.photos/550/250?random=10',
     rating: 4.8,
     tags: ['ui', 'ux', 'mobile'],
@@ -130,7 +132,7 @@ export const mockGigs = [
   {
     _id: 'g107',
     title: 'Explainer Video Animation',
-    description: '2D animated explainer video (up to 60 seconds) with script, voiceover, and background music.',
+    description: gigDescriptions.g107(),
     imgUrl: 'https://picsum.photos/550/250?random=12',
     rating: 4.7,
     tags: ['video', 'animation', 'explainer'],
@@ -151,7 +153,7 @@ export const mockGigs = [
   {
     _id: 'g108',
     title: 'Professional Voice Over',
-    description: 'Clear, emotive voiceover in English or Spanish for videos, ads, and presentations.',
+    description: gigDescriptions.g108(),
     imgUrl: 'https://picsum.photos/550/250?random=13',
     rating: 4.5,
     tags: ['voiceover', 'audio', 'voice'],
@@ -172,7 +174,7 @@ export const mockGigs = [
   {
     _id: 'g109',
     title: 'English to Spanish Translation',
-    description: 'Accurate and culturally adapted translation of documents, websites, or marketing materials.',
+    description: gigDescriptions.g109(),
     imgUrl: 'https://picsum.photos/550/250?random=23',
     rating: 4.8,
     tags: ['translation', 'english', 'spanish'],
@@ -193,7 +195,7 @@ export const mockGigs = [
   {
     _id: 'g110',
     title: 'Digital Marketing Strategy',
-    description: 'Custom digital marketing plan including SEO, PPC, and social media tactics.',
+    description: gigDescriptions.g110(),
     imgUrl: 'https://picsum.photos/550/250?random=16',
     rating: 4.6,
     tags: ['marketing', 'strategy', 'digital'],
