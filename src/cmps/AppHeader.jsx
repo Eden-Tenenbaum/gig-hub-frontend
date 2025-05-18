@@ -68,8 +68,6 @@ export function AppHeader() {
 
 	}
 
-
-
 	return (
 		<>
 			<div className='header-row-wrapper full '>

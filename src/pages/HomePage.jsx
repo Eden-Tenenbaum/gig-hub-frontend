@@ -9,6 +9,8 @@ import { useEffect, useRef } from 'react'
 
 
 export function HomePage() {
+    if (window.location.pathname !== '/') return
+    
     const isSearchbarVisible = useRef(null)
     const isCategoriesVisible = useRef(null)
 
