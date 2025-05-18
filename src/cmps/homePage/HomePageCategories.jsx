@@ -28,7 +28,7 @@ export function HomePageCategories() {
     return (
         <section className="homepage-categories">
             {fiverrHomePageCategories.map(category =>
-                <section key={category.id}>
+                <section key={category.id} className='homepage-category'>
                     <a onClick={() => navigate('/gig', { state: { category } })}>
                         <div>
                             <img src={category.icon} />
