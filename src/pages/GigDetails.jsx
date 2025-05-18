@@ -14,7 +14,7 @@ import { mockGigs } from '../services/gig/mockGigs'
 
 import { UserInteraction } from '../cmps/gigDetails/UserInteraction'
 import { BreadCrumb } from '../cmps/BreadCrumb'
-import { MiniUser } from '../cmps/gigDetails/MiniUser'
+import { MiniUser } from '../cmps/MiniUser'
 import { AboutUser } from '../cmps/gigDetails/AboutUser'
 import { ImgCarousel } from '../cmps/gigDetails/ImgCarousel'
 

@@ -3,11 +3,11 @@ export const filtersSchema = [
     // 1) Logo & Design Services
     {
         key: 'logoOptions',
-        label: 'Logo options',
+        label: 'Service options',
         groups: [
             {
                 key: 'logoStyle',
-                label: 'Logo style',
+                label: 'Style',
                 type: 'checkbox',
                 options: [
                     { value: 'minimalist', label: 'Minimalist', count: 0 },
@@ -18,7 +18,7 @@ export const filtersSchema = [
             },
             {
                 key: 'serviceOfferings',
-                label: 'Service offerings',
+                label: 'Service options',
                 type: 'checkbox',
                 options: [
                     { value: 'subscriptions', label: 'Offers subscriptions', count: 0 },
@@ -42,7 +42,7 @@ export const filtersSchema = [
             },
             {
                 key: 'serviceIncludes',
-                label: 'Service includes',
+                label: 'Service options',
                 type: 'checkbox',
                 options: [
                     { value: 'transparency', label: 'Logo transparency', count: 0 },
@@ -57,7 +57,7 @@ export const filtersSchema = [
     // 2) Seller Details
     {
         key: 'sellerDetails',
-        label: 'Seller details',
+        label: 'Seller options',
         groups: [
             {
                 key: 'sellerLevel',

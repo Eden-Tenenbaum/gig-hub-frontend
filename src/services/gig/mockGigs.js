@@ -8,7 +8,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=1',
     rating: 4.9,
     tags: ['design', 'logo', 'minimalist'],
-    owner: { _id: 'u1', fullname: 'Alice Johnson', imgUrl: 'https://picsum.photos/550/250?random=2' },
+    owner: { _id: 'u1', fullname: 'Alice Johnson', imgUrl: 'https://picsum.photos/550/250?random=2', level: 1 },
     purchasePlan: {
       price: 45,
       deliveryDay: 2,
@@ -29,7 +29,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=3',
     rating: 4.7,
     tags: ['wordpress', 'web', 'development'],
-    owner: { _id: 'u2', fullname: 'Bob Smith', imgUrl: 'https://picsum.photos/550/250?random=4' },
+    owner: { _id: 'u2', fullname: 'Bob Smith', imgUrl: 'https://picsum.photos/550/250?random=4', level: 2 },
     purchasePlan: {
       price: 250,
       deliveryDay: 5,
@@ -50,7 +50,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=5',
     rating: 4.8,
     tags: ['writing', 'seo', 'content'],
-    owner: { _id: 'u3', fullname: 'Carla Mills', imgUrl: 'https://picsum.photos?random=6' },
+    owner: { _id: 'u3', fullname: 'Carla Mills', imgUrl: 'https://picsum.photos?random=6', level: 3 },
     purchasePlan: {
       price: 80,
       deliveryDay: 3,
@@ -71,7 +71,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=20',
     rating: 4.6,
     tags: ['marketing', 'social media', 'management'],
-    owner: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/?random=7' },
+    owner: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/?random=7', level: 1 },
     purchasePlan: {
       price: 150,
       deliveryDay: 7,
@@ -92,7 +92,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=8',
     rating: 4.9,
     tags: ['photography', 'e-commerce', 'product'],
-    owner: { _id: 'u5', fullname: 'Ella White', imgUrl: 'https://picsum.photos/550/250?random=9' },
+    owner: { _id: 'u5', fullname: 'Ella White', imgUrl: 'https://picsum.photos/550/250?random=9', level: 1 },
     purchasePlan: {
       price: 100,
       deliveryDay: 4,
@@ -113,7 +113,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=10',
     rating: 4.8,
     tags: ['ui', 'ux', 'mobile'],
-    owner: { _id: 'u6', fullname: 'Frank Zhao', imgUrl: 'https://picsum.photos/550/250?random=11' },
+    owner: { _id: 'u6', fullname: 'Frank Zhao', imgUrl: 'https://picsum.photos/550/250?random=11', level: 1 },
     purchasePlan: {
       price: 300,
       deliveryDay: 6,
@@ -134,7 +134,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=12',
     rating: 4.7,
     tags: ['video', 'animation', 'explainer'],
-    owner: { _id: 'u7', fullname: 'Grace Kim', imgUrl: 'https://picsum.photos/550/250?random=12' },
+    owner: { _id: 'u7', fullname: 'Grace Kim', imgUrl: 'https://picsum.photos/550/250?random=12', level: 1 },
     purchasePlan: {
       price: 200,
       deliveryDay: 5,
@@ -155,7 +155,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=13',
     rating: 4.5,
     tags: ['voiceover', 'audio', 'voice'],
-    owner: { _id: 'u8', fullname: 'Hector Ramirez', imgUrl: 'https://picsum.photos/550/250?random=14' },
+    owner: { _id: 'u8', fullname: 'Hector Ramirez', imgUrl: 'https://picsum.photos/550/250?random=14', level: 1 },
     purchasePlan: {
       price: 60,
       deliveryDay: 2,
@@ -176,7 +176,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=23',
     rating: 4.8,
     tags: ['translation', 'english', 'spanish'],
-    owner: { _id: 'u9', fullname: 'Isabel Gomez', imgUrl: 'https://picsum.photos/550/250?random=18' },
+    owner: { _id: 'u9', fullname: 'Isabel Gomez', imgUrl: 'https://picsum.photos/550/250?random=18', level: 1 },
     purchasePlan: {
       price: 90,
       deliveryDay: 3,
@@ -197,7 +197,7 @@ export const mockGigs = [
     imgUrl: 'https://picsum.photos/550/250?random=16',
     rating: 4.6,
     tags: ['marketing', 'strategy', 'digital'],
-    owner: { _id: 'u10', fullname: 'Jack Wilson', imgUrl: 'https://picsum.photos/550/250?random=15' },
+    owner: { _id: 'u10', fullname: 'Jack Wilson', imgUrl: 'https://picsum.photos/550/250?random=15', level: 1 },
     purchasePlan: {
       price: 180,
       deliveryDay: 5,
