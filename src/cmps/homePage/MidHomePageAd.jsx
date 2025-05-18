@@ -1,7 +1,7 @@
-import Categories from '../../public/joinAd/categories.svg'
-import Matching from '../../public/joinAd/matching.svg'
-import Quickly from '../../public/joinAd/quickly.svg'
-import Happy from '../../public/joinAd/happy.svg'
+import Categories from '../../../public/joinAd/categories.svg'
+import Matching from '../../../public/joinAd/matching.svg'
+import Quickly from '../../../public/joinAd/quickly.svg'
+import Happy from '../../../public/joinAd/happy.svg'
 
 export function MidHomePageAd() {
     return (

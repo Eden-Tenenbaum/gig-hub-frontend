@@ -1,22 +1,79 @@
 import { Link } from 'react-router-dom'
 import StarIcon from '../../public/img/icons/StarIcon.svg'
+// import { MiniUser } from './MiniUser'
+import { useState } from 'react'
+import { RatingLevel } from '../cmps/explore/RatingLevel.jsx'
+
 
 export function GigPreview({ gig }) {
+    const [isHovering, setIsHovering] = useState(false)
+
+    function onMouseEnter() {
+        setIsHovering(true)
+    }
+
+    function onMouseLeave() {
+        setIsHovering(false)
+    }
+
     return <article className="gig-preview">
-        <Link to={`/gig/${gig._id}`}><img className="gig-preview__img" src={gig.imageUrl} /></Link>
+        <Link to={`/gig/${gig._id}`}
+            onMouseEnter={() => onMouseEnter()}
+            onMouseLeave={() => onMouseLeave()}
+        >
+            <img
+                className="gig-preview__img"
+                src={gig.imgUrl}
+                onMouseEnter={() => onMouseEnter()}
+                onMouseLeave={() => onMouseLeave()}
+            /></Link>
         {gig.owner && <p className='gig-preview__name'>Ad by
             <span className='gig-preview__owner'>{gig.owner.fullname}</span>
         </p>}
-        <Link className='gig-preview__desc' to={`/gig/${gig._id}`}>
+        <Link className={`gig-preview__desc ${isHovering ? 'hovered' : ''}`} to={`/gig/${gig._id}`}>
+            <img src={gig.imageUrl} />
+        </Link>
+
+        <div className="gig-preview__author">
+            <img
+                className="gig-preview__author-avatar"
+                src={gig.owner.imgUrl}
+                alt={gig.owner.fullname}
+            />
+            <span className="gig-preview__author-name">
+                {gig.owner.fullname}
+            </span>
+            <RatingLevel level={gig.owner.level} />
+        </div>
+
+        <Link
+            className={`gig-preview__desc ${isHovering ? 'hovered' : ''}`}
+            to={`/gig/${gig._id}`}
+            onMouseEnter={() => onMouseEnter()}
+            onMouseLeave={() => onMouseLeave()}
+        >
             {gig.description}
         </Link>
-        <div className='gig-preview__rating__container'>
-            <img className='gig-preview__icon' src={StarIcon} alt="" />
-            <div className='gig-preview__rating__number' >{gig.rating}</div>
+
+        <div className="gig-preview__rating">
+            <img
+                src={StarIcon}
+                alt="star"
+                className="gig-preview__rating-icon"
+            />
+            <span className='gig-preview__rating-number'>
+                {gig.rating}
+            </span>
         </div>
-        <Link to={`/gig/${gig._id}`}>
-            <p className='gig-preview__price__label'>From:
-                <span className='gig-preview__price'>${gig.price.toLocaleString()}</span>
+        <Link
+            to={`/gig/${gig._id}`}
+            onMouseEnter={() => onMouseEnter()}
+            onMouseLeave={() => onMouseLeave()}
+        >
+            <p className='gig-preview__price-label'
+            > From
+                <span className='gig-preview__price'>
+                    ${gig.purchasePlan.price.toLocaleString()}</span>
             </p>
         </Link>
     </article>

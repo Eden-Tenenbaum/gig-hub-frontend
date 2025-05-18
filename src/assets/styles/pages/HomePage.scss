@@ -7,11 +7,10 @@
     padding: 10rem 4rem 2rem 0rem;
     width: fit-content;
     font-family: MacanLight;
-    // font-weight: 280; not working
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    // grid-template-rows: auto auto;
+
 
     div {
         height: max-content;
@@ -90,12 +89,13 @@
 
 .homepage-categories {
     height: 10.3125rem;
-    margin-top: 2rem;
+    margin-top: 4.5rem;
     margin-bottom: 2.5rem;
     color: $textclr3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-inline: 0.75rem;
 
     section {
         width: min-content;
@@ -121,6 +121,7 @@
                 img {
                     height: 1.875rem;
                     width: 1.875rem;
+                    mix-blend-mode: darken;
                 }
             }
 
@@ -264,6 +265,10 @@
             margin: 0;
             font-weight: 700;
             color: $textclrwhite;
+
+            &:hover {
+                background-color: rgb(64,65,69);
+            }
         }
     }
 }
@@ -295,5 +300,9 @@
         font-size: 1rem;
         padding: 0.5rem 1rem;
         font-weight: 400;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, .9);
+        }
     }
 }

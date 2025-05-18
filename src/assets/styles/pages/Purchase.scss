@@ -1,0 +1,327 @@
+.purchase-wrapper {
+    display: grid;
+    grid-template-columns: auto 570px;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+.purchase-information-page {
+    padding-right: 1rem;
+    
+    header {
+        background-color: $backpurhcase;
+        padding: 1rem;
+        border: 1px solid $textclr7;
+    }
+
+    .payment-methods {
+        height: 4rem;
+        border: 1px solid $textclr7;
+    }
+
+    .payment-information {
+
+        .payment-methods {
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+
+            .credit-card-circle {
+                border-radius: 50%;
+                border-width: 0.3125rem;
+                border: 0.3125rem solid $textclr3;
+                width: 1.23rem;
+                margin: 0.0625rem 0.5625rem 0 0;
+                height: 1.3125rem;
+                display: inline-block;
+            }
+
+            a {
+                margin-inline: 0.25rem 0.5rem;
+            }
+        }
+    }
+
+    .pay-form-container {
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, .06);
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        padding: 1.5rem 1rem 1.5rem 2.5rem;
+        border: 1px solid $textclr7;
+
+        .diverr-pay-form {
+
+            input {
+                border: none;
+                font-size: 1rem;
+                background-color: $transparent;
+                height: 100%;
+                width: 100%;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .card-number {
+
+                .card-number-input-wrapper {
+                    margin-top: 0.625rem;
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $textclr5;
+                    border-radius: 8px;
+                    height: 2.5rem;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        padding-left: 0.25rem;
+                    }
+
+                    span {
+
+                        &:nth-child(1) {
+                            height: 100%;
+                            margin-left: 0.75rem;
+                            align-items: center;
+                            display: flex;
+                        }
+
+                        img {
+                            padding-right: 0.75rem;
+                        }
+                    }
+                }
+
+            }
+
+            .exp-cvv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-bottom: 0.5rem;
+
+                .expiration-date,
+                .security-code {
+                    width: 100%;
+
+                    input {
+                        padding-left: 1rem;
+                    }
+                }
+
+                .exp-date-input-wrapper,
+                .security-code-input-wrapper {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $textclr5;
+                    border-radius: 8px;
+                    height: 2.5rem;
+
+                }
+            }
+
+            .cardholder-name {
+
+                .cardholder-name-input-wrapper {
+                    margin-top: 0.625rem;
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $textclr5;
+                    border-radius: 8px;
+                    height: 2.5rem;
+
+                    input {
+                        padding: 0.5rem 0.75rem;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                p {
+                    color: $textclr5;
+                    font-size: 0.875rem;
+                    margin-top: 0.375rem;
+                }
+            }
+
+            .card-display-name-wrapper {
+                margin-top: 2rem;
+
+                .card-display-name-input-wrapper {
+                    margin-top: 0.625rem;
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $textclr5;
+                    border-radius: 8px;
+                    height: 2.5rem;
+
+                    input {
+                        padding: 0.5rem 0.75rem;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                p {
+                    color: $textclr5;
+                    font-size: 0.875rem;
+                    margin-top: 0.375rem;
+                    text-align: end;
+                }
+            }
+
+            .checkbox-row {
+                display: flex;
+                align-items: center;
+
+                *:nth-child(2) {
+                    padding-right: 0.5rem;
+                }
+            }
+
+        }
+    }
+}
+
+.purchase-confirmation-page {
+    padding-inline: 1rem;
+    color: $textclr1;
+    margin-inline: auto;
+
+    .order-details-wrapper {
+        width: 21.9375rem;
+        border: 1px solid $textclr7;
+        background-color: $backpurhcase;
+
+        .order-gig-header {
+            padding: 1rem 1.5rem;
+            display: flex;
+            font-weight: 700;
+
+            .order-gig-image {
+
+                height: 4.8125rem;
+                width: 7.875rem;
+                padding: 0 1rem 0.4375rem 0;
+
+                img {
+                    height: 4.375rem;
+                    width: 6.875rem;
+                }
+            }
+        }
+
+        .order-gig-general {
+            padding: 1rem 1.5rem;
+            display: flex;
+
+            .package-pricing {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+
+    }
+
+    .order-summary-wrapper {
+        width: 21.9375rem;
+        border: 1px solid $textclr7;
+        padding: 1rem 1.5rem;
+
+        .service-fee,
+        .vat {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+                align-items: center;
+
+                span:nth-child(1) {
+                    padding-right: 0.5rem;
+                }
+            }
+        }
+
+        .service-fee {
+            padding-bottom: 0.75rem;
+        }
+
+        .vat {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $borderclr1;
+            margin-bottom: 1rem;
+        }
+
+        .order-conclusion {
+
+            div {
+                display: flex;
+                justify-content: space-between;
+
+                &:nth-child(1) {
+                    padding-bottom: 0.75rem;
+                }
+
+                &:nth-child(2) {
+                    padding-bottom: 0.75rem;
+                    font-size: 1.125rem;
+                    font-weight: 700;
+                }
+
+                &:nth-child(3) {
+                    padding-bottom: 1rem;
+                }
+            }
+
+            button {
+                border-radius: 0.25rem;
+                background-color: $textclrblack;
+                color: $textclrwhite;
+                padding: 1rem 1.5rem;
+                width: 100%;
+            }
+
+            .secure-payment {
+                margin-top: 0.5rem;
+                display: flex;
+                justify-content: center;
+                font-size: 0.875rem;
+            }
+        }
+    }
+}
+
+
+.error-container {
+    display: flex;
+    color: $textclrerror;
+    font-size: 0.75rem;
+    margin-top: 0.375rem;
+
+    .error-icon {
+        padding: 0.125rem 0.25rem 0 0
+    }
+}
+
+.more-info {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $textclr1;
+    border: 2px solid $textclr1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+}

@@ -1,64 +1,117 @@
 .gig-preview {
-    font-family: Macan, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Macan, 'Helvetica Neue', MacanBold;
     border-radius: 8px;
     min-width: 100%;
+    line-height: 1.6;
 
     &__img {
         width: 100%;
         height: auto;
         min-height: 190px;
         display: block;
-        border-radius: 5px;
+        border-radius: 8px;
         object-fit: cover;
-        margin-bottom: 0.5rem;
+        cursor: pointer;
     }
 
-    &__name {
-        font-family: Macan;
-        color: #62646A;
-        font-size: 14px;
-    }
-
-    &__owner {
+    &__author {
+        column-gap: 8px;
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
         font-size: 14px;
         color: #222325;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 700;
-        margin-inline: 5px;
+        cursor: default;
+
+
+
     }
 
-    &__desc {
-        // margin-block: 0 0.2rem;
-        color: #404145;
-        font-size: 1rem;
+    &__author-avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
 
-        &:hover {
+    &__author-name {
+        font-family: MacanBold;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+
+
+    &__desc {
+        font-family: MacanLight;
+        color: #404145;
+        cursor: pointer;
+
+        &:hover,
+        &.hovered {
             text-decoration: underline;
         }
     }
 
-    &__rating__container {
-        line-height: 21px;
+    &__rating {
         display: flex;
-        gap: 5px;
+        align-items: center;
+        height: 2rem;
+        gap: 4px;
+        padding: 5px;
+        margin: 12px 0 0;
         color: #222325;
+        cursor: default;
+        font-family: MacanBold;
 
-        &__icon {
-            width: 14px;
-            height: 14px;
+        &-icon,
+        &-number {
+            margin: 0;
+            padding: 0;
         }
 
-        &__rating__number {
-            font-size: 0.5rem;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-weight: 700;
+        &-icon {
+            padding-bottom: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &-number {
+            line-height: 24px;
+            font-size: 1rem;
+            align-self: center;
         }
     }
 
-    &__price__label {
+    &__price-label {
+        margin: 0;
+        font-family: MacanBold;
+        color: $textclr3;
         color: #222325;
         font-size: 1rem;
-        font-weight: 600;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
+}
+
+.gig-preview__price {
+    margin-left: 4px;
+
+}
+
+a.gig-preview__price-label {
+    max-width: fit-content;
+}
+
+.gig-preview__rating-level {
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin: 0 0 0 auto;
+    font-family: MacanMedium;
+}
+
+.rating-high {
+    border-radius: 5px;
+    background-color: #FFE0B3;
 }

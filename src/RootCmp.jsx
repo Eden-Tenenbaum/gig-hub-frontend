@@ -11,7 +11,7 @@ import { Purchase } from './pages/Purchase'
 import { UserDetails } from './pages/UserDetails'
 
 import { AppHeader } from './cmps/AppHeader'
-import { PromoVideo } from './cmps/PromoVideo'
+import { PromoVideo } from './cmps/homePage/PromoVideo'
 import { AppFooter } from './cmps/AppFooter'
 import { UserMsg } from './cmps/UserMsg'
 
@@ -19,11 +19,11 @@ import { UserMsg } from './cmps/UserMsg'
 export function RootCmp() {
     const location = useLocation()
     const isHomePage = location.pathname === '/'
-
+    
     return (
         <div className="main-container">
             <div className={`app-header-wrapper full ${isHomePage ? 'sticky' : ''}`}>
-            <AppHeader />
+            <AppHeader/>
             </div>
             {isHomePage && <PromoVideo />}
             <UserMsg />
@@ -31,11 +31,10 @@ export function RootCmp() {
             <main>
                 <Routes>
                     <Route path="" element={<HomePage />} />
-                    <Route path="explore" element={<ExplorePage />} />
-                    <Route path="gig" element={<GigIndex />} />
+                    <Route path="gig" element={<ExplorePage />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="user/:id" element={<UserDetails />} />
-                    <Route path="gig/:gigId/buy" element={<Purchase />} />
+                    <Route path="purchase" element={<Purchase />} />
                 </Routes>
             </main>
             <AppFooter />

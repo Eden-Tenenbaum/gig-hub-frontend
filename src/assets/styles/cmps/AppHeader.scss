@@ -5,7 +5,7 @@
     background-color: $textclrwhite;
 }
 
-.header-row-wrapper { 
+.header-row-wrapper {
     border-bottom: 0.1px solid $textclr7;
     display: grid;
     grid-template-columns: auto minmax(0, 1400px) auto;
@@ -35,7 +35,7 @@
             span {
                 color: green;
             }
-        } 
+        }
     }
 }
 
@@ -189,7 +189,9 @@
             }
         }
 
-        .login-bandaid {
+        .user-btn {
+            position: relative;
+
             .header-user-options-btn {
                 width: 2rem;
                 height: 2rem;
@@ -204,6 +206,23 @@
                 border: none;
                 margin: 0;
                 cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .user-modal {
+                margin-top: 1.125rem;
+                position: absolute;
+                right: 0;
+                background-color: green;
+                padding: 1rem;
+                z-index: 10;
             }
         }
     }
@@ -295,4 +314,49 @@
             }
         }
     }
+}
+
+.header-nav-purchase {
+    left: 0;
+
+    ul {
+        display: flex;
+
+        li {
+            display: flex;
+            align-items: center;
+
+            span {
+                background-color: $textclr3;
+                border-radius: 50%;
+                color: $textclrwhite;
+                height: 1.5625rem;
+                aspect-ratio: 1 / 1;
+                margin: 0 0.5rem 0 0;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .svg-placeholder {
+                color: $textclr1;
+                margin: 0 1rem;
+                width: 0.75rem;
+            }
+        }
+    }
+}
+
+.login-form {}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
 }

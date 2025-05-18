@@ -1,4 +1,4 @@
-import vontelleVideo from '../../public/vontelle-vid.mp4'
+import vontelleVideo from '../../../public/vontelle-vid.mp4'
 
 export function VontelleVideo() {
     return (

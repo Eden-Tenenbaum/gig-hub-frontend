@@ -73,7 +73,16 @@
 
 // grid helpers
 .grid {
-    display: grid
+
+    display: grid;
+
+    &.place-center {
+        place-items: center;
+    }
+    
+    &.self-center {
+        place-self: center;
+    }
 }
 
 // Media helpers

@@ -1,31 +1,39 @@
+.filter-bar {
+    display: flex;
+    gap: 12px;
+}
+
 .filter-dropdown {
     position: relative;
-    display: inline-block;
+    font-family: MacanMedium, MacanBold;
 
 
     .trigger {
-        font-family: Macan, sans-serif;
-        color: black;
-        padding: 8px 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
+        font-family: MacanMedium;
+        color: #222325;
+        padding: 0.625rem 1.25rem;
+        border: 1px solid #dadbdd;
+        border-radius: 0.5rem;
         background: #fff;
         align-items: center;
-        display: inline-flex;
+        display: flex;
         flex-wrap: nowrap;
         white-space: nowrap;
 
         // added hover/focus state for trigger button
         &:hover,
         &:focus {
+
             background: #F5F5F5;
             cursor: pointer;
             outline: none;
         }
 
         .caret {
+            padding-top: 0.25rem;
             margin-left: 6px;
             font-size: 0.8em;
+            align-self: center;
         }
     }
 
@@ -36,22 +44,25 @@
         margin-top: 4px;
         width: 320px;
         background: #fff;
-        border: 1px solid #ddd;
         border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         z-index: 10;
         max-height: 400px;
         overflow-y: auto;
-        padding: 12px;
+        padding: 1.5rem;
 
         .group {
+            border-bottom: 1px solid #efeff0;
+            padding: 24px 8px;
+
             +.group {
                 margin-top: 12px;
             }
 
             .group-label {
-                font-weight: 600;
-                margin-bottom: 8px;
+                margin-bottom: 0.5rem;
+                font-family: MacanBold;
+                font-size: 1rem;
             }
 
             .options {
@@ -66,9 +77,19 @@
                     padding: 6px 8px;
                     border-radius: 4px;
 
-                    input {
+                    input[type='checkbox'] {
+                        border-color: #dadbdd;
+                        width: 24px;
+                        height: 24px;
                         margin-right: 6px;
+                        border: 1px solid #dadbdd; 
+                        accent-color: #222325;
+
                     }
+                     input[type='checkbox']:hover {
+                        border-color: #555555;
+
+                     }
 
                     .label-text {
                         flex: 1;
@@ -83,18 +104,11 @@
                         margin-left: 4px;
                     }
 
-                    // added lighter hover state for individual options
                     &:hover {
                         background: #F7F7F7;
                         cursor: pointer;
                     }
                 }
-            }
-
-            hr {
-                border: none;
-                border-top: 1px solid #eee;
-                margin: 12px 0;
             }
         }
 
@@ -106,9 +120,9 @@
 
             .clear,
             .apply {
-                width: 10rem; // ~160px
-                font-size: 1rem; // 16px
-                line-height: 1.5rem; // 24px
+                width: 10rem;
+                font-size: 1rem; 
+                line-height: 1.5rem; 
                 color: #222325;
                 font-weight: 600;
                 cursor: pointer;
@@ -122,3 +136,15 @@
         }
     }
 }
+
+// input[type="checkbox"] {
+//     width: 24px;
+//     height: 24px;
+//     border-radius: 2px;
+//     border: 1px solid #c5c6c9;
+//     accent-color: #222325;
+// }
+
+// input[type="checkbox"]:hover {
+//     border: 1px solid #222325;
+// }

@@ -4,41 +4,71 @@ import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
 import { useEffect, useState } from 'react'
-import { Categories } from './Categories'
-import { HeaderSearchbar } from './HeaderSearchbar'
-import { HeaderNavLoggedIn } from './HeaderNavLoggedIn'
-import { HeaderNavLoggedOut } from './HeaderNavLoggedOut'
+import { Categories } from './appHeader/Categories'
+import { HeaderSearchbar } from './appHeader/HeaderSearchbar'
+import { HeaderNavLoggedIn } from './appHeader/HeaderNavLoggedIn'
+import { HeaderNavLoggedOut } from './appHeader/HeaderNavLoggedOut'
+import { HeaderPurchase } from './appHeader/HeaderPurchase'
+import { userService } from '../services/user/user.service.local'
+import { Login } from './Login'
 
-export function AppHeader({ isSticky }) { //get logged in status from home page
+export function AppHeader() {
 	const location = useLocation()
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
 	const [showSearchBar, SetShowSearchBar] = useState(false)
-	const [isLoggedIn, setIsLoggedIn] = useState(false) // band aid function, 
-	// should get logged in state from another cmp
+	const [showCategories, SetShowCategories] = useState(false)
+	const [isLoggedIn, setIsLoggedIn] = useState(false)
+	const [isLoggingIn, setIsLoggingIn] = useState(false)
+	const isPurchasing = location.pathname.includes('/purchase')
+
+	useEffect(() => {
+		function handleSearchbarChange(event) {
+			SetShowSearchBar(!event.detail.isVisible)
+		}
+
+		function handleCategoryChange(event) {
+			SetShowCategories(!event.detail.isVisible)
+		}
+
+		window.addEventListener('homeSearchbarChanged', handleSearchbarChange)
+		window.addEventListener('homeCategoryChanged', handleCategoryChange)
+
+		return () => {
+			window.removeEventListener('homeSearchbarChanged', handleSearchbarChange)
+			window.removeEventListener('homeCategoryChanged', handleCategoryChange)
+		}
+	}, [])
+
+	useEffect(() => { //prevent scrolling while in login modal
+		if (isLoggingIn) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = ''
+		}
+
+		return () => {
+			document.body.style.overflow = ''
+		}
+	}, [isLoggingIn])
+
+	function toggleLoginModal() {
+		setIsLoggingIn(prev => !prev)
+	}
 
 	async function onLogout() {
 		try {
 			await logout()
+			setIsLoggedIn(false)
 			navigate('/')
 			showSuccessMsg(`Bye now`)
 		} catch (err) {
 			showErrorMsg('Cannot logout')
 		}
+
 	}
 
-	function toggleLoggedIn(status) { //another band-aid function until log in status is set up
-		if (status === true) {
-			setIsLoggedIn(false)
-			SetShowSearchBar(false)
-			return
-		}
-		if (status === false) {
-			setIsLoggedIn(true)
-			SetShowSearchBar(true)
-			return
-		}
-	}
+
 
 	return (
 		<>
@@ -48,22 +78,31 @@ export function AppHeader({ isSticky }) { //get logged in status from home page
 						Diverr<span>.</span>
 					</NavLink>
 
-					<HeaderSearchbar showSearchBar={showSearchBar} />
-					{isLoggedIn ?
-						<HeaderNavLoggedIn
-							isLoggedIn={isLoggedIn}
-							toggleLoggedIn={toggleLoggedIn}
-						/>
+					{!isPurchasing && <HeaderSearchbar showSearchBar={showSearchBar}/>}
+
+					{isPurchasing ?
+						<HeaderPurchase />
 						:
-						<HeaderNavLoggedOut
-							isLoggedIn={isLoggedIn}
-							toggleLoggedIn={toggleLoggedIn}
-						/>}
+						<>
+							{isLoggedIn ?
+								<HeaderNavLoggedIn
+									setIsLoggedIn={setIsLoggedIn}
+									user={user}
+									onLogout={onLogout}
+								/>
+								:
+								<HeaderNavLoggedOut
+									toggleLoginModal={toggleLoginModal}
+								/>}
+						</>
+					}
 				</div>
 			</div>
-			<div className='categories-row-wrapper'>
-				<Categories />
-			</div>
+			{!isPurchasing &&
+				<div className='categories-row-wrapper'>
+					{showCategories && <Categories />}
+				</div>}
+			{isLoggingIn && <Login toggleLoginModal={toggleLoginModal} setIsLoggedIn={setIsLoggedIn} />}
 		</>
 	)
 }
