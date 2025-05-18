@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import caretIcon from '../../public/img/icons/caretIcon.svg'
 
 export function FilterDropdown({ title, groups }) {
     const [open, setOpen] = useState(false)
@@ -23,7 +24,11 @@ export function FilterDropdown({ title, groups }) {
     return (
         <div className="filter-dropdown">
             <button className="trigger" onClick={() => setOpen(o => !o)}>
-                {title} <span className="caret">▾</span>
+                {title}
+                <img
+                    className="caret"
+                    src={caretIcon}
+                />
             </button>
 
             {open && (
@@ -42,12 +47,10 @@ export function FilterDropdown({ title, groups }) {
                                                 onChange={() => toggle(group.key, option.value)}
                                             />
                                             <span className="label-text">{option.label}</span>
-                                            <span className="count">{option.count}</span>
                                         </label>
                                     );
                                 })}
                             </div>
-                            <hr />
                         </div>
                     ))}
                     <div className="actions">

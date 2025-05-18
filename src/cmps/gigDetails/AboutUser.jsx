@@ -1,5 +1,3 @@
-import { Stars } from '../../cmps/Stars'
-import { MiniUser } from './MiniUser'
 
 export function AboutUser({ user }) {
     return <article className="about-user">

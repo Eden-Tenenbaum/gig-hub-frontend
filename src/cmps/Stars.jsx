@@ -1,4 +1,4 @@
-import StarIcon from '../../public/img/icons/StarIcon.svg'
+import { StarIcon } from './SvgHub'
 
 export function Stars({ rating, showStars = false }) {
   const stars = Array(Math.round(rating)).fill()
@@ -6,13 +6,11 @@ export function Stars({ rating, showStars = false }) {
     <section className="stars-display">
       {showStars && (
         <span className="stars">
-          {stars.map((_, idx) => (
-            <img key={idx} src={StarIcon} alt="" />
-          ))}
+          {stars.map((_, idx) => <StarIcon key={idx} />)}
         </span>
       )}
       <span className="rating-num stars">
-        {!showStars && <img src={StarIcon} alt="" />} {rating}
+        {!showStars && <StarIcon />} {rating}
       </span>
     </section>
   )

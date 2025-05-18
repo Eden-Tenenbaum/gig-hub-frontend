@@ -1,4 +1,4 @@
-import { Stars } from '../../cmps/Stars'
+import { Stars } from './Stars'
 
 export function MiniUser({ gig, scale = 1, showStars = false, fs = 18, includeUserMsg = false}) {
     return <article className="mini-user flex" style={{ '--scale': scale }}>

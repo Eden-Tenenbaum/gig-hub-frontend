@@ -8,17 +8,36 @@
   src: url(/src/assets/fonts/MacanPanWeb-Light.ttf);
 }
 
+@font-face {
+  font-family: MacanSemiBold;
+  src: url(/src/assets/fonts/MacanSemibold.ttf);
+}
+
+@font-face {
+  font-family: MacanBold;
+  src: url(/src/assets/fonts/macan-bold.woff2);
+}
+
+@font-face {
+  font-family: MacanBold-2;
+  src: url(/src/assets/fonts/MacanPanWeb-Book.ttf);
+}
+
+@font-face {
+  font-family: MacanExtrabold;
+  src: url(/src/assets/fonts/MacanPanWeb-Extrabold.ttf);
+}
+
+@font-face {
+  font-family: MacanMedium;
+  src: url(/src/assets/fonts/MacanPanWeb-Medium.ttf);
+}
+
+
+
+
 //   src: url('../../fonts/macan-regular.woff2') format('truetype');
 //   src: url('../../fonts/MacanPanWeb-Book.ttf') format('truetype');
 //     src: url('../../fonts/MacanPanWeb-Extrabold.ttf') format('truetype');
 //     src: url('../../fonts/MacanPanWeb-Light.ttf') format('truetype');
 //     src: url('../../fonts/MacanPanWeb-Medium.ttf') format('truetype');
-
-
-@font-face {
-  font-family: 'MacanPanWeb-Semibold';
-  src: url('../../fonts/MacanPanWeb-Semibold.ttf');
-
-}
-
-

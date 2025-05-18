@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router'
 
-import HeartIcon from '../../../public/img/icons/HeartIcon.svg'
-import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
+import { CheckmarkIcon, ClockIcon, HeartIcon, LoopIcon } from '../SvgHub'
 
 export function UserInteraction({ plan, onPurchase }) {
   const [isSaved, setIsSaved] = useState(false)
@@ -10,7 +8,6 @@ export function UserInteraction({ plan, onPurchase }) {
 
   function toggleSave() {
     setIsSaved(prev => !prev)
-    console.log(plan.includes)
   }
 
   function activatePlan(plan) {
@@ -21,15 +18,15 @@ export function UserInteraction({ plan, onPurchase }) {
     <aside className="user-interaction grid">
       <article className="interaction-bar">
         <div className={`heart-wrapper grid ${isSaved && 'saved'}`}>
-          <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" onClick={toggleSave} />
+          <HeartIcon className="heart-icon" fill={isSaved ? '#f74040' : '#b5b6ba'} onClick={toggleSave} />
           <span className="tooltip fs14">Save to list</span>
         </div>
       </article>
       <article className="purchase-modal">
         <section className="plan-buttons flex space-between">
-          <span className={activePlan === 1 && 'active'} onClick={() => activatePlan(1)}>Basic</span>
-          <span className={activePlan === 1.5 && 'active'} onClick={() => activatePlan(1.5)}>Standard</span>
-          <span className={activePlan === 2 && 'active'} onClick={() => activatePlan(2)}>Premium</span>
+          <span className={activePlan === 1 ? 'active' : undefined} onClick={() => activatePlan(1)}>Basic</span>
+          <span className={activePlan === 1.5 ? 'active' : undefined} onClick={() => activatePlan(1.5)}>Standard</span>
+          <span className={activePlan === 2 ? 'active' : undefined} onClick={() => activatePlan(2)}>Premium</span>
         </section>
         <article className="plan">
           <section className="offer flex space-between">
@@ -43,12 +40,14 @@ export function UserInteraction({ plan, onPurchase }) {
           <section className="content">
             <span className="content-text">{plan.content}</span>
             <section className="way-of-work flex fs14">
-              <section className="delivery-time">{plan.deliveryDay}-day delivery</section>
-              <section className="revisions">{plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
+              <section className="delivery-time flex"><ClockIcon />{plan.deliveryDay}-day delivery</section>
+              <section className="revisions flex"><LoopIcon /> {plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
             </section>
             <ul className="whats-included">
               {plan.includes.map((criteria, idx) => {
-                return <li className={`fs14 ${idx <= activePlan && 'active'}`} key={idx}>{criteria}</li>
+                return <>
+                  <li className="fs14 flex" key={idx}><CheckmarkIcon fill={idx <= activePlan && '#222325'} /> {criteria}</li>
+                </>
               })}
             </ul>
             <button className="order-request" onClick={() => onPurchase()}>Continue<span></span></button>
