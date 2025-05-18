@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router'
 
-import HeartIcon from '../../../public/img/icons/HeartIcon.svg'
-import HeartIconRed from '../../../public/img/icons/HeartIconRed.svg'
+import {HeartIcon} from '../../services/svg.service'
 
 export function UserInteraction({ plan, onPurchase }) {
   const [isSaved, setIsSaved] = useState(false)
@@ -10,7 +8,6 @@ export function UserInteraction({ plan, onPurchase }) {
 
   function toggleSave() {
     setIsSaved(prev => !prev)
-    console.log(plan.includes)
   }
 
   function activatePlan(plan) {
@@ -21,15 +18,15 @@ export function UserInteraction({ plan, onPurchase }) {
     <aside className="user-interaction grid">
       <article className="interaction-bar">
         <div className={`heart-wrapper grid ${isSaved && 'saved'}`}>
-          <img src={isSaved ? HeartIconRed : HeartIcon} alt="Save" className="heart-icon" onClick={toggleSave} />
+          <HeartIcon className="heart-icon" isSaved={isSaved} onClick={toggleSave} />
           <span className="tooltip fs14">Save to list</span>
         </div>
       </article>
       <article className="purchase-modal">
         <section className="plan-buttons flex space-between">
-          <span className={activePlan === 1 && 'active'} onClick={() => activatePlan(1)}>Basic</span>
-          <span className={activePlan === 1.5 && 'active'} onClick={() => activatePlan(1.5)}>Standard</span>
-          <span className={activePlan === 2 && 'active'} onClick={() => activatePlan(2)}>Premium</span>
+          <span className={activePlan === 1 ? 'active' : undefined} onClick={() => activatePlan(1)}>Basic</span>
+          <span className={activePlan === 1.5 ? 'active' : undefined} onClick={() => activatePlan(1.5)}>Standard</span>
+          <span className={activePlan === 2 ? 'active' : undefined} onClick={() => activatePlan(2)}>Premium</span>
         </section>
         <article className="plan">
           <section className="offer flex space-between">
