@@ -1,8 +1,4 @@
-import { useNavigate } from 'react-router'
-
-export function HeaderNavLoggedOut({ isLoggedIn, toggleLoggedIn }) {
-    const navigate = useNavigate()
-
+export function HeaderNavLoggedOut({ toggleLoginModal }) {
     return (
         <nav className='header-nav-logged-out'>
             <ul>
@@ -13,21 +9,14 @@ export function HeaderNavLoggedOut({ isLoggedIn, toggleLoggedIn }) {
                     <div className='header-try-diverr-go'>Try Diverr Go</div>
                 </li>
                 <li>
-                    <div className='header-sign-in'>Sign in</div>
+                    <div className='header-sign-in' onClick={() => toggleLoginModal()}>Sign in</div>
                 </li>
                 <li>
                     <div className='login-bandaid'>
-                        <button
-                            className='header-join-btn'
-                            onClick={() => {
-                                toggleLoggedIn(isLoggedIn)
-                                navigate('explore')
-                            }}>
-                            Join
-                        </button>
+                        <button className='header-join-btn'>Join</button>
                     </div>
                 </li>
             </ul>
-        </nav>
+        </nav >
     )
 }
