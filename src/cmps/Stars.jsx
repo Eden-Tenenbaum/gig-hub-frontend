@@ -1,4 +1,4 @@
-import { StarIcon } from '../services/svg.service'
+import { StarIcon } from './SvgHub'
 
 export function Stars({ rating, showStars = false }) {
   const stars = Array(Math.round(rating)).fill()

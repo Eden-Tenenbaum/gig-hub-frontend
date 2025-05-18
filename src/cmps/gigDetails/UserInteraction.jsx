@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import {HeartIcon} from '../../services/svg.service'
+import { CheckmarkIcon, ClockIcon, HeartIcon, LoopIcon } from '../SvgHub'
 
 export function UserInteraction({ plan, onPurchase }) {
   const [isSaved, setIsSaved] = useState(false)
@@ -18,7 +18,7 @@ export function UserInteraction({ plan, onPurchase }) {
     <aside className="user-interaction grid">
       <article className="interaction-bar">
         <div className={`heart-wrapper grid ${isSaved && 'saved'}`}>
-          <HeartIcon className="heart-icon" isSaved={isSaved} onClick={toggleSave} />
+          <HeartIcon className="heart-icon" fill={isSaved ? '#f74040' : '#b5b6ba'} onClick={toggleSave} />
           <span className="tooltip fs14">Save to list</span>
         </div>
       </article>
@@ -40,12 +40,14 @@ export function UserInteraction({ plan, onPurchase }) {
           <section className="content">
             <span className="content-text">{plan.content}</span>
             <section className="way-of-work flex fs14">
-              <section className="delivery-time">{plan.deliveryDay}-day delivery</section>
-              <section className="revisions">{plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
+              <section className="delivery-time flex"><ClockIcon />{plan.deliveryDay}-day delivery</section>
+              <section className="revisions flex"><LoopIcon /> {plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
             </section>
             <ul className="whats-included">
               {plan.includes.map((criteria, idx) => {
-                return <li className={`fs14 ${idx <= activePlan && 'active'}`} key={idx}>{criteria}</li>
+                return <>
+                  <li className="fs14 flex" key={idx}><CheckmarkIcon fill={idx <= activePlan && '#222325'} /> {criteria}</li>
+                </>
               })}
             </ul>
             <button className="order-request" onClick={() => onPurchase()}>Continue<span></span></button>
