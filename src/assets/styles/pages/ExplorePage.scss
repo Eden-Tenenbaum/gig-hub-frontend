@@ -1,21 +1,11 @@
 .explore-page {
-    padding: 2rem;
-    margin: 0;
 
-    &_sub__header {
-        display: block;
-        width: 500px;
-        box-sizing: border-box;
-        font-family: 'MacanPanWeb-Semibold';
-
-        &__title {
-            color: #222235;
-            padding: 0.5rem;
-            font-weight: 700;
-            font-size: 2rem;
-            margin: 0;
-
-        }
-
+    &__title {
+        font-family: MacanBold;
+        line-height: 36px;
+        margin: 0;
+        padding: 0.5rem 0;
+        color: #222235;
+        font-size: 2rem;
     }
 }

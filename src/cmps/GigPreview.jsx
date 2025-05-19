@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import StarIcon from '../../public/img/icons/StarIcon.svg'
 // import { MiniUser } from './MiniUser'
 import { useState } from 'react'
-import { RatingLevel } from '../cmps/explore/RatingLevel.jsx'
+import { RatingLevel } from '../cmps/RatingLevel.jsx'
+import { SlidesCarousel } from './SlidesCarousel.jsx'
 
 
 export function GigPreview({ gig }) {
@@ -17,22 +18,20 @@ export function GigPreview({ gig }) {
     }
 
     return <article className="gig-preview">
-        <Link to={`/gig/${gig._id}`}
+        {/* <Link to={`/gig/${gig._id}`}
             onMouseEnter={() => onMouseEnter()}
             onMouseLeave={() => onMouseLeave()}
-        >
-            <img
+        > */}
+        {/* <img
                 className="gig-preview__img"
-                src={gig.imgUrl}
-                onMouseEnter={() => onMouseEnter()}
-                onMouseLeave={() => onMouseLeave()}
-            /></Link>
-        {gig.owner && <p className='gig-preview__name'>Ad by
-            <span className='gig-preview__owner'>{gig.owner.fullname}</span>
-        </p>}
-        <Link className={`gig-preview__desc ${isHovering ? 'hovered' : ''}`} to={`/gig/${gig._id}`}>
+                src={gig.imgUrl} */}
+        <SlidesCarousel slides={gig.imgUrl} />
+        {/* </Link> */}
+
+        {/* <Link className={`gig-preview__desc ${isHovering ? 'hovered' : ''}`} to={`/gig/${gig._id}`}>
             <img src={gig.imageUrl} />
         </Link>
+         */}
 
         <div className="gig-preview__author">
             <img

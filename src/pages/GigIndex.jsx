@@ -80,7 +80,7 @@ export function GigIndex() {
         <main className="gig-index">
             {/* <header>
                 {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>}
-            </header> */}
+            </header>
             {/* <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <GigList
                 gigs={gigs}
