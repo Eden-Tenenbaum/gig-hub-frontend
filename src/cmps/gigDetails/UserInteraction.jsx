@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { CheckmarkIcon, ClockIcon, HeartIcon, LoopIcon } from '../SvgHub'
+import { ArrowIcon, CheckmarkIcon, ClockIcon, HeartIcon, LoopIcon } from '../SvgHub'
 
 export function UserInteraction({ plan, onPurchase }) {
   const [isSaved, setIsSaved] = useState(false)
@@ -43,14 +43,15 @@ export function UserInteraction({ plan, onPurchase }) {
               <section className="delivery-time flex"><ClockIcon />{plan.deliveryDay}-day delivery</section>
               <section className="revisions flex"><LoopIcon /> {plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
             </section>
-            <ul className="whats-included">
-              {plan.includes.map((criteria, idx) => {
-                return <>
-                  <li className="fs14 flex" key={idx}><CheckmarkIcon fill={idx <= activePlan && '#222325'} /> {criteria}</li>
+            <ul className="whats-included grid">
+              {plan.includes.map((criteria, idx) =>
+                <>
+                  <CheckmarkIcon fill={idx <= activePlan ? '#222325' : '#dadbdd'} />
+                  <li className="fs14" key={idx}>{criteria}</li>
                 </>
-              })}
+              )}
             </ul>
-            <button className="order-request" onClick={() => onPurchase()}>Continue<span></span></button>
+            <button className="order-request" onClick={() => onPurchase()}>Continue<ArrowIcon /></button>
           </section>
         </article>
       </article>

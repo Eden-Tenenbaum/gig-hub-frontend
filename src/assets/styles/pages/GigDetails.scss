@@ -47,6 +47,18 @@
             color: $textclr1;
             margin-bottom: rem(64px);
 
+            .gig-description {
+
+                span {
+                    font-weight: bold;
+                }
+
+                ul {
+                    list-style: square;
+                    margin-left: rem(24px);
+                }
+            }
+
             h2 {
                 color: $textclr2;
                 height: rem(42px);
@@ -84,15 +96,19 @@
                 >.from {
                     grid-area: from;
                 }
+
                 >.member-since {
                     grid-area: memb;
                 }
+
                 >.response-time {
                     grid-area: resp;
                 }
+
                 >.last-delivery {
                     grid-area: last;
                 }
+
                 >.languages {
                     grid-area: lang;
                 }
@@ -212,28 +228,32 @@
 
                 .content {
 
+
                     .way-of-work {
                         padding-top: rem(9px);
                         font-weight: $weight2;
-                        margin-bottom: rem(8px);
+                        margin-bottom: rem(5px);
 
+                        .icon {
+                            margin-top: rem(4px);
+                            margin-right: rem(8px);
+                        }
                         
                         .revisions {
                             margin-left: rem(16px);
                         }
                     }
                     
-                    .icon {
-                        margin-top: rem(4px);
-                        margin-right: rem(8px);
-                    }
-                    
                     .whats-included {
                         margin-bottom: rem(20px);
+                        grid-template-columns: auto 1fr;
+                        .icon {
+                            place-self: center;
+                            margin-right: rem(12px);
+                        }
                     }
 
                     .order-request {
-                        position: relative;
                         width: 100%;
                         background-color: $clr6;
                         color: $clr1;
@@ -244,10 +264,8 @@
                             background: $clr5;
                         }
 
-                        span::after {
-                            position: absolute;
-                            right: rem(16px);
-                            @include icon-for-text('/public/img/icons/ArrowIcon.svg')
+                        .icon {
+                            float: right;
                         }
                     }
                 }
