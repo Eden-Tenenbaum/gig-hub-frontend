@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux'
+import { Logo } from './SvgHub'
 
 export function AppFooter() {
 	const count = useSelector(storeState => storeState.userModule.count)
 
 	return (
 		<footer className="app-footer">
+			<Logo />
 			<p>&copy; Diverr international Ltd. 2025</p>
 
             {/* {import.meta.env.VITE_LOCAL ? 
