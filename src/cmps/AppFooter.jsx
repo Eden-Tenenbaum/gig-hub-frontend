@@ -6,10 +6,12 @@ export function AppFooter() {
 
 	return (
 		<footer className="app-footer">
-			<Logo />
-			<p>&copy; Diverr international Ltd. 2025</p>
+			<div>
+				<Logo />
+				<p>&copy; Diverr international Ltd. 2025</p>
+			</div>
 
-            {/* {import.meta.env.VITE_LOCAL ? 
+			{/* {import.meta.env.VITE_LOCAL ? 
                 <span className="local-services">Local Services</span> : 
                 <span className="remote-services">Remote Services</span>} */}
 		</footer>
