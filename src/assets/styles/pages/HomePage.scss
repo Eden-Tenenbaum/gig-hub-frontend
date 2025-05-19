@@ -1,5 +1,8 @@
 .home-page {
-    font-family: Macan; //temp until merging
+    
+    * {
+        box-sizing: border-box;
+    }
 }
 
 .over-promo-video {
