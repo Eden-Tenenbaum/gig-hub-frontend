@@ -141,42 +141,63 @@
     .user-interaction {
         align-self: flex-start;
         display: grid;
-        gap: 1rem;
-        padding-top: rem(8px);
+        gap: rem(16px);
+        padding-top: rem(4px);
         width: rem(414.55px);
 
         .interaction-bar {
-            display: none;
-            padding-bottom: rem(12px);
+            padding-bottom: rem(16px);
             text-align: center;
 
             .heart-wrapper {
-                justify-items: end;
+                grid-auto-flow: column;
+                grid-template-columns: 1fr auto;
+                place-items: center end;
+                gap: rem(13px);
                 height: rem(27px);
 
                 .tooltip {
                     position: absolute;
-                    top: -3rem;
-                    right: -22.5%;
+                    top: -9.5%;
+                    right: -8.25%;
                     transform: translateX(-50%);
+                    padding: rem(12px);
+                    opacity: 0;
+
                     background: $clr5;
                     color: $clr1;
-                    padding: .75rem;
-                    border-radius: .25rem;
-                    opacity: 0;
-                    transition: opacity .15s ease-in;
+                    line-height: rem(21px);
+                    border-radius: rem(4px);
+                    
+                    &::after {
+                        @include tooltip-pointer($color: $clr5, $position: bottom, $size: rem(8px), $translate: (-50%, 50%));
+                    }
                 }
-
+                
                 .heart-icon {
                     cursor: pointer;
-
+                    
                     &:hover+.tooltip {
                         opacity: 0.9;
+                        transition: opacity .15s ease-in;
                     }
                 }
 
                 &.saved .tooltip {
                     opacity: 0;
+                }
+
+                .saved-count {
+                    position: relative;
+                    background: $clr1;
+                    padding: rem(2px) rem(10px);
+                    border: 1px solid $gray2;
+                    border-radius: rem(3px);
+                    line-height: rem(24px);
+                    
+                    &::after {
+                        @include tooltip-pointer($color: $clr1, $position: left, $size: rem(10px), $translate: (-50%, -50%), $border: 1px solid $gray1);
+                    }
                 }
             }
 
