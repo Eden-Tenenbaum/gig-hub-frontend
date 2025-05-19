@@ -7,6 +7,7 @@ import { UserModal } from './UserModal'
 
 export function HeaderNavLoggedIn({ user, onLogout }) {
     const [isUserModal, setIsUserModal] = useState(false)
+    const navigate = useNavigate()
 
     function toggleUserMenu() {
         setIsUserModal(prev => !prev)
@@ -38,7 +39,7 @@ export function HeaderNavLoggedIn({ user, onLogout }) {
                     </button>
                 </li>
                 <li>
-                    <div className='header-orders'>Orders</div>
+                    <div className='header-orders' onClick={() => navigate('/seller')}>Orders</div>
                 </li>
                 <li>
                     <div className='header-try-diverr-go'>Try Diverr Go</div>

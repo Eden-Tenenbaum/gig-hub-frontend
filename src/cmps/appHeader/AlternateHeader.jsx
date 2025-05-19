@@ -5,7 +5,7 @@ export function AlternateHeader({ isPurchasing, isProfile, user, isUserModal }) 
     return (
         <>
             {isPurchasing && <HeaderPurchase />}              
-            {isProfile && <HeaderProfile />}  
+            {/* {isProfile && <HeaderProfile />}   */}
         </>
     )
 }

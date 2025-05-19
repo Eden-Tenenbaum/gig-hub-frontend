@@ -1,27 +1,33 @@
-.app-footer{
+.app-footer {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     border-top: 1px solid $textclr7;
-    min-height: 3.5rem;
-    padding: 0 2rem 2.5rem 2rem;
+    padding: 0.5rem 0 2.5rem 0;
     font-size: 0.875rem;
     color: $textclr3;
-    
 
-    p {
-        margin: 0;
-    }
-    
-    span {
-        font-size: .8em;
-        
-        &.local-services {
-            color: $clr1;
+
+    div {
+        display: flex;
+        gap: 1rem;
+        padding-top: 1rem;
+        align-items: center;
+
+        p {
+            margin: 0;
         }
-        
-        &.remote-services {
-            color: $clr5;
+
+        span {
+            font-size: .8em;
+
+            &.local-services {
+                color: $clr1;
+            }
+
+            &.remote-services {
+                color: $clr5;
+            }
         }
     }
 }
