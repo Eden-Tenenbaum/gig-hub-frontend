@@ -46,8 +46,8 @@ export function UserInteraction({ plan, onPurchase }) {
             <ul className="whats-included grid">
               {plan.includes.map((criteria, idx) =>
                 <>
-                  <CheckmarkIcon fill={idx <= activePlan ? '#222325' : '#dadbdd'} />
-                  <li className="fs14" key={idx}>{criteria}</li>
+                  <CheckmarkIcon key={'checkmark-' + idx} fill={idx <= activePlan ? '#222325' : '#dadbdd'} />
+                  <li className="fs14" key={'li-' + idx}>{criteria}</li>
                 </>
               )}
             </ul>
