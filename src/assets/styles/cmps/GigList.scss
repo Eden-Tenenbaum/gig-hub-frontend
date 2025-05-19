@@ -2,7 +2,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
+    margin-top: 1rem;
 }
+
 @media (max-width: 900px) {
     .gig-list {
         grid-template-columns: repeat(3, minmax(240px, 1fr));

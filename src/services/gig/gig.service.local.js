@@ -90,7 +90,7 @@ function getDefaultFilter() {
     return {
         txt: '',
         minPrice: 0,
-        maxPrice: Infinity, 
+        maxPrice: Infinity,
         category: '',
         minRating: 0,
         deliveryDay: null,
@@ -98,5 +98,4 @@ function getDefaultFilter() {
         sortBy: 'rating' //rating/price/deliveryday etc...
     }
 }
-
 // storageService.post(STORAGE_KEY, mockGigs)

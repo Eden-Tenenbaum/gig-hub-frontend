@@ -1,6 +1,6 @@
 import React from 'react'
-import DiamondIcon from '../../../public/img/icons/DiamondIcon.svg'
-import DiamondIcon2 from '../../../public/img/icons/DiamondIcon2.svg'
+import DiamondIcon from '../../public/img/icons/DiamondIcon.svg'
+import DiamondIcon2 from '../../public/img/icons/DiamondIcon2.svg'
 
 const iconsByLevel = {
     1: [DiamondIcon, DiamondIcon2, DiamondIcon2],
