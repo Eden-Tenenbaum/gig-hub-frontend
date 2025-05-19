@@ -4,6 +4,7 @@ export const utilService = {
     getRandomIntInclusive,
     randomPastTime,
     debounce,
+    getCurrDate,
     saveToStorage,
     loadFromStorage
 }
@@ -51,6 +52,31 @@ export function debounce(func, timeout = 300) {
     return (...args) => {
         clearTimeout(timer)
         timer = setTimeout(() => { func.apply(this, args) }, timeout)
+    }
+}
+
+export function getCurrDate(str, format = 'string') {
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"]
+    if (str === 'day') {
+        if (format === 'string') {
+            return dayNames[new Date().getDay()]
+        }
+        if (format === 'number') {
+            return (new Date().getDay() + 1)
+        }
+    }
+    if (str === 'month') {
+        if (format === 'string') {
+            return monthNames[new Date().getMonth()]
+        }
+        if (format === 'number') {
+            return (new Date().getMonth() + 1)
+        }      
+    }
+    if (str === 'year') {
+        return new Date().getFullYear()
     }
 }
 

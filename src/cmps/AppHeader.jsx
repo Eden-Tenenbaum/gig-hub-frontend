@@ -8,7 +8,7 @@ import { Categories } from './appHeader/Categories'
 import { HeaderSearchbar } from './appHeader/HeaderSearchbar'
 import { HeaderNavLoggedIn } from './appHeader/HeaderNavLoggedIn'
 import { HeaderNavLoggedOut } from './appHeader/HeaderNavLoggedOut'
-import { HeaderPurchase } from './appHeader/HeaderPurchase'
+import { AlternateHeader } from './appHeader/AlternateHeader'
 import { userService } from '../services/user/user.service.local'
 import { Login } from './Login'
 
@@ -21,6 +21,7 @@ export function AppHeader() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const [isLoggingIn, setIsLoggingIn] = useState(false)
 	const isPurchasing = location.pathname.includes('/purchase')
+	const isProfile = location.pathname.includes('/seller')
 
 	useEffect(() => {
 		function handleSearchbarChange(event) {
@@ -76,10 +77,14 @@ export function AppHeader() {
 						Diverr<span>.</span>
 					</NavLink>
 
-					{!isPurchasing && <HeaderSearchbar showSearchBar={showSearchBar}/>}
+					{(!isPurchasing && !isProfile ) && <HeaderSearchbar showSearchBar={showSearchBar}/>}
 
-					{isPurchasing ?
-						<HeaderPurchase />
+					{(isPurchasing || isProfile) ?
+						<AlternateHeader 
+						isPurchasing={isPurchasing} 
+						isProfile={isProfile}
+						user={user}
+						/>
 						:
 						<>
 							{isLoggedIn ?
@@ -96,7 +101,7 @@ export function AppHeader() {
 					}
 				</div>
 			</div>
-			{!isPurchasing &&
+			{(!isPurchasing && !isProfile ) &&
 				<div className='categories-row-wrapper'>
 					{showCategories && <Categories />}
 				</div>}

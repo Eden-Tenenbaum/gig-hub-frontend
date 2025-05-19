@@ -112,6 +112,7 @@ async function _createAdmin() {
             gigs: [],
             ordersMade: [],
             ordersReceived: [],
+            likedGigIds: [],
         }
     const newUser = await storageService.post('user', user)
     console.log('newUser: ', newUser)

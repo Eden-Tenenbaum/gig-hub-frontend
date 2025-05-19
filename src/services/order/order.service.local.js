@@ -15,6 +15,7 @@ export const orderService = {
 	remove,
 	confirmOrder,
 	addConfirmed,
+	queryConfirmed,
 }
 
 // possible orders
@@ -40,6 +41,10 @@ async function remove(orderId) {
 }
 
 // confirm orders
+
+function queryConfirmed() {
+	return storageService.query(CONFIRMED_STORAGE_KEY)
+}
 
 async function addConfirmed(order) {
 	return await storageService.post(CONFIRMED_STORAGE_KEY, order)

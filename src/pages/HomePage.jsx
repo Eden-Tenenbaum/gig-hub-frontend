@@ -9,12 +9,12 @@ import { useEffect, useRef } from 'react'
 
 
 export function HomePage() {
-    if (window.location.pathname !== '/') return
     
     const isSearchbarVisible = useRef(null)
     const isCategoriesVisible = useRef(null)
-
+    
     useEffect(() => {
+        if (window.location.pathname !== '/') return
         const searchbar = document.querySelector('.searchbar-over-promo-video')
         const category = document.querySelector('.homepage-category')
 

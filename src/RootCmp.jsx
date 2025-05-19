@@ -9,6 +9,7 @@ import { GigIndex } from './pages/GigIndex'
 import { GigDetails } from './pages/GigDetails'
 import { Purchase } from './pages/Purchase'
 import { UserDetails } from './pages/UserDetails'
+import { Dashboard } from './pages/Dashboard'
 
 import { AppHeader } from './cmps/AppHeader'
 import { PromoVideo } from './cmps/homePage/PromoVideo'
@@ -35,6 +36,7 @@ export function RootCmp() {
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="purchase" element={<Purchase />} />
+                    <Route path="seller" element={<Dashboard />} />
                 </Routes>
             </main>
             <AppFooter />
