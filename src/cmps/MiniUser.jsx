@@ -8,7 +8,7 @@ export function MiniUser({ gig, scale = 1, showStars = false, fs = 18, includeUs
         <section>
             <p className={`fullname fs${fs} ${includeUserMsg && 'ium'}`}>{gig.owner.fullname}</p>
             {includeUserMsg && <p className="msg">this is a user msg</p>}
-            <Stars rating={gig.rating} showStars={showStars} />
+            <Stars rating={gig.rating} showStars={showStars} starProps={includeUserMsg && { viewBox: '0 0 16 15', width: '15', height: '15' }} />
         </section>
     </article>
 }

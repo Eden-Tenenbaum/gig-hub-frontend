@@ -62,6 +62,46 @@
     vertical-align: middle;
 }
 
+@mixin tooltip-pointer($color: #000, $position: bottom, $size: rem(8px), $translate: (0, 0), $border: null) {
+
+    content: '';
+    position: absolute;
+    width: $size;
+    height: $size;
+    background: $color;
+    translate: nth($translate, 1) nth($translate, 2);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+
+    @if $border {
+        border: $border;
+    }
+
+    @if $position ==top {
+        top: 0;
+        left: 50%;
+        rotate: 315deg;
+    }
+
+    @else if $position ==bottom {
+        bottom: 0;
+        left: 50%;
+        rotate: 135deg;
+    }
+
+    @else if $position ==left {
+        left: 0;
+        top: 50%;
+        rotate: 225deg;
+    }
+
+    @else if $position ==right {
+        right: 0;
+        top: 50%;
+        rotate: 45deg;
+    }
+
+}
+
 // Mixin for removing hover efects on iphone screen
 @mixin hover-supported {
     @media not all and (pointer: coarse) {

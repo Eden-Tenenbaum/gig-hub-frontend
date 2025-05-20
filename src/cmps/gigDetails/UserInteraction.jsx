@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import { ArrowIcon, CheckmarkIcon, ClockIcon, HeartIcon, LoopIcon } from '../SvgHub'
 
@@ -17,9 +17,10 @@ export function UserInteraction({ plan, onPurchase }) {
   return (
     <aside className="user-interaction grid">
       <article className="interaction-bar">
-        <div className={`heart-wrapper grid ${isSaved && 'saved'}`}>
+        <div className={`heart-wrapper grid fs14 ${isSaved && 'saved'}`}>
           <HeartIcon className="heart-icon" fill={isSaved ? '#f74040' : '#b5b6ba'} onClick={toggleSave} />
-          <span className="tooltip fs14">Save to list</span>
+          <span className="tooltip">Save to list</span>
+          <span className="saved-count">115</span>
         </div>
       </article>
       <article className="purchase-modal">
@@ -44,12 +45,12 @@ export function UserInteraction({ plan, onPurchase }) {
               <section className="revisions flex"><LoopIcon /> {plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
             </section>
             <ul className="whats-included grid">
-              {plan.includes.map((criteria, idx) =>
-                <>
+              {plan.includes.map((criteria, idx) => (
+                <React.Fragment key={idx}>
                   <CheckmarkIcon fill={idx <= activePlan ? '#222325' : '#dadbdd'} />
-                  <li className="fs14" key={idx}>{criteria}</li>
-                </>
-              )}
+                  <li className="fs14">{criteria}</li>
+                </React.Fragment>
+              ))}
             </ul>
             <button className="order-request" onClick={() => onPurchase()}>Continue<ArrowIcon /></button>
           </section>

@@ -11,6 +11,7 @@ import { HeaderNavLoggedOut } from './appHeader/HeaderNavLoggedOut'
 import { AlternateHeader } from './appHeader/AlternateHeader'
 import { userService } from '../services/user/user.service.local'
 import { Login } from './Login'
+import { Logo } from './SvgHub'
 
 export function AppHeader() {
 	const location = useLocation()
@@ -74,7 +75,7 @@ export function AppHeader() {
 			<div className='header-row-wrapper full '>
 				<div className="app-header ">
 					<NavLink to="/" className="logo">
-						Diverr<span>.</span>
+						<Logo />
 					</NavLink>
 
 					{(!isPurchasing && !isProfile ) && <HeaderSearchbar showSearchBar={showSearchBar}/>}
