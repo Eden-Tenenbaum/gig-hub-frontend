@@ -13,7 +13,7 @@ export function ReviewList({ reviews, onRemoveReview }) {
     }
 
     return (
-        <section>
+        <section className="review-list">
             {/* <ul className="list review-list">
                 {reviews.map(review =>
                     <li key={review._id}>
@@ -24,7 +24,7 @@ export function ReviewList({ reviews, onRemoveReview }) {
                     </li>)
                 }
             </ul> */}
-            <div>1</div>
+            <ReviewPreview review={reviews[0]} />
             <div>2</div>
             <div>1</div>
             <div>2</div>
