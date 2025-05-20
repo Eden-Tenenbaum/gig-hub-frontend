@@ -7,7 +7,6 @@ export const mockGigs = [
     _id: 'g101',
     title: 'Minimalist Logo Design',
     description: gigDescriptions.g101(),
-    imgUrl: 'https://picsum.photos/550/250?random=1',
     description: 'I will create a clean, modern minimalist logo tailored to your brand identity and vision.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -26,7 +25,7 @@ export const mockGigs = [
       includes: ['Logo transparency', 'Vector file', 'Printable file']
     },
     reviews: [{
-      commenter: { _id: 'u2', fullname: 'Bob Smith', imgUrl: 'https://picsum.photos/550/250?random=4' },
+      reviewer: { _id: 'u2', fullname: 'Bob Smith', loc: 'Barbados', imgUrl: 'https://picsum.photos/550/250?random=4' },
       rating: 4.8,
       comment: 'Really captured my brand’s essence. Quick turnaround and great communication!'
     }]
@@ -35,7 +34,6 @@ export const mockGigs = [
     _id: 'g102',
     title: 'Custom WordPress Website',
     description: gigDescriptions.g102(),
-    imgUrl: 'https://picsum.photos/550/250?random=3',
     description: 'Full setup and customization of a responsive WordPress website with your choice of theme.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -54,7 +52,7 @@ export const mockGigs = [
       includes: ['Responsive design', 'SEO setup', 'Plugin installation']
     },
     reviews: [{
-      commenter: { _id: 'u3', fullname: 'Carla Mills', imgUrl: 'https://picsum.photos?random=6' },
+      reviewer: { _id: 'u3', fullname: 'Carla Mills', loc: 'Canada', imgUrl: 'https://picsum.photos?random=6' },
       rating: 4.6,
       comment: 'Beautiful site, professional delivery, and very helpful with customizations!'
     }]
@@ -63,7 +61,6 @@ export const mockGigs = [
     _id: 'g103',
     title: 'SEO Content Writing',
     description: gigDescriptions.g103(),
-    imgUrl: 'https://picsum.photos/550/250?random=5',
     description: 'High-quality SEO blog posts and website content to help you rank higher on search engines.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -82,7 +79,7 @@ export const mockGigs = [
       includes: ['SEO optimization', 'Keyword research', 'Meta descriptions']
     },
     reviews: [{
-      commenter: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/?random=7' },
+      reviewer: { _id: 'u4', fullname: 'Daniel Lee', loc: 'Djibouti', imgUrl: 'https://picsum.photos/?random=7' },
       rating: 4.9,
       comment: 'Top-tier writing! SEO improved almost immediately after publishing.'
     }]
@@ -91,7 +88,6 @@ export const mockGigs = [
     _id: 'g104',
     title: 'Social Media Management',
     description: gigDescriptions.g104(),
-    imgUrl: 'https://picsum.photos/550/250?random=20',
     description: 'Complete social media strategy, posting schedule, and community engagement for your brand.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -110,7 +106,7 @@ export const mockGigs = [
       includes: ['Content calendar', 'Engagement tracking', 'Hashtag strategy']
     },
     reviews: [{
-      commenter: { _id: 'u5', fullname: 'Ella White', imgUrl: 'https://picsum.photos/550/250?random=9' },
+      reviewer: { _id: 'u5', fullname: 'Ella White', loc: 'Ecuador', imgUrl: 'https://picsum.photos/550/250?random=9' },
       rating: 4.7,
       comment: 'Helped grow our audience steadily. Very responsive to feedback.'
     }]
@@ -119,7 +115,6 @@ export const mockGigs = [
     _id: 'g105',
     title: 'E-commerce Product Photography',
     description: gigDescriptions.g105(),
-    imgUrl: 'https://picsum.photos/550/250?random=8',
     description: 'Professional product photos with white background, ready for Shopify, Amazon, and more.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -138,7 +133,7 @@ export const mockGigs = [
       includes: ['10 product shots', 'White background', 'High-res images']
     },
     reviews: [{
-      commenter: { _id: 'u6', fullname: 'Frank Zhao', imgUrl: 'https://picsum.photos/550/250?random=11' },
+      reviewer: { _id: 'u6', fullname: 'Frank Zhao', loc: 'Finland', imgUrl: 'https://picsum.photos/550/250?random=11' },
       rating: 5.0,
       comment: 'Crisp photos, fast delivery. Will definitely use again for future launches.'
     }]
@@ -147,7 +142,6 @@ export const mockGigs = [
     _id: 'g106',
     title: 'Mobile App UI/UX Design',
     description: gigDescriptions.g106(),
-    imgUrl: 'https://picsum.photos/550/250?random=10',
     description: 'Design engaging and user-friendly mobile app interfaces using Figma or Sketch.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -166,7 +160,7 @@ export const mockGigs = [
       includes: ['Prototype design', 'User flow', 'UI kit']
     },
     reviews: [{
-      commenter: { _id: 'u7', fullname: 'Grace Kim', imgUrl: 'https://picsum.photos/550/250?random=12' },
+      reviewer: { _id: 'u7', fullname: 'Grace Kim', loc: 'Ghana', imgUrl: 'https://picsum.photos/550/250?random=12' },
       rating: 4.9,
       comment: 'Super clean and intuitive designs. Improved our user feedback immediately.'
     }]
@@ -175,7 +169,6 @@ export const mockGigs = [
     _id: 'g107',
     title: 'Explainer Video Animation',
     description: gigDescriptions.g107(),
-    imgUrl: 'https://picsum.photos/550/250?random=12',
     description: '2D animated explainer video (up to 60 seconds) with script, voiceover, and background music.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -194,7 +187,7 @@ export const mockGigs = [
       includes: ['Voiceover', 'Script writing', 'Background music']
     },
     reviews: [{
-      commenter: { _id: 'u8', fullname: 'Hector Ramirez', imgUrl: 'https://picsum.photos/550/250?random=14' },
+      reviewer: { _id: 'u8', fullname: 'Hector Ramirez', loc: 'Honduras', imgUrl: 'https://picsum.photos/550/250?random=14' },
       rating: 4.6,
       comment: 'Engaging video that helped us explain our product clearly on social media.'
     }]
@@ -203,7 +196,6 @@ export const mockGigs = [
     _id: 'g108',
     title: 'Professional Voice Over',
     description: gigDescriptions.g108(),
-    imgUrl: 'https://picsum.photos/550/250?random=13',
     description: 'Clear, emotive voiceover in English or Spanish for videos, ads, and presentations.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -222,7 +214,7 @@ export const mockGigs = [
       includes: ['English & Spanish', 'Commercial rights', 'Studio-quality audio']
     },
     reviews: [{
-      commenter: { _id: 'u9', fullname: 'Isabel Gomez', imgUrl: 'https://picsum.photos/550/250?random=18' },
+      reviewer: { _id: 'u9', fullname: 'Isabel Gomez', loc: 'Israel', imgUrl: 'https://picsum.photos/550/250?random=18' },
       rating: 4.5,
       comment: 'Versatile voice with excellent timing. Fit our ad perfectly!'
     }]
@@ -231,7 +223,6 @@ export const mockGigs = [
     _id: 'g109',
     title: 'English to Spanish Translation',
     description: gigDescriptions.g109(),
-    imgUrl: 'https://picsum.photos/550/250?random=23',
     description: 'Accurate and culturally adapted translation of documents, websites, or marketing materials.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -250,7 +241,7 @@ export const mockGigs = [
       includes: ['Manual translation', 'Proofreading', 'Localized content']
     },
     reviews: [{
-      commenter: { _id: 'u10', fullname: 'Jack Wilson', ownerUrl: 'https://picsum.photos/550/250?random=15' },
+      reviewer: { _id: 'u10', fullname: 'Jack Wilson', loc: 'Jamaica', ownerUrl: 'https://picsum.photos/550/250?random=15' },
       rating: 4.9,
       comment: 'Flawless translation. Very professional and easy to work with!'
     }]
@@ -259,7 +250,6 @@ export const mockGigs = [
     _id: 'g110',
     title: 'Digital Marketing Strategy',
     description: gigDescriptions.g110(),
-    imgUrl: 'https://picsum.photos/550/250?random=16',
     description: 'Custom digital marketing plan including SEO, PPC, and social media tactics.',
     imgUrl: [
       { src: 'https://picsum.photos/550/250?random=1' },
@@ -278,7 +268,7 @@ export const mockGigs = [
       includes: ['SEO audit', 'PPC strategy', 'Social calendar']
     },
     reviews: [{
-      commenter: { _id: 'u1', fullname: 'Alice Johnson', ownerUrl: 'https://picsum.photos/550/250?random=2' },
+      reviewer: { _id: 'u1', fullname: 'Alice Johnson', loc: 'Australia', ownerUrl: 'https://picsum.photos/550/250?random=2' },
       rating: 4.7,
       comment: 'Smart strategy that’s already improving ROI. Clear and actionable plans!'
     }]
