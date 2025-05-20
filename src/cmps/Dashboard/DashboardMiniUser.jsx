@@ -1,5 +1,4 @@
 export function DashboardMiniUser({ user }) {
-    const slicedUsername = user.fullname.slice(0, user.fullname.indexOf(' ') + 2)
     const displayUsername = user.fullname.slice(0, user.fullname.indexOf(' ')) + user._id
 
     return (
@@ -13,7 +12,7 @@ export function DashboardMiniUser({ user }) {
                 )}
             </div>
             <a>
-                <p>{slicedUsername}</p>
+                <p>{user.fullname}</p>
                 <p>@{displayUsername}</p>
             </a>
             <button>View profile</button>

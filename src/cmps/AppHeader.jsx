@@ -22,7 +22,8 @@ export function AppHeader() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const [isLoggingIn, setIsLoggingIn] = useState(false)
 	const isPurchasing = location.pathname.includes('/purchase')
-	const isProfile = location.pathname.includes('/seller')
+	const isProfile = location.pathname.includes('/user')
+	const isSeller = location.pathname.includes('/seller')
 
 	useEffect(() => {
 		function handleSearchbarChange(event) {
@@ -54,6 +55,12 @@ export function AppHeader() {
 		}
 	}, [isLoggingIn])
 
+	useEffect(() => {
+		if (location.pathname === '/') return
+		SetShowSearchBar(!isPurchasing && !isSeller)
+		SetShowCategories(!isPurchasing && !isSeller)
+	}, [location.pathname])
+
 	function toggleLoginModal() {
 		setIsLoggingIn(prev => !prev)
 	}
@@ -74,17 +81,17 @@ export function AppHeader() {
 		<>
 			<div className='header-row-wrapper full '>
 				<div className="app-header ">
-					<NavLink to="/" className="logo">
-						<Logo />
-					</NavLink>
+						<NavLink to="/" className="logo">
+							<Logo />
+						</NavLink>
 
-					{(!isPurchasing && !isProfile ) && <HeaderSearchbar showSearchBar={showSearchBar}/>}
+					<HeaderSearchbar showSearchBar={showSearchBar} />
 
-					{(isPurchasing || isProfile) ?
-						<AlternateHeader 
-						isPurchasing={isPurchasing} 
-						isProfile={isProfile}
-						user={user}
+					{(isPurchasing) ?
+						<AlternateHeader
+							isPurchasing={isPurchasing}
+							isProfile={isProfile}
+							user={user}
 						/>
 						:
 						<>
@@ -93,6 +100,7 @@ export function AppHeader() {
 									setIsLoggedIn={setIsLoggedIn}
 									user={user}
 									onLogout={onLogout}
+									isSeller={isSeller}
 								/>
 								:
 								<HeaderNavLoggedOut
@@ -102,7 +110,7 @@ export function AppHeader() {
 					}
 				</div>
 			</div>
-			{(!isPurchasing && !isProfile ) &&
+			{!isPurchasing &&
 				<div className='categories-row-wrapper'>
 					{showCategories && <Categories />}
 				</div>}

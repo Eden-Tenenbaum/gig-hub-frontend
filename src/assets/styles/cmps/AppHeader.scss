@@ -15,29 +15,32 @@
         grid-column: 2;
         display: flex;
         align-items: center;
+        position: relative;
         height: 5rem;
         max-width: 1400px;
 
         * {
             font-size: 1rem;
         }
+            .logo {
+                position: relative;
+                color: $textclr2;
+                margin-right: 2rem;
+                margin-top: -0.75rem;
+                // height: 1.6875rem;
+                height: 100%;
+                width: 5.5625rem;
+                font-weight: bold;
+                font-size: 1.5rem;
 
-        .logo {
-            align-content: center;
-            color: $textclr2;
-            margin-right: 2rem;
-            margin-top: -0.75rem;
-            height: 1.6875rem;
-            width: 5.5625rem;
-            font-weight: bold;
-            font-size: 1.5rem;
-
-            span {
-                color: green;
+                svg {
+                    position: absolute;
+                    top: 40%;
+                }
             }
-        }
     }
 }
+
 
 .header-search-bar {
     flex: 1;
@@ -218,13 +221,44 @@
                 }
             }
 
+            .tip {
+                position: absolute;
+                top: 105%;
+                left: 20%;
+
+                &::after {
+                    @include tooltip-pointer(#fff, top, rem(16px), (0, 50%), 1px solid #ccc);
+                    z-index: 100;
+                }
+            }
+
             .user-modal {
                 margin-top: 1.125rem;
                 position: absolute;
+                display: flex;
+                flex-direction: column;
                 right: 0;
-                background-color: green;
-                padding: 1rem;
-                z-index: 10;
+                background-color: $textclrwhite;
+                border: 1px solid $textclr5;
+                padding: 0.3125rem 1rem;
+                z-index: 30;
+                color: $textclr4;
+
+                * {
+                    transition: all 0.3s ease;
+                    padding-block: 0.3125rem;
+                    border-radius: 0px;
+
+                    &:hover {
+                        color: #1dbf73;
+                        background-color: $textclrwhite;
+                        cursor: pointer;
+                    }
+
+                    &:nth-child(2) {
+                        border-bottom: 1px solid $borderprofile;
+                    }
+                }
             }
         }
     }
@@ -351,8 +385,6 @@
     }
 }
 
-.login-form {}
-
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -364,4 +396,8 @@
     align-items: center;
     justify-content: center;
     z-index: 100;
+}
+
+.nopad {
+    padding: 0 !important;
 }

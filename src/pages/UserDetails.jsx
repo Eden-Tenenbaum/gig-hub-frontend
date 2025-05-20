@@ -7,6 +7,8 @@ import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 
+import { LocationPinIcon, ProfileIcon, LanguagesIcon, ClockIcon, ArrowIcon } from '../cmps/SvgHub'
+
 export function UserDetails() {
 
   const params = useParams()
@@ -30,15 +32,48 @@ export function UserDetails() {
   }
 
   return (
-    <section className="user-details">
-      <h1>User Details</h1>
-      {user && <div>
-        <h3>
-          {user.fullname}
-        </h3>
-        <img src={user.imgUrl} style={{ width: '100px' }} />
-        <pre> {JSON.stringify(user, null, 2)} </pre>
-      </div>}
+    <section className="user-profile">
+      <div className='profile-page-left-side'>
+        {user &&
+          <div className='profile-mini-user'>
+            <div className='picture-name'>
+              <img src={user.imgUrl} style={{ width: '120px' }} />
+              <p>{user.fullname}</p>
+              <p>@{user.username}{user._id}</p>
+            </div>
+            <div className='location-join-date'>
+              <div>
+                <svg><LocationPinIcon /></svg>
+                <p>Located in Israel</p>
+              </div>
+              <div>
+                <svg><ProfileIcon /></svg>
+                <p>Joined in May 2025</p>
+              </div>
+            </div>
+            <div className='profile-languages'>
+              <div>
+                <svg></svg>
+                <p>Hebrew (Fluent)</p>
+              </div>
+              <div>
+                <svg></svg>
+                <p>English (Fluent)</p>
+              </div>
+            </div>
+            <div className='preferred-hours'>
+              <div>
+                <svg><ClockIcon /></svg>
+                <p>Preferred working hours</p>
+              </div>
+            </div>
+          </div>
+        }
+        <button>
+          <p>Explore Diverr</p>
+          <svg><ArrowIcon /></svg>
+        </button>
+      </div>
     </section>
   )
 }
