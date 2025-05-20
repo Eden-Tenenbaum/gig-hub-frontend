@@ -1,4 +1,5 @@
 .breadcrumb-container {
+  margin-top: 2rem;
 
   ul.breadcrumb {
     display: flex;
@@ -8,8 +9,8 @@
     font-weight: $weight0;
     list-style: none;
     padding: 0;
-    margin: 0;
-    margin-inline-start: rem(10px);
+    // margin: 0;
+    // margin-inline-start: rem(10px);
 
     .crumb {
       display: flex;

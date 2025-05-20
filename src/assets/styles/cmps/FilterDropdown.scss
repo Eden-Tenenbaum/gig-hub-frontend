@@ -1,6 +1,7 @@
 .filter-bar {
     display: flex;
     gap: 12px;
+    margin-top: 2rem;
 }
 
 .filter-dropdown {
@@ -82,14 +83,15 @@
                         width: 24px;
                         height: 24px;
                         margin-right: 6px;
-                        border: 1px solid #dadbdd; 
+                        border: 1px solid #dadbdd;
                         accent-color: #222325;
 
                     }
-                     input[type='checkbox']:hover {
+
+                    input[type='checkbox']:hover {
                         border-color: #555555;
 
-                     }
+                    }
 
                     .label-text {
                         flex: 1;
@@ -121,8 +123,8 @@
             .clear,
             .apply {
                 width: 10rem;
-                font-size: 1rem; 
-                line-height: 1.5rem; 
+                font-size: 1rem;
+                line-height: 1.5rem;
                 color: #222325;
                 font-weight: 600;
                 cursor: pointer;
@@ -136,15 +138,3 @@
         }
     }
 }
-
-// input[type="checkbox"] {
-//     width: 24px;
-//     height: 24px;
-//     border-radius: 2px;
-//     border: 1px solid #c5c6c9;
-//     accent-color: #222325;
-// }
-
-// input[type="checkbox"]:hover {
-//     border: 1px solid #222325;
-// }
