@@ -1,9 +1,11 @@
+import { PurchaseCheckmarkIcon } from "../SvgHub"
+
 export function HeaderPurchase() {
     return (
         <section className="header-nav-purchase">
             <ul>
                 <li>
-                    <span>V</span>
+                    <span><PurchaseCheckmarkIcon /></span>
                     <a>Order Details</a>
                     <a className="svg-placeholder">{`>`}</a>
                 </li>

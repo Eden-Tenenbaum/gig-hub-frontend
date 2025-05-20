@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { Logo } from './SvgHub'
+import { TikTokIcon, InstagramIcon, LinkedInIcon, FacebookIcon, PinterestIcon, XIcon } from './SvgHub'
 
 export function AppFooter() {
 	const count = useSelector(storeState => storeState.userModule.count)
@@ -10,10 +11,38 @@ export function AppFooter() {
 				<Logo />
 				<p>&copy; Diverr international Ltd. 2025</p>
 			</div>
-
-			{/* {import.meta.env.VITE_LOCAL ? 
-                <span className="local-services">Local Services</span> : 
-                <span className="remote-services">Remote Services</span>} */}
+			<ul className='footer-link-list'>
+				<li>
+					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+						<svg><TikTokIcon /></svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+						<svg><InstagramIcon /></svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+						<svg><LinkedInIcon /></svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+						<svg><FacebookIcon /></svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+						<svg><PinterestIcon /></svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+						<svg><XIcon /></svg>
+					</a>
+				</li>
+			</ul>
 		</footer>
 	)
 }

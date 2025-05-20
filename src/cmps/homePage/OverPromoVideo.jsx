@@ -6,10 +6,11 @@ import PayPalIcon from '../../../public/img/icons/over-promo-icons/paypal.svg'
 import PayoneerIcon from '../../../public/img/icons/over-promo-icons/payoneer.svg'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { MagnifyingGlassIcon } from '../SvgHub'
 
 export function OverPromoVideo() {
     const [input, setInput] = useState('')
-    const [searchParams] = useSearchParams()
+    const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
 
     function handleSearch(ev) {
@@ -23,7 +24,7 @@ export function OverPromoVideo() {
             searchParams.delete('subCategory')
         }
 
-        navigate(`/gigs?${searchParams.toString()}`)
+        navigate(`/gig?${searchParams.toString()}`)
     }
 
     return (
@@ -42,7 +43,7 @@ export function OverPromoVideo() {
                             onChange={(ev) => setInput(ev.target.value)}
                         />
                         <button type='submit' className='promo-video-search-bar-btn'>
-                            <i className="fa-solid fa-magnifying-glass"></i>
+                            <MagnifyingGlassIcon />
                         </button>
                     </div>
                 </form>

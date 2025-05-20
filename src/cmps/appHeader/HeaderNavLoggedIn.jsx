@@ -1,9 +1,10 @@
-import heartIcon from '../../../public/img/heart-icon.png'
-import envelopeIcon from '../../../public/img/envelope-icon.png'
-import bellIcon from '../../../public/img/bell-icon.png'
+// import heartIcon from '../../../public/img/heart-icon.png'
+// import envelopeIcon from '../../../public/img/envelope-icon.png'
+// import bellIcon from '../../../public/img/bell-icon.png'
 import { useNavigate } from 'react-router'
 import { useState } from 'react'
 import { UserModal } from './UserModal'
+import { HeaderHeartIcon, HeaderBellIcon, HeaderEnvelopeIcon } from '../SvgHub'
 
 export function HeaderNavLoggedIn({ user, onLogout }) {
     const [isUserModal, setIsUserModal] = useState(false)
@@ -21,21 +22,17 @@ export function HeaderNavLoggedIn({ user, onLogout }) {
                 </li>
                 <li>
                     <button className='header-btn' onClick={() => toggleUserMenu()}>
-                        {/* <i className="far fa-bell"></i>
-									<span></span> */}
-                        <img src={bellIcon} />
+                        <HeaderBellIcon />
                     </button>
                 </li>
                 <li>
                     <button className='header-btn'>
-                        {/* <i className="far fa-envelope"></i> */}
-                        <img src={envelopeIcon} />
+                        <HeaderEnvelopeIcon />
                     </button>
                 </li>
                 <li>
                     <button className='header-btn'>
-                        {/* <i className="far fa-heart"></i> */}
-                        <img src={heartIcon} />
+                        <HeaderHeartIcon />
                     </button>
                 </li>
                 <li>

@@ -1,7 +1,8 @@
 .purchase-wrapper {
     display: grid;
     grid-template-columns: auto 570px;
-    padding-block: 2rem 4rem;
+    padding-block: 2rem 4rem; 
+    margin-top: 1rem;
 }
 
 .purchase-information-page {
@@ -11,6 +12,7 @@
         background-color: $backpurhcase;
         padding: 1rem;
         border: 1px solid $textclr7;
+        font-weight: 700;
     }
 
     .payment-methods {
@@ -27,11 +29,11 @@
 
             .credit-card-circle {
                 border-radius: 50%;
-                border-width: 0.3125rem;
+                border-width: 0.3rem;
                 border: 0.3125rem solid $textclr3;
-                width: 1.23rem;
+                width: 0.73rem;
                 margin: 0.0625rem 0.5625rem 0 0;
-                height: 1.3125rem;
+                height: 0.73rem;
                 display: inline-block;
             }
 
@@ -79,16 +81,12 @@
                     }
 
                     span {
+                        margin-right: 0.75rem;
+                        align-items: center;
+                            display: flex;
 
                         &:nth-child(1) {
-                            height: 100%;
-                            margin-left: 0.75rem;
-                            align-items: center;
-                            display: flex;
-                        }
-
-                        img {
-                            padding-right: 0.75rem;
+                            margin-inline: 0.75rem 1.125rem;     
                         }
                     }
                 }
@@ -200,7 +198,6 @@
             font-weight: 700;
 
             .order-gig-image {
-
                 height: 4.8125rem;
                 width: 7.875rem;
                 padding: 0 1rem 0.4375rem 0;
@@ -230,7 +227,6 @@
     }
 
     .order-summary-wrapper {
-        width: 21.9375rem;
         border: 1px solid $textclr7;
         padding: 1rem 1.5rem;
 

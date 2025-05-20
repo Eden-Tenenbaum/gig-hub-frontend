@@ -8,7 +8,7 @@ export function DashboardMiniUser({ user }) {
                 {user && (
                     <span
                         className='header-user-options-btn'>
-                        <img src={user.imgUrl} alt={user.fullname.slice(0, 1)}></img>
+                        <img src={user.imgUrl} alt={user.fullname}></img>
                     </span>
                 )}
             </div>

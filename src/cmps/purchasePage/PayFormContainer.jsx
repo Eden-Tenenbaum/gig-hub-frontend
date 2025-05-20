@@ -1,6 +1,7 @@
-// import Lock from '../../public/img/icons/purchase-icons/lock.svg'
 import { PurchaseErrorMessage } from './PurchaseErrorMessage.jsx'
 import { useState } from 'react'
+
+import { CreditCardIcon, LockIcon } from '../SvgHub'
 
 export function PayFormContainer() {
 
@@ -30,14 +31,14 @@ export function PayFormContainer() {
                     <label className="card-number">
                         <span>Card number</span>
                         <div className='card-number-input-wrapper'>
-                            <span>card</span>
+                            <span><CreditCardIcon /></span>
                             <input
                                 placeholder='1234 5678 9012 3456'
                                 type="text"
                                 maxLength="19"
                                 value={'7364 1827 2567 1527'}
                             ></input>
-                            <span><img src={Lock}></img></span>
+                            <span><LockIcon /></span>
                         </div>
                         <PurchaseErrorMessage message={inputError()} />
                     </label>

@@ -1,5 +1,6 @@
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { MagnifyingGlassIcon } from '../SvgHub'
 
 export function HeaderSearchbar({ showSearchBar }) {
     const [input, setInput] = useState('')
@@ -17,7 +18,7 @@ export function HeaderSearchbar({ showSearchBar }) {
           searchParams.delete('subCategory')
         }
     
-        navigate(`/gigs?${searchParams.toString()}`)
+        navigate(`/gig?${searchParams.toString()}`)
       }
 
         return (
@@ -31,7 +32,7 @@ export function HeaderSearchbar({ showSearchBar }) {
                             onChange={(ev) => setInput(ev.target.value)}
                         />
                         <button type='submit'>
-                            <i className="fa-solid fa-magnifying-glass"></i>
+                            <MagnifyingGlassIcon />
                         </button>
                     </form>}
             </div>

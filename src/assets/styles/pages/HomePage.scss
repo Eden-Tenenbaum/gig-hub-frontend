@@ -49,6 +49,9 @@
         button {
             color: $textclrwhite;
             position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             top: 10%;
             right: 0.375rem;
             height: 80%;
@@ -56,6 +59,10 @@
             border-radius: 0.5rem;
             background-color: $textclr3;
             font-size: 1rem;
+
+            svg {
+                fill: $textclrwhite;
+            }
         }
     }
 
