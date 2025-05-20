@@ -34,12 +34,20 @@
             .thumbnails {
                 width: 100%;
                 height: rem(60px);
-                padding: 5px 0 5px 5px;
+                padding: rem(5px) 0 rem(5px) rem(5px);
+                overflow: hidden;
 
-                li {
-                    max-width: rem(100px);
-                    height: rem(60px);
+                .thumbnails-list {
+                    li {
+                        width: 100px;
+                        height: 60px;
+                        margin-right: rem(5px);
+                        img {
+                            height: 100%;
+                        }
+                    }
                 }
+
             }
         }
 
@@ -150,7 +158,6 @@
             text-align: center;
 
             .heart-wrapper {
-                grid-auto-flow: column;
                 grid-template-columns: 1fr auto;
                 place-items: center end;
                 gap: rem(13px);

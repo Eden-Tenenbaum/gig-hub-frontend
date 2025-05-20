@@ -83,6 +83,10 @@
     &.self-center {
         place-self: center;
     }
+
+    &.flow-column {
+        grid-auto-flow: column;
+    }
 }
 
 // Media helpers
