@@ -1,8 +1,6 @@
 .gig-preview {
-    font-family: Macan, 'Helvetica Neue', MacanBold;
     border-radius: 8px;
     min-width: 100%;
-    line-height: 1.6;
 
     &__img {
         width: 100%;
@@ -34,7 +32,7 @@
 
     &__author-name {
         font-family: MacanBold;
-        font-weight: 700;
+        font-weight: $weight2;
         line-height: 1.2;
     }
 
@@ -61,7 +59,7 @@
         height: 2rem;
         gap: 4px;
         margin: 0.5rem 0 0;
-        color: #222325;
+        color: $textclr3;
         cursor: default;
         font-family: MacanBold;
 
@@ -88,7 +86,6 @@
         margin: 0;
         font-family: MacanBold;
         color: $textclr3;
-        color: #222325;
         font-size: 1rem;
     }
 }
@@ -104,15 +101,13 @@ a.gig-preview__price-label {
 
 .gig-preview__rating-level {
     padding: 0 4px;
-    display: flex;
     align-items: center;
     gap: 3px;
     margin: 0 0 0 auto;
-    font-weight: 500;
-    font-family: 'Helvetica Neue';
+    font-weight: $weight1;
 }
 
-.rating-high {
+.rating-3 {
     border-radius: 5px;
-    background-color: #FFE0B3;
+    background-color: #ffe0b3;
 }

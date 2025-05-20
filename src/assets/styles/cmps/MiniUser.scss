@@ -14,13 +14,29 @@
     .fullname {
         margin-block: rem(-2px) rem(2px);
         font-weight: $weight2;
-
+        gap: rem(12px);
+        
         &.ium {
             margin-top: rem(5px);
         }
     }
-
+    
     .msg {
         margin-block: rem(5px);
+    }
+    
+    .info-svg {
+        gap: rem(12px);
+        
+        .seperator {
+            width: 0;
+            height: rem(20px);
+            border-left: 1px solid $gray2;
+        }
+
+        .review-count {
+            color: $textclr4;
+            padding-left: rem(4px);
+        }
     }
 }

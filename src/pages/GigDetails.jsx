@@ -70,7 +70,7 @@ export function GigDetails() {
       <section className="gig-info grid">
         <BreadCrumb path={['back to list']} />
         <h2 className="title fs28">{gig.title}</h2>
-        <MiniUser gig={gig} showStars={true} />
+        <MiniUser gig={gig} showStars={true} reviewCount={{ underline: true, link: true }} />
         <ImgCarousel gig={gig} />
         <article className="description">
           <h2 className="fs20">About this gig</h2>
@@ -78,11 +78,12 @@ export function GigDetails() {
         </article>
         <article className="description">
           <h2 className="fs20">Get to know {gig.owner.fullname}</h2>
-          <MiniUser gig={gig} scale={1.5} fs={16} showStars={true} includeUserMsg={true} />
+          <MiniUser gig={gig} scale={1.5} fs={16} showStars={true} includeUserMsg={true} reviewCount={{ underline: true }} />
           <button className="contact">Contact me</button>
           <AboutUser />
         </article>
-        <section className="reviews grid">
+        <section id="reviews" className="reviews grid">
+          <h2 className="fs20">Reviews</h2>
           <article className="review-statistics">stats</article>
           <ReviewList />
         </section>
