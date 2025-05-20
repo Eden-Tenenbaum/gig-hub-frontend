@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { UserModal } from './UserModal'
 import { HeaderHeartIcon, HeaderBellIcon, HeaderEnvelopeIcon } from '../SvgHub'
 
-export function HeaderNavLoggedIn({ user, onLogout }) {
+export function HeaderNavLoggedIn({ user, onLogout, isSeller }) {
     const [isUserModal, setIsUserModal] = useState(false)
     const navigate = useNavigate()
 
@@ -18,10 +18,10 @@ export function HeaderNavLoggedIn({ user, onLogout }) {
         <nav className='header-nav-logged-in'>
             <ul>
                 <li>
-                    <button className='upgrade-to-pro'>Upgrade to Pro</button>
+                    {!isSeller && <button className='upgrade-to-pro'>Upgrade to Pro</button>}
                 </li>
                 <li>
-                    <button className='header-btn' onClick={() => toggleUserMenu()}>
+                    <button className='header-btn'>
                         <HeaderBellIcon />
                     </button>
                 </li>
@@ -35,24 +35,24 @@ export function HeaderNavLoggedIn({ user, onLogout }) {
                         <HeaderHeartIcon />
                     </button>
                 </li>
-                <li>
-                    <div className='header-orders' onClick={() => navigate('/seller')}>Orders</div>
-                </li>
-                <li>
+                {!isSeller && <li>
+                    <div className='header-orders'>Orders</div>
+                </li>}
+                {!isSeller && <li>
                     <div className='header-try-diverr-go'>Try Diverr Go</div>
-                </li>
-                <li>
+                </li>}
+                <li className={`${isSeller ? 'nopad' : ''}`}>
                     <div className='user-btn'>
                         {user && (
                             <span
                                 className='header-user-options-btn'
                                 onClick={() => {
-                                    onLogout()
+                                    toggleUserMenu()
                                 }}>
                                 <img src={user.imgUrl} alt={user.fullname.slice(0, 1)}></img>
                             </span>
                         )}
-                        {isUserModal && <UserModal />}
+                        {isUserModal && <UserModal onLogout={onLogout} user={user} toggleUserMenu={toggleUserMenu} />}
                     </div>
                 </li>
             </ul>

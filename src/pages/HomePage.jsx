@@ -30,7 +30,6 @@ export function HomePage() {
 
                 if (entry.target === searchbar && isSearchbarVisible.current !== isVisible) {
                     isSearchbarVisible.current = isVisible
-                    console.log(isSearchbarVisible.current)
                     window.dispatchEvent(
                         new CustomEvent('homeSearchbarChanged', {
                             detail: { isVisible }
@@ -40,7 +39,6 @@ export function HomePage() {
 
                 if (entry.target === category && isCategoriesVisible.current !== isVisible) {
                     isCategoriesVisible.current = isVisible
-                    console.log(isCategoriesVisible.current)
                     window.dispatchEvent(
                         new CustomEvent('homeCategoryChanged', {
                             detail: { isVisible }

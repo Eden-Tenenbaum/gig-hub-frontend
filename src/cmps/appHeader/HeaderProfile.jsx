@@ -10,21 +10,17 @@ export function HeaderProfile({ user, isUserModal }) {
             <div>
                 <ul>
                     <li>
-                        <button className='header-btn' onClick={() => toggleUserMenu()}>
-                            {/* <i className="far fa-bell"></i>
-                                                <span></span> */}
+                        <button className='header-btn'>
                             <img src={bellIcon} />
                         </button>
                     </li>
                     <li>
                         <button className='header-btn'>
-                            {/* <i className="far fa-envelope"></i> */}
                             <img src={envelopeIcon} />
                         </button>
                     </li>
                     <li>
                         <button className='header-btn'>
-                            {/* <i className="far fa-heart"></i> */}
                             <img src={heartIcon} />
                         </button>
                     </li>
