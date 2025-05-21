@@ -36,7 +36,11 @@ const responsive = {
     }
 }
 
-
+export function getCategoryName(categoryId) {
+    const category = fiverrMainCategories.find(c => c.id === categoryId)
+    console.log(category)
+    return category.name
+}
 
 export function Categories() {
     const [searchParams] = useSearchParams();

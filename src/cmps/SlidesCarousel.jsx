@@ -38,8 +38,26 @@ export function SlidesCarousel({ slides = [] }) {
                 {idx === current && <img src={slide.src} />}
             </div>
         ))}
-        <button className="prev" onClick={prevSlide}><img className='prev-icon' src={PrevIcon} /></button>
-        <button className="next" onClick={nextSlide}><img className='next-icon' src={NextIcon} /></button>
+        <button
+            type="button"
+            className="prev"
+            onClick={e => {
+                e.preventDefault()
+                e.stopPropagation()
+                prevSlide()
+            }}
+        >
+            <img className="prev-icon" src={PrevIcon} alt="Previous slide" />
+        </button>
+        <button
+            className="next"
+            onClick={e => {
+                e.preventDefault()
+                e.stopPropagation()
+                nextSlide()
+            }}
+        >
+            <img className='next-icon' src={NextIcon} /></button>
 
         <div className="dots-container">
             {slides.map((_, idx) => (
@@ -50,5 +68,5 @@ export function SlidesCarousel({ slides = [] }) {
                 />
             ))}
         </div>
-    </div>
+    </div >
 }

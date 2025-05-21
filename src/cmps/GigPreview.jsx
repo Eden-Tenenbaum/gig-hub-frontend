@@ -29,7 +29,12 @@ export function GigPreview({ gig = {} }) {
     }
 
     return <article className="gig-preview">
-        <SlidesCarousel slides={slides} />
+        <Link to={`/gig/${gig._id}`}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+        >
+            <SlidesCarousel slides={slides} />
+        </Link>
 
         <div className="gig-preview__author">
             <img
@@ -44,7 +49,7 @@ export function GigPreview({ gig = {} }) {
         </div>
 
         <Link to={`/gig/${gig._id}`}
-            className="gig-preview__desc" >
+            className={`gig-preview__desc ${isHovering ? "hovered" : ''}`} >
             {previewText}
         </Link>
 
