@@ -4,7 +4,7 @@ import { makeId } from '../util.service'
 import { userService } from '../user'
 import { mockGigs } from './mockGigs'
 
-const STORAGE_KEY = 'gig'
+const STORAGE_KEY = 'gigs'
 
 export const gigService = {
     query,
@@ -13,31 +13,43 @@ export const gigService = {
     remove,
     addGigMsg,
     getDefaultFilter
-}
-window.cs = gigService
+};
 
+async function query(filterBy = getDefaultFilter()) {
+    let gigs = await storageService.query(STORAGE_KEY)
+    const missing = mockGigs.filter(mg => !gigs.find(g => g._id === mg._id))
+    if (missing.length) {
+        await Promise.all(missing.map(mg => storageService.post(STORAGE_KEY, mg)))
+        gigs = await storageService.query(STORAGE_KEY)
+    }
 
-async function query(filterBy = { txt: '', minPrice: 0 }) {
-    var gigs = await storageService.query(STORAGE_KEY)
-    const { txt, minPrice, sortField, sortDir } = filterBy
-
-    if (txt) {
+    if (filterBy.category) {
+        gigs = gigs.filter(gig => gig.category === filterBy.category)
+    }
+    if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
+        gigs = gigs.filter(
+            gig => regex.test(gig.title) || regex.test(gig.description)
+        )
     }
-    if (minPrice) {
-        gigs = gigs.filter(gig => gig.price >= minPrice)
+    if (filterBy.minPrice) {
+        gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
     }
-    if (sortField === 'title') {
-        gigs.sort((gig1, gig2) =>
-            gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
-    }
-    if (sortField === 'price') {
-        gigs.sort((gig1, gig2) =>
-            (gig1[sortField] - gig2[sortField]) * +sortDir)
-    }
+    if (filterBy.minRating) {
+        gigs = gigs.filter(gig => gig.rating >= filterBy.minRating)
 
-    gigs = gigs.map(({ _id, title, price, owner }) => ({ _id, title, price, owner }))
+    }
+    const sortKey = filterBy.sortField || filterBy.sortBy
+    if (sortKey) {
+        const dir = filterBy.sortDir === 'desc' ? -1 : 1
+        gigs.sort((a, b) => {
+            const aVal = a[sortKey]
+            const bVal = b[sortKey]
+            if (typeof aVal === 'number' && typeof bVal === 'number') return (aVal - bVal) * dir
+            if (typeof aVal === 'string' && typeof bVal === 'string') return aVal.localeCompare(bVal) * dir
+            return 0
+        })
+    }
     return gigs
 }
 
@@ -46,27 +58,30 @@ function getById(gigId) {
 }
 
 async function remove(gigId) {
-    // throw new Error('Nope')
     await storageService.remove(STORAGE_KEY, gigId)
 }
 
 async function save(gig) {
-    var savedGig
+    let savedGig
     if (gig._id) {
         const gigToSave = {
             _id: gig._id,
-            price: gig.price
+            title: gig.title,
+            price: gig.price,
+            category: gig.category
         }
         savedGig = await storageService.put(STORAGE_KEY, gigToSave)
     } else {
-        const gigToSave = {
+        const newGig = {
+            ...gig,
+            _id: makeId(),
+            owner: userService.getLoggedinUser(),
             title: gig.title,
             price: gig.price,
             // Later, owner is set by the backend
-            owner: userService.getLoggedinUser(),
             msgs: []
         }
-        savedGig = await storageService.post(STORAGE_KEY, gigToSave)
+        savedGig = await storageService.post(STORAGE_KEY, newGig)
     }
     return savedGig
 }
@@ -74,15 +89,10 @@ async function save(gig) {
 async function addGigMsg(gigId, txt) {
     // Later, this is all done by the backend
     const gig = await getById(gigId)
-
-    const msg = {
-        id: makeId(),
-        by: userService.getLoggedinUser(),
-        txt
-    }
+    if (!gig.msgs) gig.msgs = []
+    const msg = { id: makeId(), by: userService.getLoggedinUser(), txt }
     gig.msgs.push(msg)
     await storageService.put(STORAGE_KEY, gig)
-
     return msg
 }
 
@@ -95,7 +105,9 @@ function getDefaultFilter() {
         minRating: 0,
         deliveryDay: null,
         sellerId: '',
-        sortBy: 'rating' //rating/price/deliveryday etc...
+        sortBy: 'rating', //rating/price/deliveryday etc...
+        sortField: '',
+        sortDir: 'desc'
     }
 }
 // storageService.post(STORAGE_KEY, mockGigs)

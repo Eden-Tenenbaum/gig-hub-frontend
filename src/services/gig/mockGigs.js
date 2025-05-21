@@ -1,10 +1,11 @@
 // src/services/gig/mockGigs.js
 // Demo data for local development (mock gigs)
-import { gigDescriptions } from "./MockDesc" 
+import { gigDescriptions } from "./MockDesc";
 
 export const mockGigs = [
   {
     _id: 'g101',
+    category: 'graphics-design',
     title: 'Minimalist Logo Design',
     description: gigDescriptions.g101(),
     description: 'I will create a clean, modern minimalist logo tailored to your brand identity and vision.',
@@ -32,6 +33,7 @@ export const mockGigs = [
   },
   {
     _id: 'g102',
+    category: 'programming-tech',
     title: 'Custom WordPress Website',
     description: gigDescriptions.g102(),
     description: 'Full setup and customization of a responsive WordPress website with your choice of theme.',
@@ -59,6 +61,7 @@ export const mockGigs = [
   },
   {
     _id: 'g103',
+    category: 'digital-marketing',
     title: 'SEO Content Writing',
     description: gigDescriptions.g103(),
     description: 'High-quality SEO blog posts and website content to help you rank higher on search engines.',
@@ -70,7 +73,7 @@ export const mockGigs = [
     ],
     rating: 4.8,
     tags: ['writing', 'seo', 'content'],
-    owner: { _id: 'u3', fullname: 'Carla Mills', imgUrl: 'https://picsum.photos?random=6', level: 3 },
+    owner: { _id: 'u3', fullname: 'Carla Mills', imgUrl: 'https://picsum.photos/550/250?random=6', level: 3 },
     purchasePlan: {
       price: 80,
       deliveryDay: 3,
@@ -78,6 +81,13 @@ export const mockGigs = [
       content: 'Optimized articles designed to improve search visibility and engage your target audience',
       includes: ['SEO optimization', 'Keyword research', 'Meta descriptions']
     },
+    reviews: [
+      {
+        commenter: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/550/250?random=7' },
+        rating: 4.9,
+        comment: 'Top-tier writing! SEO improved almost immediately after publishing.'
+      }
+    ]
     reviews: [{
       reviewer: { _id: 'u4', fullname: 'Daniel Lee', loc: 'Djibouti', imgUrl: 'https://picsum.photos/?random=7' },
       rating: 4.9,
@@ -86,6 +96,7 @@ export const mockGigs = [
   },
   {
     _id: 'g104',
+    category: 'digital-marketing',
     title: 'Social Media Management',
     description: gigDescriptions.g104(),
     description: 'Complete social media strategy, posting schedule, and community engagement for your brand.',
@@ -97,7 +108,7 @@ export const mockGigs = [
     ],
     rating: 4.6,
     tags: ['marketing', 'social media', 'management'],
-    owner: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/?random=7', level: 1 },
+    owner: { _id: 'u4', fullname: 'Daniel Lee', imgUrl: 'https://picsum.photos/550/250?random=7', level: 1 },
     purchasePlan: {
       price: 150,
       deliveryDay: 7,
@@ -113,6 +124,7 @@ export const mockGigs = [
   },
   {
     _id: 'g105',
+    category: 'business',
     title: 'E-commerce Product Photography',
     description: gigDescriptions.g105(),
     description: 'Professional product photos with white background, ready for Shopify, Amazon, and more.',

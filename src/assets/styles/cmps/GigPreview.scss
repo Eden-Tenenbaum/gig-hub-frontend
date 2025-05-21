@@ -1,16 +1,7 @@
 .gig-preview {
     border-radius: 8px;
-    min-width: 100%;
-
-    &__img {
-        width: 100%;
-        height: auto;
-        min-height: 190px;
-        display: block;
-        border-radius: 8px;
-        object-fit: cover;
-        cursor: pointer;
-    }
+    width: 100%;
+    line-height: 1.6;
 
     &__author {
         column-gap: 8px;
