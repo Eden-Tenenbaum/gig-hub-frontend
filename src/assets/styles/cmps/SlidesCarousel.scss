@@ -64,12 +64,12 @@
 .slideshow-container .slide img,
 .slideshow-container .single-slide img {
     width: 100%;
-    height: auto;
+    min-height: clamp(150px, 190px, 400px);
     display: block;
     border-radius: 8px;
-    object-fit: cover;
+    overflow-clip-margin: content-box;
+    overflow: clip;
     cursor: pointer;
-    min-height: 190px;
 }
 
 button.next:hover {
