@@ -40,7 +40,7 @@ export function PayFormContainer() {
                             ></input>
                             <span><LockIcon /></span>
                         </div>
-                        <PurchaseErrorMessage message={inputError()} />
+                        <PurchaseErrorMessage message={inputError()} isError={isError}/>
                     </label>
                     <div className='exp-cvv'>
                         <label className="expiration-date">
@@ -48,14 +48,14 @@ export function PayFormContainer() {
                             <div className='exp-date-input-wrapper'>
                                 <input placeholder='MM / YY' type='text' value={'05 / 30'}></input>
                             </div>
-                            <PurchaseErrorMessage message={inputError()} />
+                            <PurchaseErrorMessage message={inputError()} isError={isError}/>
                         </label>
                         <label className="security-code">
                             <span>Security code</span>
                             <div className='security-code-input-wrapper'>
                                 <input placeholder='123' type='text' value={'923'}></input>
                             </div>
-                            <PurchaseErrorMessage message={inputError()} />
+                            <PurchaseErrorMessage message={inputError()} isError={isError}/>
                         </label>
                     </div>
                     <div className='cardholder-info'>
@@ -95,7 +95,7 @@ export function PayFormContainer() {
                         </div>
                         <div className='save-card'>
                             <span className='checkbox-row'>
-                                <span className='checkbox'></span> 
+                                <span className='checkbox'></span>
                                 <label>Save this card for future payments</label>
                                 <span className='more-info'> ? </span>
                             </span>

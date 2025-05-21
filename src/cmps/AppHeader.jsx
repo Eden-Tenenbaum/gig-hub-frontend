@@ -85,7 +85,7 @@ export function AppHeader() {
 							<Logo />
 						</NavLink>
 
-					<HeaderSearchbar showSearchBar={showSearchBar} />
+					{!isPurchasing && <HeaderSearchbar showSearchBar={showSearchBar} />}
 
 					{(isPurchasing) ?
 						<AlternateHeader

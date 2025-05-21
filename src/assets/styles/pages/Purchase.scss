@@ -304,6 +304,10 @@
     .error-icon {
         padding: 0.125rem 0.25rem 0 0
     }
+
+    &.hidden {
+        visibility: hidden;
+    }
 }
 
 .more-info {
