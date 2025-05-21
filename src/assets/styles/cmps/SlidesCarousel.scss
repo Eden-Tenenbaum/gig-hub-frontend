@@ -1,27 +1,124 @@
-// 
-
 .slideshow-container {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    min-height: clamp(150px, 190px, 400px); // ensure container shows image
 }
 
-/* NEW: slides wrapper */
 .slides {
-  display: flex;                       // line them up in a row
-  transition: transform 0.5s ease;     // animate slide movement
+    display: flex; // line up all slides side-by-side
+    width: 100%;
+    transition: transform 0.5s ease; // smooth slide animation
 }
 
 .slide {
-  flex: 0 0 100%;                      // each slide is full width
-  max-width: 100%;
+    flex: 0 0 100%; // each slide is full container width
+    position: relative; // in case you layer anything later
+    transition: opacity 0.5s ease; // fade-in on active
 }
 
-/* keep your existing prev/next styles... */
+.slide.active {
+    opacity: 1;
+}
+
+.single-slide {
+    img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        min-height: clamp(150px, 190px, 400px);
+        cursor: pointer;
+    }
+}
+
+.slideshow-container .slide img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    min-height: clamp(150px, 190px, 400px);
+    cursor: pointer;
+}
+
 .slideshow-container .prev,
 .slideshow-container .next {
-  /* (you can remove one of your duplicate `transition` declarations) */
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  /* rest of your button rules */
+    position: absolute;
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 12px;
+    background: rgb(255, 255, 255);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* rest of your SCSS unchanged */
+.slideshow-container .prev {
+    left: 10px;
+    transform: translate(-100%, -50%);
+}
+
+.slideshow-container .next {
+    right: 10px;
+    transform: translate(100%, -50%);
+}
+
+.slideshow-container:hover .prev,
+.slideshow-container:hover .next {
+    transform: translateY(-50%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+button.prev:hover,
+button.next:hover {
+    text-align: center;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background
+}
+
+.dot.active {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 1);
+}
+
+.dot:last-of-type {
+    width: 5px;
+    height: 5px;
+}
+
+.dot:first-of-type {
+    width: 5px;
+    height: 5px;
+}
+
+.dot.active:last-of-type,
+.dot.dot.active:first-of-type {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 1);
+}
