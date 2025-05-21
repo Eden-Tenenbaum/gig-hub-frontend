@@ -27,15 +27,10 @@
     .info-svg {
         gap: rem(12px);
         
-        .seperator {
+        .line {
             width: 0;
             height: rem(20px);
             border-left: 1px solid $gray2;
-        }
-
-        .review-count {
-            color: $textclr4;
-            padding-left: rem(4px);
         }
     }
 }

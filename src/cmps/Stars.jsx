@@ -14,20 +14,23 @@ export function Stars({ rating, showStars = false, reviewCount = { isReview: fal
   const fullStars = Math.floor(roundToHalf)
   const hasHalf = roundToHalf % 1 !== 0
   const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0)
-  
+
   return (
-    <section className="stars-display">
-      {showStars && (
+    <section className="stars-display flex">
+      {showStars ? (
         <span className="stars">
           {[...Array(fullStars)].map((_, i) => <StarIcon key={`full-${i}`} {...starProps} />)}
-          {hasHalf && <HalfStarIcon key="half" {...starProps} />}
+          {hasHalf && <HalfStarIcon {...starProps} />}
           {[...Array(emptyStars)].map((_, i) => <EmptyStarIcon key={`empty-${i}`} {...starProps} />)}
+          <span className="rating-num stars">{rating}</span>
+        </span>
+      ) : (
+        <span className="rating-num stars">
+          <StarIcon {...starProps} />
+          {rating}
         </span>
       )}
-      <span className="rating-num stars">
-        {!showStars && <StarIcon {...starProps} />}
-        {rating}
-      </span>
+      
       {!reviewCount.isReview && (
         <span className="review-count" onClick={movesToReviews}>
           {'('}<span className={reviewCount.underline ? 'underline' : ''}>19</span>{')'}

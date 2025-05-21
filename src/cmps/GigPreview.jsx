@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import StarIcon from '../../public/img/icons/StarIcon.svg'
+import { Stars } from './Stars.jsx'
 // import { MiniUser } from './MiniUser'
 import { useState } from 'react'
 import { RatingLevel } from '../cmps/RatingLevel.jsx'
@@ -54,16 +54,8 @@ export function GigPreview({ gig }) {
             {gig.description}
         </Link>
 
-        <div className="gig-preview__rating">
-            <img
-                src={StarIcon}
-                alt="star"
-                className="gig-preview__rating-icon"
-            />
-            <span className='gig-preview__rating-number'>
-                {gig.rating}
-            </span>
-        </div>
+        <Stars rating={gig.rating} starProps={{ viewBox: '0 2 16 16', width: '15', height: '20' }} />
+        
         <Link
             to={`/gig/${gig._id}`}
             onMouseEnter={() => onMouseEnter()}

@@ -16,7 +16,7 @@ export function MiniUser({ gig, scale = 1, showStars = false, fs = 18, includeUs
                 <Stars rating={gig.rating} showStars={showStars} reviewCount={reviewCount} starProps={includeUserMsg && { viewBox: '0 0 16 15', width: '15', height: '15' }} />
                 {includeUserMsg &&
                     <>
-                        <span className="seperator"></span>
+                        <span className="line"></span>
                         <RatingLevel level={gig.owner.level} />
                     </>
                 }
