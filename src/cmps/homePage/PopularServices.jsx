@@ -11,7 +11,7 @@ import AIDevelopment from '../../../public/popservice/ai-development.webp';
 import LogoDesign from '../../../public/popservice/logo-design.png';
 import WebsiteDesign from '../../../public/popservice/website-design.webp';
 
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 // import tester from '../../../public/img/react.svg'
 
@@ -103,26 +103,24 @@ const responsive = {
     }
 }
 
-const small = 15
 
 export function PopularServices() {
-    const navigate = useNavigate()
-
     return (
         <section className="homepage-popular-services">
             <p className='popular-services-header'>Popular services</p>
             <Carousel responsive={responsive}>
                 {popularServices.map(category =>
                     <section key={category.id}>
-                        <div 
-                        className={category.name.length <= small ? 'small' : ''}
-                        onClick={() => navigate('/gig', { state: { category } })}
-                        >
-                            <p>{category.name}</p>
-                            <div>
-                                <img src={category.img} />
+                        <Link to={`/gig?category=${category.id}`}>
+                            <div
+                                className={category.name.length <= 15 ? 'small' : ''}
+                            >
+                                <p>{category.name}</p>
+                                <div>
+                                    <img src={category.img} />
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </section>
                 )}
             </Carousel>

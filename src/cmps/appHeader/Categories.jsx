@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useNavigate } from "react-router";
+import { Link, useSearchParams } from 'react-router-dom';
 
 const fiverrMainCategories = [
     { name: "Graphics & Design", id: "graphics-design" },
@@ -36,24 +36,24 @@ const responsive = {
     }
 }
 
-// const save = navigate(`/explore/${category.id}`)
+
 
 export function Categories() {
-    const navigate = useNavigate()
-    
+    const [searchParams] = useSearchParams();
+    const current = searchParams.get('category') || '';
     return (
         <section className="categories-menu-package">
             <ul>
-                {fiverrMainCategories.map(category =>
-                    <li key={category.id}>
-                        <a onClick={() => 
-                            {
-                                // setParamsForIndex(category.id)
-                                navigate('/gig', { state: { category } })
-                            }}
-                            >{category.name}</a>
-                    </li>)
-                }
+                {fiverrMainCategories.map(({ name, id }) => (
+                    <li key={id}>
+                        <Link
+                            to={`/gig?category=${id}`}
+                            className={current === id ? 'active' : ''}
+                        >
+                            {name}
+                        </Link>
+                    </li>
+                ))}
             </ul>
         </section >
     )

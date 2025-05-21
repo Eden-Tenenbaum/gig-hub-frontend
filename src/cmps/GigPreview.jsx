@@ -1,13 +1,24 @@
 import { Link } from 'react-router-dom'
-import StarIcon from '../../public/img/icons/StarIcon.svg'
-// import { MiniUser } from './MiniUser'
-import { useState } from 'react'
 import { RatingLevel } from '../cmps/RatingLevel.jsx'
+import StarIcon from '../../public/img/icons/StarIcon.svg'
+import { useState } from 'react'
 import { SlidesCarousel } from './SlidesCarousel.jsx'
+// import { MiniUser } from './MiniUser'
 
 
-export function GigPreview({ gig }) {
+export function GigPreview({ gig = {} }) {
     const [isHovering, setIsHovering] = useState(false)
+    const slides = Array.isArray(gig.imgUrl) ? gig.imgUrl : []
+
+    const avatarUrl = gig.owner?.imgUrl || '/fallback-avatar.png'
+    const authorName = gig.owner?.fullname || 'Unknown'
+    const authorLevel = gig.owner?.level || 1
+
+    const previewText =
+        typeof gig.description === 'string'
+            ? gig.description
+            : `${gig.title}`
+    const price = gig.purchasePlan?.price || 0
 
     function onMouseEnter() {
         setIsHovering(true)
@@ -18,40 +29,23 @@ export function GigPreview({ gig }) {
     }
 
     return <article className="gig-preview">
-        {/* <Link to={`/gig/${gig._id}`}
-            onMouseEnter={() => onMouseEnter()}
-            onMouseLeave={() => onMouseLeave()}
-        > */}
-        {/* <img
-                className="gig-preview__img"
-                src={gig.imgUrl} */}
-        <SlidesCarousel slides={gig.imgUrl} />
-        {/* </Link> */}
-
-        {/* <Link className={`gig-preview__desc ${isHovering ? 'hovered' : ''}`} to={`/gig/${gig._id}`}>
-            <img src={gig.imageUrl} />
-        </Link>
-         */}
+        <SlidesCarousel slides={slides} />
 
         <div className="gig-preview__author">
             <img
                 className="gig-preview__author-avatar"
-                src={gig.owner.imgUrl}
-                alt={gig.owner.fullname}
+                src={avatarUrl}
+                alt={authorName}
             />
             <span className="gig-preview__author-name">
-                {gig.owner.fullname}
+                {authorName}
             </span>
-            <RatingLevel level={gig.owner.level} />
+            <RatingLevel level={authorLevel} />
         </div>
 
-        <Link
-            className={`gig-preview__desc ${isHovering ? 'hovered' : ''}`}
-            to={`/gig/${gig._id}`}
-            onMouseEnter={() => onMouseEnter()}
-            onMouseLeave={() => onMouseLeave()}
-        >
-            {gig.description}
+        <Link to={`/gig/${gig._id}`}
+            className="gig-preview__desc" >
+            {previewText}
         </Link>
 
         <div className="gig-preview__rating">
@@ -61,18 +55,20 @@ export function GigPreview({ gig }) {
                 className="gig-preview__rating-icon"
             />
             <span className='gig-preview__rating-number'>
-                {gig.rating}
+                {gig.rating ?? 'N/A'}
             </span>
         </div>
+
         <Link
             to={`/gig/${gig._id}`}
-            onMouseEnter={() => onMouseEnter()}
-            onMouseLeave={() => onMouseLeave()}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             <p className='gig-preview__price-label'
             > From
                 <span className='gig-preview__price'>
-                    ${gig.purchasePlan.price.toLocaleString()}</span>
+                    ${price.toLocaleString()}
+                </span>
             </p>
         </Link>
     </article>

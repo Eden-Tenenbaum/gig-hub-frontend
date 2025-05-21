@@ -40,7 +40,6 @@ async function update({ _id, score }) {
     // When admin updates other user's details, do not update loggedinUser
     const loggedinUser = getLoggedinUser()
     if (loggedinUser._id === user._id) saveLoggedinUser(user)
-
     return user
 }
 
@@ -100,20 +99,20 @@ async function addOrderToSeller(sellerId, orderId) {
 // _createAdmin()
 async function _createAdmin() {
     if (user.length) return
-    const user = 
-        {
-            _id: 'u101',
-            fullname: 'User Cohen',
-            imgUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
-            username: 'user',
-            password: 'password',
-            isAdmin: false,
-            level: 'basic',
-            gigs: [],
-            ordersMade: [],
-            ordersReceived: [],
-            likedGigIds: [],
-        }
+    const user =
+    {
+        _id: 'u101',
+        fullname: 'User Cohen',
+        imgUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+        username: 'user',
+        password: 'password',
+        isAdmin: false,
+        level: 'basic',
+        gigs: [],
+        ordersMade: [],
+        ordersReceived: [],
+        likedGigIds: [],
+    }
     const newUser = await storageService.post('user', user)
     console.log('newUser: ', newUser)
 }
