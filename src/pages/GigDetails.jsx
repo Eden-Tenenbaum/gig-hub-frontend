@@ -6,8 +6,6 @@ import { loadGig, addGigMsg } from '../store/actions/gig.actions'
 import { utilService } from '../services/util.service'
 import { orderService } from '../services/order/order.service.local'
 
-import { ReviewList } from '../cmps/ReviewList'
-
 import { mockGigs2 } from '../services/gig/mockGigs2'
 
 import { UserInteraction } from '../cmps/gigDetails/UserInteraction'
@@ -15,6 +13,8 @@ import { BreadCrumb } from '../cmps/BreadCrumb'
 import { MiniUser } from '../cmps/MiniUser'
 import { AboutUser } from '../cmps/gigDetails/AboutUser'
 import { ImgCarousel } from '../cmps/gigDetails/ImgCarousel'
+import { ReviewStatistics } from '../cmps/gigDetails/ReviewStatistics'
+import { ReviewList } from '../cmps/ReviewList'
 
 export function GigDetails() {
   const navigate = useNavigate()
@@ -33,21 +33,23 @@ export function GigDetails() {
   // purchase flow - start - yonatan (creating order obj)
   async function onPurchase(activePlan) {
     var selectedPackage = ''
-    if (activePlan === 1) {
-      selectedPackage = 'BASIC'
-    }
-    if (activePlan === 1.5) {
-      selectedPackage = 'STANDARD'
-    }
-    if (activePlan === 2) {
-      selectedPackage = 'PREMIUM'
+    switch (activePlan) {
+      case 1:
+        selectedPackage = 'BASIC'
+        break;
+      case 1.5:
+        selectedPackage = 'STANDARD'
+        break;
+      default:
+        selectedPackage = 'PREMIUM'
+        break;
     }
 
 
     const gigToBuy = {
       _id: gig._id,
       title: gig.title,
-      imgUrl: gig.imgUrl[0].src, 
+      imgUrl: gig.imgUrl[0].src,
       price: gig.purchasePlan.price * activePlan,
       deliveryTime: gig.purchasePlan.deliveryDay,
       package: selectedPackage,
@@ -78,7 +80,7 @@ export function GigDetails() {
   if (!gig._id) return
   return (
     <section className="gig-details grid">
-      <UserInteraction plan={gig.purchasePlan} onPurchase={onPurchase}/>
+      <UserInteraction plan={gig.purchasePlan} onPurchase={onPurchase} />
       <section className="gig-info grid">
         <BreadCrumb path={['back to list']} />
         <h2 className="title fs28">{gig.title}</h2>
@@ -96,7 +98,7 @@ export function GigDetails() {
         </article>
         <section id="reviews" className="reviews grid">
           <h2 className="fs20">Reviews</h2>
-          <article className="review-statistics">stats + sort + search</article>
+          <ReviewStatistics />
           <ReviewList reviews={gig.reviews} />
         </section>
       </section>

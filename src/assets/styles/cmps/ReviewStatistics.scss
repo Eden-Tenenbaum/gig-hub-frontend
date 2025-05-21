@@ -1,0 +1,53 @@
+.review-statistics {
+    height: 371.41px;
+    border: 1px dashed;
+    line-height: 1.5;
+
+    .numbers-info {
+        grid-template-rows: auto 1fr;
+        max-height: 218px;
+        .reviews-num {
+            color: $textclr2;
+            font-weight: $weight2;
+            line-height: 140%;
+        }
+
+        .graph-container {
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+
+            .stars-num {
+                padding: rem(6px);
+                line-height: 100%;
+                font-weight: $weight1;
+                color: $textclr1;
+                opacity: .2;
+
+                &.active {
+                    color: $textclr3;
+                    opacity: 1;
+                }
+            }
+
+            .graph {
+                height: rem(8px);
+                width: 100%;
+                background: $clr7;
+                border-radius: 999px;
+            }
+
+            .review-count {
+                grid-column: 3;
+            }
+        }
+    }
+
+    .stars-info {
+        grid-template-rows: auto 1fr;
+        max-height: 218px;
+
+        .stars-display {
+            justify-self: end;
+        }
+    }
+}
