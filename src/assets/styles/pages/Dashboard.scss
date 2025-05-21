@@ -151,7 +151,7 @@
                 transition: all 0.2s ease-in-out;
                 display: flex;
                 align-items: center;
-                
+
                 &:hover {
                     cursor: pointer;
                     border: 1px solid $textclr10;
@@ -175,29 +175,59 @@
                 align-items: center;
                 padding: 1rem 1.5rem;
                 margin-bottom: 1rem;
-                height: 6rem; //TEMPORARY
-
-                img {
-                    height: 3rem;
-                }
+                height: 6rem; //TEMPORARY    
+     
 
                 span {
 
-                    &:nth-child(2), &:nth-child(3), &:nth-child(4){
+                    &:nth-child(1) {
+                        display: flex;
+
+                        img {
+                            padding-right: 1rem;
+
+                            &:nth-child(1) {
+                                height: 3rem;
+                            }
+
+                            &:nth-child(2) {
+                                margin-top: 0.75rem;
+                                height: 2rem;
+                            }
+                        }
+
+                        p {
+                            margin: 0;
+                            margin-top: 1.5rem;
+                            font-size: 0.75rem;
+                        }
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4) {
 
                         p {
                             font-size: 0.875rem;
                             margin: 0;
 
-                            &:nth-child(1){
+                            &:nth-child(1) {
                                 color: $textclr10;
                             }
 
-                            &:nth-child(2){
+                            &:nth-child(2) {
                                 color: $textclr4;
 
                                 &.late-on-delivery {
                                     color: red;
+                                    display: flex;
+                                    align-items: center;
+
+                                    svg {
+                                        fill: red;
+                                        padding-right: 0.2rem;
+                                        margin-bottom: 0.2rem;
+                                    }
                                 }
                             }
                         }
@@ -214,9 +244,32 @@
                             &:nth-child(2) {
                                 padding-inline: 0.5rem;
                                 border-radius: 1.5rem;
-                                background-color: red;
-                                color:  $textclrwhite;
+                                color: $textclrwhite;
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+
+                                &.status-confirmed {
+                                    background-color: $textclr8;
+                                }
+
+                                &.status-canceled {
+                                    background-color: $textclr3;
+                                }
+
+                                &.status-pending {
+                                    background-color: red;
+                                }
                             }
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        color: $textclr8;
+
+                        &:hover {
+                            cursor: pointer;
                         }
                     }
                 }

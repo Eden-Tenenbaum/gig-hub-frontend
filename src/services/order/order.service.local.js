@@ -16,6 +16,8 @@ export const orderService = {
 	confirmOrder,
 	addConfirmed,
 	queryConfirmed,
+	saveConfirmed,
+	getConfirmedById
 }
 
 // possible orders
@@ -48,6 +50,14 @@ function queryConfirmed() {
 
 async function addConfirmed(order) {
 	return await storageService.post(CONFIRMED_STORAGE_KEY, order)
+}
+
+async function saveConfirmed(order) {
+	return await storageService.put(CONFIRMED_STORAGE_KEY, order)
+}
+
+function getConfirmedById(orderId) {
+	return storageService.get(CONFIRMED_STORAGE_KEY, orderId)
 }
 
 async function confirmOrder(orderId, buyerId) {
