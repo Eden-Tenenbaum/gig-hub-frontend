@@ -219,7 +219,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u12",
             "fullname": "Sophie Allen",
-            "loc": "UK",
+            "loc": "United Kingdom",
             "imgUrl": "https://picsum.photos/550/250?random=14"
           },
           "rating": 5.0,
@@ -599,7 +599,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u32",
             "fullname": "Veronica Miles",
-            "loc": "UK",
+            "loc": "United Kingdom",
             "imgUrl": "https://picsum.photos/550/250?random=16"
           },
           "rating": 4.8,
@@ -1055,7 +1055,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u56",
             "fullname": "John Baker",
-            "loc": "UK",
+            "loc": "United Kingdom",
             "imgUrl": "https://picsum.photos/550/250?random=8"
           },
           "rating": 4.6,
@@ -1286,7 +1286,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u68",
               "fullname": "Jessica Green",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=8"
             },
             "rating": 4.8,
@@ -1402,7 +1402,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u74",
               "fullname": "David Lee",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=6"
             },
             "rating": 4.9,
@@ -1555,7 +1555,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u98",
               "fullname": "Ethan Scott",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=24"
             },
             "rating": 5.0,
@@ -1810,7 +1810,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u112",
               "fullname": "Oliver Scott",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=48"
             },
             "rating": 4.8,
@@ -1959,7 +1959,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u132",
               "fullname": "Samantha Miller",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=9"
             },
             "rating": 4.9,
@@ -2230,7 +2230,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u146",
               "fullname": "Ethan Green",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=11"
             },
             "rating": 4.7,
@@ -2347,7 +2347,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u152",
               "fullname": "Oliver Davis",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=10"
             },
             "rating": 5.0,
@@ -2464,7 +2464,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u158",
               "fullname": "Jackie Morgan",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=10"
             },
             "rating": 4.7,
@@ -2619,7 +2619,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u166",
               "fullname": "Logan Brooks",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=44"
             },
             "rating": 5.0,
@@ -2852,7 +2852,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u186",
               "fullname": "Oscar Jensen",
-              "loc": "UK",
+              "loc": "United Kingdom",
               "imgUrl": "https://picsum.photos/550/250?random=104"
             },
             "rating": 4.8,

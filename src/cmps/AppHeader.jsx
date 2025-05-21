@@ -19,7 +19,6 @@ export function AppHeader() {
 	const navigate = useNavigate()
 	const [showSearchBar, SetShowSearchBar] = useState(true)
 	const [showCategories, SetShowCategories] = useState(true)
-	const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const [isLoggingIn, setIsLoggingIn] = useState(false)
 	const isPurchasing = location.pathname.includes('/purchase')
 	const isProfile = location.pathname.includes('/user')
@@ -68,9 +67,8 @@ export function AppHeader() {
 	async function onLogout() {
 		try {
 			await logout()
-			setIsLoggedIn(false)
 			navigate('/')
-			showSuccessMsg(`Bye now`)
+			// showSuccessMsg(`Bye now`)
 		} catch (err) {
 			showErrorMsg('Cannot logout')
 		}
@@ -95,9 +93,8 @@ export function AppHeader() {
 						/>
 						:
 						<>
-							{isLoggedIn ?
+							{user ?
 								<HeaderNavLoggedIn
-									setIsLoggedIn={setIsLoggedIn}
 									user={user}
 									onLogout={onLogout}
 									isSeller={isSeller}
@@ -114,7 +111,7 @@ export function AppHeader() {
 				<div className='categories-row-wrapper'>
 					{showCategories && <Categories />}
 				</div>}
-			{isLoggingIn && <Login toggleLoginModal={toggleLoginModal} setIsLoggedIn={setIsLoggedIn} />}
+			{isLoggingIn && <Login toggleLoginModal={toggleLoginModal}/>}
 		</>
 	)
 }

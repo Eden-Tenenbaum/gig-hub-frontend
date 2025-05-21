@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import { userService } from '../services/user/user.service.local'
 import { login } from '../store/actions/user.actions'
 
-export function Login({ toggleLoginModal, setIsLoggedIn }) {
+export function Login({ toggleLoginModal}) {
     const [users, setUsers] = useState([])
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
 
@@ -25,8 +25,7 @@ export function Login({ toggleLoginModal, setIsLoggedIn }) {
         if (!credentials.username) return
         await login(credentials)
         toggleLoginModal()
-        setIsLoggedIn(true)
-        navigate('/gig')
+        // navigate('/gig')
     }
 
     function handleChange(ev) {

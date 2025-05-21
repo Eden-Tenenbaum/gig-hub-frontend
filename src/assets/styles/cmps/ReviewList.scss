@@ -1,6 +1,7 @@
 .review-list {
     margin-top: rem(24px);
     line-height: 1.5;
+    gap: rem(72px);
 
     .review-preview {
         padding: rem(16px) rem(24px);
@@ -37,6 +38,7 @@
             margin-top: rem(3px);
             grid-template-columns: auto auto 1fr;
             gap: rem(12px);
+
             .time-ago {
                 color: $textclr4;
             }
@@ -44,6 +46,26 @@
 
         .review-txt {
             margin-top: -1px;
+        }
+
+        .completed-gig-info {
+            gap: 41px;
+            >* {
+                :first-child {
+                    font-weight: $weight1;
+                }
+
+                :last-child {
+                    color: $textclr4;
+                }
+            }
+
+            .line {
+                width: 0;
+                height: rem(24px);
+                margin-block: rem(8px);
+                border-left: 1px solid $gray2;
+            }
         }
     }
 }
