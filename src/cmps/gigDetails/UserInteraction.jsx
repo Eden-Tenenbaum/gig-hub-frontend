@@ -14,6 +14,8 @@ export function UserInteraction({ plan, onPurchase }) {
     setActivePlan(plan)
   }
 
+  console.log(activePlan)
+
   return (
     <aside className="user-interaction grid">
       <article className="interaction-bar">
@@ -52,7 +54,7 @@ export function UserInteraction({ plan, onPurchase }) {
                 </React.Fragment>
               ))}
             </ul>
-            <button className="order-request" onClick={() => onPurchase()}>Continue<ArrowIcon /></button>
+            <button className="order-request" onClick={() => onPurchase(activePlan)}>Continue<ArrowIcon /></button>
           </section>
         </article>
       </article>
