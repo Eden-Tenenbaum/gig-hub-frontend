@@ -17,7 +17,7 @@ export function UserInteraction({ plan, onPurchase }) {
   return (
     <aside className="user-interaction grid">
       <article className="interaction-bar">
-        <div className={`heart-wrapper grid fs14 ${isSaved && 'saved'}`}>
+        <div className={`heart-wrapper grid flow-column fs14 ${isSaved && 'saved'}`}>
           <HeartIcon className="heart-icon" fill={isSaved ? '#f74040' : '#b5b6ba'} onClick={toggleSave} />
           <span className="tooltip">Save to list</span>
           <span className="saved-count">115</span>

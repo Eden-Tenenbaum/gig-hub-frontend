@@ -1,11 +1,19 @@
-.stars {
-    display: inline-flex;
-    align-items: center;
-    gap: rem(4px);
+.stars-display {
     color: $textclr3;
 
-    &.rating-num {
-        margin-left: rem(4px);
+    .stars {
+        display: inline-flex;
+        align-items: baseline;
+        gap: rem(4px);
+    }
+
+    .rating-num {
         font-weight: $weight1;
     }
+
+    .review-count {
+        color: $textclr4;
+        padding-left: rem(4px);
+    }
+
 }

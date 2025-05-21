@@ -1,4 +1,4 @@
-import StarIcon from '../../../public/img/icons/StarIcon.svg'
+import { Stars } from '../Stars'
 
 export function DashboardLevelOverview({ user }) {
     return (
@@ -17,11 +17,7 @@ export function DashboardLevelOverview({ user }) {
                 <div>
                     <p>Rating</p>
                     <p>
-                                <img
-                                    src={StarIcon}
-                                    alt="star"
-                                    className="gig-preview__rating-icon"
-                                /> 4.9   
+                        <Stars rating={4.9} />
                     </p>  {/* demo data */}
                 </div>
                 <div>
@@ -29,7 +25,7 @@ export function DashboardLevelOverview({ user }) {
                     <p>100%</p>  {/* demo data */}
                 </div>
             </section>
-            <button>View progress</button> {/* remove? */}         
+            <button>View progress</button> {/* remove? */}
         </section>
     )
 }

@@ -1,5 +1,4 @@
 .mini-user {
-    margin-bottom: rem(23px);
     --scale: 1;
     gap: calc(1rem * (0.5 + var(--scale) * 0.5));
 
@@ -14,13 +13,24 @@
     .fullname {
         margin-block: rem(-2px) rem(2px);
         font-weight: $weight2;
-
+        gap: rem(12px);
+        
         &.ium {
             margin-top: rem(5px);
         }
     }
-
+    
     .msg {
         margin-block: rem(5px);
+    }
+    
+    .info-svg {
+        gap: rem(12px);
+        
+        .line {
+            width: 0;
+            height: rem(20px);
+            border-left: 1px solid $gray2;
+        }
     }
 }

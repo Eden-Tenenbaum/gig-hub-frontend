@@ -1,5 +1,5 @@
 import React from "react"
-import HomeIconUrl from '../../public/img/icons/HomeIcon.svg'
+import { HouseIcon } from "./SvgHub"
 import { Link } from "react-router-dom"
 
 
@@ -9,12 +9,12 @@ export function BreadCrumb({ path, infoLink }) {
             <ul className="breadcrumb">
                 <li className="crumb">
                     <Link to="/">
-                        <img src={HomeIconUrl} alt="Home" className="icon" />
+                        <HouseIcon />
                     </Link>
                 </li>
                 {path.map((seg, i) => (
                     <React.Fragment key={i}>
-                        <li className="separator">/</li>
+                        <li className="slash">/</li>
                         <li className="crumb">
                             {i < path.length - 1
                                 ? <Link to="#">{seg}</Link>

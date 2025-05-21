@@ -21,6 +21,10 @@
             margin-bottom: rem(13.5px);
         }
 
+        .mini-user {
+            margin-bottom: rem(23px);
+        }
+
         .img-carousel {
             width: 100%;
             margin-bottom: rem(64px);
@@ -34,12 +38,21 @@
             .thumbnails {
                 width: 100%;
                 height: rem(60px);
-                padding: 5px 0 5px 5px;
+                padding: rem(5px) 0 rem(5px) rem(5px);
+                overflow: hidden;
 
-                li {
-                    max-width: rem(100px);
-                    height: rem(60px);
+                .thumbnails-list {
+                    li {
+                        width: 100px;
+                        height: 60px;
+                        margin-right: rem(5px);
+
+                        img {
+                            height: 100%;
+                        }
+                    }
                 }
+
             }
         }
 
@@ -64,6 +77,10 @@
                 height: rem(42px);
             }
 
+            .mini-user {
+                margin-bottom: rem(21px);
+            }
+
             .contact {
                 padding: rem(8px) rem(16px);
                 border: 1px solid $textclr3;
@@ -73,7 +90,7 @@
                 line-height: rem(24px);
                 transition: 70ms cubic-bezier(0.75, 0, 0.25, 1);
                 margin-bottom: rem(25px);
-                
+
                 &:hover {
                     background-color: $clr2;
                 }
@@ -134,7 +151,17 @@
         }
 
         .reviews {
-            gap: 1rem;
+            gap: rem(16px);
+
+            h2 {
+                line-height: rem(28px);
+                margin: 0;
+            }
+
+            .review-statistics {
+                height: 373.41px;
+                border: 1px dashed;
+            }
         }
     }
 
@@ -150,7 +177,6 @@
             text-align: center;
 
             .heart-wrapper {
-                grid-auto-flow: column;
                 grid-template-columns: 1fr auto;
                 place-items: center end;
                 gap: rem(13px);
@@ -168,15 +194,15 @@
                     color: $clr1;
                     line-height: rem(21px);
                     border-radius: rem(4px);
-                    
+
                     &::after {
                         @include tooltip-pointer($color: $clr5, $position: bottom, $size: rem(8px), $translate: (-50%, 50%));
                     }
                 }
-                
+
                 .heart-icon {
                     cursor: pointer;
-                    
+
                     &:hover+.tooltip {
                         opacity: 0.9;
                         transition: opacity .15s ease-in;
@@ -194,7 +220,7 @@
                     border: 1px solid $gray2;
                     border-radius: rem(3px);
                     line-height: rem(24px);
-                    
+
                     &::after {
                         @include tooltip-pointer($color: $clr1, $position: left, $size: rem(10px), $translate: (-50%, -50%), $border: 1px solid $gray1);
                     }
@@ -260,15 +286,16 @@
                             margin-top: rem(4px);
                             margin-right: rem(8px);
                         }
-                        
+
                         .revisions {
                             margin-left: rem(16px);
                         }
                     }
-                    
+
                     .whats-included {
                         margin-bottom: rem(20px);
                         grid-template-columns: auto 1fr;
+
                         .icon {
                             place-self: center;
                             margin-right: rem(12px);

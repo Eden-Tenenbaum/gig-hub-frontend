@@ -44,6 +44,10 @@
     font-weight: bold;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 // flex helpers
 
 .flex {
@@ -79,9 +83,17 @@
     &.place-center {
         place-items: center;
     }
-    
+
+    &.align-center {
+        align-items: center;
+    }
+
     &.self-center {
         place-self: center;
+    }
+
+    &.flow-column {
+        grid-auto-flow: column;
     }
 }
 
@@ -102,4 +114,15 @@
 .circle {
     border-radius: 50%;
     overflow: hidden;
+}
+
+// Others
+
+.separator {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: $gray2;
+    border-radius: 50%;
+    vertical-align: middle;
 }
