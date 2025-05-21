@@ -1,83 +1,27 @@
+// 
+
 .slideshow-container {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
+/* NEW: slides wrapper */
+.slides {
+  display: flex;                       // line them up in a row
+  transition: transform 0.5s ease;     // animate slide movement
+}
+
+.slide {
+  flex: 0 0 100%;                      // each slide is full width
+  max-width: 100%;
+}
+
+/* keep your existing prev/next styles... */
 .slideshow-container .prev,
 .slideshow-container .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgb(255, 255, 255);
-    color: white;
-    border: none;
-    padding: 0.5rem 0.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 2;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    pointer-events: none;
+  /* (you can remove one of your duplicate `transition` declarations) */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* rest of your button rules */
 }
 
-.slideshow-container .prev {
-    left: 10px;
-    transform: translate(-100%, -50%);
-}
-
-.slideshow-container .next {
-    right: 10px;
-    transform: translate(100%, -50%);
-}
-
-.slideshow-container:hover .prev,
-.slideshow-container:hover .next {
-
-    transform: translateY(-50%);
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.dots-container {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 2;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.dot.active {
-    background: white;
-}
-
-.slideshow-container .slide img,
-.slideshow-container .single-slide img {
-    width: 100%;
-    min-height: clamp(150px, 190px, 400px);
-    display: block;
-    border-radius: 8px;
-    overflow-clip-margin: content-box;
-    overflow: clip;
-    cursor: pointer;
-}
-
-button.next:hover {
-    background: rgb(235, 235, 235);
-    text-align: center;
-}
-
-button.prev:hover {
-    background: rgb(235, 235, 235);
-    text-align: center;
-}
+/* rest of your SCSS unchanged */
