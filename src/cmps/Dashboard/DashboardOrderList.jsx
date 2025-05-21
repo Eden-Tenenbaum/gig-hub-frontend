@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react'
 import { orderService } from "../../services/order/order.service.local"
 import { utilService } from '../../services/util.service'
+import { CaretDownIcon } from '../SvgHub'
 
 export function DashboardOrderList({ user }) {
     const [orders, setOrders] = useState([])
+    var possibleEarnings = 0
+    orders.forEach(order => possibleEarnings += order.gig.price)
 
     function generateTimeLeft() {
-        const timeLeft = utilService.getRandomIntInclusive(3, 7) - utilService.getRandomIntInclusive(0, 10)
+        const timeLeft = 3 - utilService.getRandomIntInclusive(0, 4)
         if (timeLeft < 0) {
             return (
                 <p className='late-on-delivery'>{Math.abs(timeLeft)} days late</p>
             )
         } else {
             return (
-                <p className='not-late-on-delivery'>{timeLeft} days left</p>
+                <p className='not-late-on-delivery'>{timeLeft} days</p>
             )
         }
     }
@@ -31,11 +34,11 @@ export function DashboardOrderList({ user }) {
             <p className="dashboard-welcome-message">Welcome, {user.fullname}</p>
             <div className="active-orders">
                 <p>Active orders
-                    <a> - 6</a> {/* Active orders */}
-                    <a>($725)</a> {/* Total orders cost */}
+                    <a> - {orders.length}</a>
+                    <a> $({possibleEarnings})</a>
                 </p>
                 <span className="order-list-dropdown-filter">Active orders (6)
-                    <span className="dropdown-icon">^</span> {/* Swap for svg */}
+                    <CaretDownIcon />
                 </span>
                 {/* Active orders/completed/canceled */}
             </div>
@@ -43,7 +46,7 @@ export function DashboardOrderList({ user }) {
                 <ul>
                     {orders.map(order =>
                         <li key={order._id} className="dashboard-order">
-                            <span>{order.buyer}</span>
+                            <span><img src={order.gig.imgUrl} /></span>
                             <span>
                                 <p>Price</p>
                                 <p>${order.gig.price}</p>

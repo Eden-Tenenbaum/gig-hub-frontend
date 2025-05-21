@@ -60,7 +60,7 @@ async function confirmOrder(orderId, buyerId) {
 		...orderToConfirm,
 		_id: utilService.makeId(),
 		buyer: buyerId,
-		status: 'pending',
+		status: 'IN REVISION',
 		createdAt: Date.now()
 	}
 

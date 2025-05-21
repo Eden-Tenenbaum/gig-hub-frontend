@@ -1,5 +1,6 @@
 import { orderService } from "../../services/order/order.service.local"
 import { useNavigate } from "react-router"
+import { showUserMsg } from "../../services/event-bus.service"
 
 export function PurchaseConfirmation({ order, user }) {
     const orderTotal = order.vat + order.gig.price + order.serviceFee
@@ -7,7 +8,9 @@ export function PurchaseConfirmation({ order, user }) {
 
     function FinalizePurchase() {
         orderService.confirmOrder(order._id, user._id)
+        showUserMsg({txt: 'Your order has been placed and sent to the seller'})
         navigate('/')
+
     }
 
     return (

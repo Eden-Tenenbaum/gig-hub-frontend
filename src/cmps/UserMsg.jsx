@@ -4,7 +4,7 @@ import { socketService, SOCKET_EVENT_REVIEW_ABOUT_YOU } from '../services/socket
 
 export function UserMsg() {
 	const [msg, setMsg] = useState(null)
-	const timeoutIdRef = useRef()
+	const timeoutIdRef = useRef() 
 
 	useEffect(() => {
 		const unsubscribe = eventBus.on('show-msg', msg => {
@@ -35,7 +35,7 @@ export function UserMsg() {
     }
 	return (
 		<section className={`user-msg ${msg?.type} ${msgClass()}`}>
-			<button onClick={closeMsg}>x</button>
+			{/* <button onClick={closeMsg}>x</button> */}
 			{msg?.txt}
 		</section>
 	)

@@ -181,7 +181,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u10",
             "fullname": "Sarah Kim",
-            "loc": "USA",
+            "loc": "United States",
             "imgUrl": "https://picsum.photos/550/250?random=8"
           },
           "rating": 4.9,
@@ -561,7 +561,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u30",
             "fullname": "Nina Roz",
-            "loc": "USA",
+            "loc": "United States",
             "imgUrl": "https://picsum.photos/550/250?random=10"
           },
           "rating": 4.9,
@@ -751,7 +751,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u40",
             "fullname": "George Allen",
-            "loc": "USA",
+            "loc": "United States",
             "imgUrl": "https://picsum.photos/550/250?random=20"
           },
           "rating": 5.0,
@@ -865,7 +865,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u46",
             "fullname": "Chloe Rivera",
-            "loc": "USA",
+            "loc": "United States",
             "imgUrl": "https://picsum.photos/550/250?random=18"
           },
           "rating": 5.0,
@@ -1169,7 +1169,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u62",
               "fullname": "Sam Wilson",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=10"
             },
             "rating": 5.0,
@@ -1325,7 +1325,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u70",
               "fullname": "Henry Clark",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=14"
             },
             "rating": 5.0,
@@ -1468,7 +1468,7 @@ export const mockGigs2 = [
           "imgUrl": "https://picsum.photos/550/250?random=17",
           "level": 2
         },
-        "purchasePlan": {
+        "purchasePlan": { 
           "price": 220,
           "deliveryDay": 8,
           "revisions": 3,
@@ -1480,7 +1480,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u78",
               "fullname": "Tom Harris",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=18"
             },
             "rating": 5.0,
@@ -1629,7 +1629,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u102",
               "fullname": "Noah Brown",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=32"
             },
             "rating": 5.0,
@@ -1702,7 +1702,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u106",
               "fullname": "Michael Garcia",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=39"
             },
             "rating": 4.8,
@@ -1774,7 +1774,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u110",
               "fullname": "Mia Collins",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=45"
             },
             "rating": 5.0,
@@ -1882,7 +1882,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u116",
               "fullname": "Henry Lee",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=54"
             },
             "rating": 4.6,
@@ -1920,7 +1920,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u130",
               "fullname": "Henry Clark",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=6"
             },
             "rating": 4.8,
@@ -2075,7 +2075,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u138",
               "fullname": "James Wilson",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=11"
             },
             "rating": 4.9,
@@ -2191,7 +2191,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u144",
               "fullname": "Laura Bennett",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=5"
             },
             "rating": 5.0,
@@ -2308,7 +2308,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u150",
               "fullname": "Ava Mitchell",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=9"
             },
             "rating": 4.9,
@@ -2425,7 +2425,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u156",
               "fullname": "Zoe Carter",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=11"
             },
             "rating": 4.9,
@@ -2502,7 +2502,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u160",
               "fullname": "Chloe Adams",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=26"
             },
             "rating": 4.9,
@@ -2541,7 +2541,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u162",
               "fullname": "Emily Harris",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=32"
             },
             "rating": 4.6,
@@ -2658,7 +2658,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u168",
               "fullname": "Samantha Cruz",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=50"
             },
             "rating": 4.9,
@@ -2697,7 +2697,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u170",
               "fullname": "Henry Lopez",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=56"
             },
             "rating": 4.9,
@@ -2891,7 +2891,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u188",
               "fullname": "Jayden Wells",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=110"
             },
             "rating": 5.0,
@@ -3240,7 +3240,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u206",
               "fullname": "Abby Jenkins",
-              "loc": "USA",
+              "loc": "United States",
               "imgUrl": "https://picsum.photos/550/250?random=164"
             },
             "rating": 5.0,

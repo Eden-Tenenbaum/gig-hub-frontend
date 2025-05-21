@@ -5,7 +5,7 @@ import { Stars } from "./Stars"
 export function ReviewPreview({ review }) {
     const { reviewer, rating, comment } = review
 
-    return <article className="review-preview grid">
+    return <article className="review-preview grid"> 
         <section className="reviewer flex">
             <section className="img-container square-ratio circle">
                 <img src={reviewer.imgUrl} alt="img" />
