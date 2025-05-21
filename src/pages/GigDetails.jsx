@@ -85,7 +85,7 @@ export function GigDetails() {
         <section id="reviews" className="reviews grid">
           <h2 className="fs20">Reviews</h2>
           <article className="review-statistics">stats + sort + search</article>
-          <ReviewList reviews={gig.reviews}/>
+          <ReviewList reviews={gig.reviews} />
         </section>
       </section>
     </section>

@@ -1,11 +1,10 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { HomePage } from './pages/HomePage'
 import { ExplorePage } from './pages/ExplorePage.jsx'
 import { GigIndex } from './pages/GigIndex'
-
 import { GigDetails } from './pages/GigDetails'
 import { Purchase } from './pages/Purchase'
 import { UserDetails } from './pages/UserDetails'
@@ -18,17 +17,17 @@ import { UserMsg } from './cmps/UserMsg'
 
 
 export function RootCmp() {
+    const { title, category } = useParams()
     const location = useLocation()
     const isHomePage = location.pathname === '/'
-    
+
     return (
         <div className="main-container">
             <div className={`app-header-wrapper full ${isHomePage ? 'sticky' : ''}`}>
-            <AppHeader/>
+                <AppHeader />
             </div>
             {isHomePage && <PromoVideo />}
             <UserMsg />
-
             <main>
                 <Routes>
                     <Route path="" element={<HomePage />} />

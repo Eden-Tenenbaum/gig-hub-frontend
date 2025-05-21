@@ -13,6 +13,20 @@
         cursor: default;
     }
 
+    &__img-container {
+
+        &:hover,
+        &.hovered {
+            &__desc {
+
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+
+
     &__author-avatar {
         width: 24px;
         height: 24px;

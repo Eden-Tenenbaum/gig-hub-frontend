@@ -88,11 +88,6 @@ export const mockGigs = [
         comment: 'Top-tier writing! SEO improved almost immediately after publishing.'
       }
     ]
-    reviews: [{
-      reviewer: { _id: 'u4', fullname: 'Daniel Lee', loc: 'Djibouti', imgUrl: 'https://picsum.photos/?random=7' },
-      rating: 4.9,
-      comment: 'Top-tier writing! SEO improved almost immediately after publishing.'
-    }]
   },
   {
     _id: 'g104',
