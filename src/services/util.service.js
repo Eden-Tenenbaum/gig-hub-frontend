@@ -6,7 +6,8 @@ export const utilService = {
     debounce,
     getCurrDate,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    capitalizeWords
 }
 
 
@@ -53,6 +54,14 @@ export function debounce(func, timeout = 300) {
         clearTimeout(timer)
         timer = setTimeout(() => { func.apply(this, args) }, timeout)
     }
+}
+
+function capitalizeWords(str) {
+    if (!str) return ''
+    return str
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
 }
 
 export function getCurrDate(str, format = 'string') {

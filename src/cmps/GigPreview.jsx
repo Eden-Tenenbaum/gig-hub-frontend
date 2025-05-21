@@ -16,7 +16,7 @@ export function GigPreview({ gig = {} }) {
 
     const previewText =
         typeof gig.description === 'string'
-            ? gig.description
+            ? gig.title
             : `${gig.title}`
     const price = gig.purchasePlan?.price || 0
 

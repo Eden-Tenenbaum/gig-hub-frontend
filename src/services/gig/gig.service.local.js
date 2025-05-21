@@ -2,7 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { makeId } from '../util.service'
 import { userService } from '../user'
-import { mockGigs } from './mockGigs'
+import { mockGigs2 } from './mockGigs2'
 
 const STORAGE_KEY = 'gigs'
 
@@ -19,7 +19,7 @@ async function query(filterBy = getDefaultFilter()) {
     let gigs = await storageService.query(STORAGE_KEY)
     
     if (!gigs || !gigs.length) {
-        gigs = mockGigs
+        gigs = mockGigs2
         localStorage.setItem(STORAGE_KEY, JSON.stringify(gigs))
     }
 

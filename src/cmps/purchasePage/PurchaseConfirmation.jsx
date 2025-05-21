@@ -7,7 +7,7 @@ export function PurchaseConfirmation({ order }) {
 
     function FinalizePurchase() {
         orderService.confirmOrder(order._id, '1234')
-        navigate('/gig')
+        navigate('/')
     }
 
     return (

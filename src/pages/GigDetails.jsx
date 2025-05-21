@@ -10,7 +10,7 @@ import { orderService } from '../services/order/order.service.local'
 
 import { ReviewList } from '../cmps/ReviewList'
 
-import { mockGigs } from '../services/gig/mockGigs'
+import { mockGigs2 } from '../services/gig/mockGigs2'
 
 import { UserInteraction } from '../cmps/gigDetails/UserInteraction'
 import { BreadCrumb } from '../cmps/BreadCrumb'
@@ -28,7 +28,7 @@ export function GigDetails() {
   }, [gigId])
 
   function loadGig(gigId) {
-    const findGig = mockGigs.find(g => g._id === gigId)
+    const findGig = mockGigs2.find(g => g._id === gigId)
     setGig(findGig)
   }
 

@@ -17,11 +17,9 @@ export function OverPromoVideo() {
         ev.preventDefault()
 
         if (input) {
-            searchParams.set('title', input)
-            searchParams.set('subCategory', input)
+            searchParams.set('category', input)
         } else {
-            searchParams.delete('title')
-            searchParams.delete('subCategory')
+            searchParams.delete('category')
         }
 
         navigate(`/gig?${searchParams.toString()}`)

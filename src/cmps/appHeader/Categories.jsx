@@ -16,7 +16,7 @@ const fiverrMainCategories = [
     // { name: "Consulting", id: "consulting" },
     // { name: "Data", id: "data" },
     // { name: "Photography", id: "photography" }
-];
+]
 
 const responsive = {
     desktop: {
@@ -34,12 +34,6 @@ const responsive = {
         items: 1,
         slidesToSlide: 1 // optional, default to 1.
     }
-}
-
-export function getCategoryName(categoryId) {
-    const category = fiverrMainCategories.find(c => c.id === categoryId)
-    console.log(category)
-    return category.name
 }
 
 export function Categories() {

@@ -5,7 +5,7 @@ import PrevIcon from '../../public/img/icons/PrevIcon.svg'
 export function SlidesCarousel({ slides = [] }) {
     const [current, setCurrent] = useState(0)
     const length = slides.length
-    console.log("slides:", slides)
+    // console.log("slides:", slides)
     useEffect(() => {
         if (current >= length) {
             setCurrent(0)

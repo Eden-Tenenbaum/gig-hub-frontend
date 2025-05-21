@@ -4,9 +4,10 @@ import { useSearchParams } from 'react-router-dom'
 import { loadGigs, addGig, updateGig, removeGig, addGigMsg } from '../store/actions/gig.actions'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
+import { mockGigs2 } from '../services/gig/mockGigs2'
 
 
-export function GigIndex() {
+export function GigIndex({ categoryId }) {
     const [searchParams] = useSearchParams()
     // const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
     // const gigs = useSelector(storeState => storeState.gigModule.gigs)
@@ -25,6 +26,13 @@ export function GigIndex() {
     }, [searchParams])
 
     const gigs = useSelector(state => state.gigModule.gigs) 
+
+    function filterGigs(categoryId) {
+        if(categoryId === '') return mockGigs2
+        const filteredGigs = mockGigs2.filter(gig => gig.category.includes(categoryId))
+        console.log(filteredGigs)
+        return filteredGigs
+    }
 
     async function onRemoveGig(gigId) {
         try {
@@ -63,7 +71,7 @@ export function GigIndex() {
             </header>
             {/* <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <GigList
-                gigs={gigs}
+                gigs={filterGigs(categoryId)}
                 onAddGig={onAddGig}
                 onRemoveGig={onRemoveGig}
                 onUpdateGig={onUpdateGig} />
