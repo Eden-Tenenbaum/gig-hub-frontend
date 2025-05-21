@@ -17,10 +17,10 @@ export const gigService = {
 
 async function query(filterBy = getDefaultFilter()) {
     let gigs = await storageService.query(STORAGE_KEY)
-    const missing = mockGigs.filter(mg => !gigs.find(g => g._id === mg._id))
-    if (missing.length) {
-        await Promise.all(missing.map(mg => storageService.post(STORAGE_KEY, mg)))
-        gigs = await storageService.query(STORAGE_KEY)
+    
+    if (!gigs || !gigs.length) {
+        gigs = mockGigs
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(gigs))
     }
 
     if (filterBy.category) {
@@ -39,17 +39,17 @@ async function query(filterBy = getDefaultFilter()) {
         gigs = gigs.filter(gig => gig.rating >= filterBy.minRating)
 
     }
-    const sortKey = filterBy.sortField || filterBy.sortBy
-    if (sortKey) {
-        const dir = filterBy.sortDir === 'desc' ? -1 : 1
-        gigs.sort((a, b) => {
-            const aVal = a[sortKey]
-            const bVal = b[sortKey]
-            if (typeof aVal === 'number' && typeof bVal === 'number') return (aVal - bVal) * dir
-            if (typeof aVal === 'string' && typeof bVal === 'string') return aVal.localeCompare(bVal) * dir
-            return 0
-        })
-    }
+    // const sortKey = filterBy.sortField || filterBy.sortBy
+    // if (sortKey) {
+    //     const dir = filterBy.sortDir === 'desc' ? -1 : 1
+    //     gigs.sort((a, b) => {
+    //         const aVal = a[sortKey]
+    //         const bVal = b[sortKey]
+    //         if (typeof aVal === 'number' && typeof bVal === 'number') return (aVal - bVal) * dir
+    //         if (typeof aVal === 'string' && typeof bVal === 'string') return aVal.localeCompare(bVal) * dir
+    //         return 0
+    //     })
+    // }
     return gigs
 }
 
@@ -107,7 +107,7 @@ function getDefaultFilter() {
         sellerId: '',
         sortBy: 'rating', //rating/price/deliveryday etc...
         sortField: '',
-        sortDir: 'desc'
+        // sortDir: 'desc'
     }
 }
 // storageService.post(STORAGE_KEY, mockGigs)

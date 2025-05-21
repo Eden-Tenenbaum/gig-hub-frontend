@@ -24,7 +24,7 @@ export function GigIndex() {
         reloadCurrentFilter()
     }, [searchParams])
 
-    const gigs = useSelector(state => state.gigModule.gigs)
+    const gigs = useSelector(state => state.gigModule.gigs) 
 
     async function onRemoveGig(gigId) {
         try {

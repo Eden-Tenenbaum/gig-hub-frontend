@@ -1,12 +1,6 @@
 import { Link } from 'react-router-dom'
-<<<<<<< HEAD
-import { Stars } from './Stars.jsx'
-// import { MiniUser } from './MiniUser'
-import { useState } from 'react'
-=======
->>>>>>> feat/category-query-filter
 import { RatingLevel } from '../cmps/RatingLevel.jsx'
-import StarIcon from '../../public/img/icons/StarIcon.svg'
+import { StarIcon } from './SvgHub.jsx'
 import { useState } from 'react'
 import { SlidesCarousel } from './SlidesCarousel.jsx'
 // import { MiniUser } from './MiniUser'
@@ -54,22 +48,13 @@ export function GigPreview({ gig = {} }) {
             {previewText}
         </Link>
 
-<<<<<<< HEAD
-        <Stars rating={gig.rating} starProps={{ viewBox: '0 2 16 16', width: '15', height: '20' }} />
-        
-=======
         <div className="gig-preview__rating">
-            <img
-                src={StarIcon}
-                alt="star"
-                className="gig-preview__rating-icon"
-            />
+            <StarIcon className="gig-preview__rating-icon" />
             <span className='gig-preview__rating-number'>
                 {gig.rating ?? 'N/A'}
             </span>
         </div>
 
->>>>>>> feat/category-query-filter
         <Link
             to={`/gig/${gig._id}`}
             onMouseEnter={onMouseEnter}
