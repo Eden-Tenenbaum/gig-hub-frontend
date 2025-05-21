@@ -10,8 +10,8 @@ import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from
 import { LocationPinIcon, ProfileIcon, LanguagesIcon, ClockIcon, ArrowIcon } from '../cmps/SvgHub'
 
 export function UserDetails() {
-
-  const params = useParams()
+const params = useParams()
+  
   const user = useSelector(storeState => storeState.userModule.watchedUser)
 
   useEffect(() => {

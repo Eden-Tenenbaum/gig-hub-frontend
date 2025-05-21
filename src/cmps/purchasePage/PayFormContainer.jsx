@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import { CreditCardIcon, LockIcon } from '../SvgHub'
 
-export function PayFormContainer() {
+export function PayFormContainer({ user }) {
 
     const [isError, setIsError] = useState(false) //future use
 

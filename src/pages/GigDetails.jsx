@@ -33,16 +33,29 @@ export function GigDetails() {
   }
 
   // purchase flow - start - yonatan (creating order obj)
-  async function onPurchase() {
+  async function onPurchase(activePlan) {
+    var selectedPackage = ''
+    if (activePlan === 1) {
+      selectedPackage = 'BASIC'
+    }
+    if (activePlan === 1.5) {
+      selectedPackage = 'STANDARD'
+    }
+    if (activePlan === 2) {
+      selectedPackage = 'PREMIUM'
+    }
+
+
     const gigToBuy = {
       _id: gig._id,
       title: gig.title,
-      imgUrl: gig.imgUrl,
-      price: gig.purchasePlan.price,
-      deliveryTime: gig.purchasePlan.deliveryDay
+      imgUrl: gig.imgUrl[0].src, 
+      price: gig.purchasePlan.price * activePlan,
+      deliveryTime: gig.purchasePlan.deliveryDay,
+      package: selectedPackage,
     }
 
-    const serviceFee = (utilService.getRandomIntInclusive(5, 20) * gig.purchasePlan.price) / 100
+    const serviceFee = (utilService.getRandomIntInclusive(5, 20) * gigToBuy.price) / 100
 
     const newOrder = {
       _id: utilService.makeId(),
@@ -52,6 +65,7 @@ export function GigDetails() {
       status: 'pending',
       serviceFee: serviceFee,
       vat: (serviceFee + gig.purchasePlan.price) * 0.18
+
     }
     try {
       await orderService.add(newOrder)
@@ -66,7 +80,7 @@ export function GigDetails() {
   if (!gig._id) return
   return (
     <section className="gig-details grid">
-      <UserInteraction plan={gig.purchasePlan} onPurchase={onPurchase} />
+      <UserInteraction plan={gig.purchasePlan} onPurchase={onPurchase}/>
       <section className="gig-info grid">
         <BreadCrumb path={['back to list']} />
         <h2 className="title fs28">{gig.title}</h2>

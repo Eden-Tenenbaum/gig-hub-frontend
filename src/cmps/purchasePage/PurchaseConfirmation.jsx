@@ -1,13 +1,16 @@
 import { orderService } from "../../services/order/order.service.local"
 import { useNavigate } from "react-router"
+import { showUserMsg } from "../../services/event-bus.service"
 
-export function PurchaseConfirmation({ order }) {
+export function PurchaseConfirmation({ order, user }) {
     const orderTotal = order.vat + order.gig.price + order.serviceFee
     const navigate = useNavigate()
 
     function FinalizePurchase() {
-        orderService.confirmOrder(order._id, '1234')
+        orderService.confirmOrder(order._id, user._id)
+        showUserMsg({txt: 'Your order has been placed and sent to the seller'})
         navigate('/')
+
     }
 
     return (
@@ -23,7 +26,7 @@ export function PurchaseConfirmation({ order }) {
                 </span>
                 <span className="order-gig-general">
                     <span className="package-pricing">
-                        <span>BASIC PACKAGE</span>
+                        <span>{order.gig.package} PACKAGE</span>
                         <div>${order.gig.price}</div>
                     </span>
                     {/* <span className="purchase-package-details"></span> maybe apply later*/}
