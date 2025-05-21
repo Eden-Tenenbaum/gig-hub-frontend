@@ -24,5 +24,16 @@ export function ReviewPreview({ review }) {
             <span className="time-ago fs12">19 hours ago</span>
         </section>
         <section className="review-txt">{comment}</section>
+        <section className="completed-gig-info flex">
+            <section className="price-range grid">
+                <span className="fs14">Up to ₪200</span>
+                <span className="fs12">Price</span>
+            </section>
+            <section className="line"></section>
+            <section className="price-range grid">
+                <span className="fs14">4 days</span>
+                <span className="fs12">Duration</span>
+            </section>
+        </section>
     </article>
 }
