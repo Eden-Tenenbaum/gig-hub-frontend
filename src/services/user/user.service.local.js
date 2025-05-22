@@ -47,9 +47,9 @@ async function update({ _id, score }) {
 
 async function login(userCred) {
     const users = await storageService.query('user')
-    // const user = users.find(user => user.username === userCred.username &&
-    //     user.password === userCred.password) skipping cred until advice about modal
-    const user = users[0]
+    const user = users.find(user => user.username === userCred.username)
+    //  &&   user.password === userCred.password) skipping cred until advice about modal
+    // const user = users[0]
 
     if (user) return saveLoggedinUser(user)
     else throw new Error('Invalid credentials')
