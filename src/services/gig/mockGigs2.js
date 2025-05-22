@@ -295,7 +295,7 @@ export const mockGigs2 = [
           "reviewer": {
             "_id": "u16",
             "fullname": "Ahmed Saleh",
-            "loc": "UAE",
+            "loc": "United Arab Emirates",
             "imgUrl": "https://picsum.photos/550/250?random=6"
           },
           "rating": 4.7,
@@ -2774,7 +2774,7 @@ export const mockGigs2 = [
             "reviewer": {
               "_id": "u182",
               "fullname": "Amira Yusuf",
-              "loc": "UAE",
+              "loc": "United Arab Emirates",
               "imgUrl": "https://picsum.photos/550/250?random=92"
             },
             "rating": 4.6,
