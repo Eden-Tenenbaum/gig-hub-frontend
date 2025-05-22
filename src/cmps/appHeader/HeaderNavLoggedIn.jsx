@@ -1,16 +1,19 @@
-// import heartIcon from '../../../public/img/heart-icon.png'
-// import envelopeIcon from '../../../public/img/envelope-icon.png'
-// import bellIcon from '../../../public/img/bell-icon.png'
 import { useNavigate } from 'react-router'
 import { useState } from 'react'
 import { UserModal } from './UserModal'
 import { HeaderHeartIcon, HeaderBellIcon, HeaderEnvelopeIcon } from '../SvgHub'
+import { OrdersModal } from './OrdersModal'
 
 export function HeaderNavLoggedIn({ user, onLogout, isSeller }) {
     const [isUserModal, setIsUserModal] = useState(false)
+    const [isOrdersList, setIsOrdersList] = useState(false)
 
     function toggleUserMenu() {
         setIsUserModal(prev => !prev)
+    }
+
+    function toggleOrdersList() {
+        setIsOrdersList(prev => !prev)
     }
 
     return (
@@ -35,7 +38,10 @@ export function HeaderNavLoggedIn({ user, onLogout, isSeller }) {
                     </button>
                 </li>
                 {!isSeller && <li>
-                    <div className='header-orders' onClick={() => toggleOrdersModal()}>Orders</div>
+                    <div className='header-orders' onClick={() => toggleOrdersList()}>
+                        Orders
+                        {isOrdersList && <OrdersModal user={user} onClose={() => setIsOrdersList(false)}/>}
+                        </div>
                 </li>}
                 {!isSeller && <li>
                     <div className='header-try-diverr-go'>Try Diverr Go</div>
