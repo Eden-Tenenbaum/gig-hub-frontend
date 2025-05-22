@@ -97,7 +97,7 @@ export function DashboardOrderList({ user }) {
                                 <p>Delivery Time</p>
                                 {generateTimeLeft()}
                             </span>
-                            <span>
+                            <span className='dashboard-order-status'>
                                 <p>Status</p>
                                 <p 
                                 className={
