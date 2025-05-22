@@ -51,6 +51,25 @@ export function DashboardOrderList({ user }) {
         }
     }
 
+    function getRandomName() {
+        const firstNames = [
+          "Liam", "Olivia", "Noah", "Emma", "Elijah",
+          "Ava", "James", "Sophia", "William", "Isabella",
+          "Benjamin", "Mia", "Lucas", "Charlotte", "Henry"
+        ];
+      
+        const lastNames = [
+          "Smith", "Johnson", "Brown", "Taylor", "Anderson",
+          "Thomas", "Jackson", "White", "Harris", "Martin",
+          "Thompson", "Garcia", "Martinez", "Robinson", "Clark"
+        ];
+      
+        const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+        const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+      
+        return `${firstName} ${lastName}`;
+      }
+
     function openOrderStatusModal(orderId) {
         setOpenModalOrderId(orderId)
     }
@@ -86,8 +105,8 @@ export function DashboardOrderList({ user }) {
                         <li key={order._id} className="dashboard-order">
                             <span>
                                 <img src={order.gig.imgUrl} />
-                                <img src={user.imgUrl} />
-                                <p>{user.fullname}</p>
+                                {/* <img src={user.imgUrl} /> */} <img src={`https://picsum.photos/550/250?random=${utilService.getRandomIntInclusive(0,30)}`} />
+                                {/* <p>{user.fullname}</p> */} <p>{getRandomName()}</p>
                             </span>
                             <span>
                                 <p>Price</p>
