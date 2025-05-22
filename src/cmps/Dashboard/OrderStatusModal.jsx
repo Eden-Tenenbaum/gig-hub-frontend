@@ -35,8 +35,8 @@ export function OrderStatusModal({ order, closeOrderStatusModal, updateOrderStat
                         <button onClick={() => handleStatusChange('CANCELED')}>Cancel</button>
                     </div>
                 </div>
+                <div className='tip'></div>
             </div>
-            <div className='tip'></div>
         </>
     )
 }
