@@ -1,5 +1,6 @@
 import { storageService } from '../async-storage.service'
 import buyerPfp from '../../../public/img/profile.pictures/buyer-pfp.jpg'
+import sellerPfp from '../../../public/img/profile.pictures/seller-pfp.jpg'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
@@ -106,6 +107,29 @@ async function _createAdmin() {
             fullname: 'Yonatan Keren',
             imgUrl: buyerPfp,
             username: 'yonatan',
+            password: 'password',
+            isAdmin: false,
+            level: 'basic',
+            gigs: [],
+            ordersMade: [],
+            ordersReceived: [],
+            likedGigIds: [],
+            location: 'israel',
+        }
+    const newUser = await storageService.post('user', user)
+    console.log('newUser: ', newUser)
+}
+
+// To quickly create an admin user, uncomment the next line
+// _createSeller()
+async function _createSeller() {
+    if (user.length) return
+    const user = 
+        {
+            _id: 'u102',
+            fullname: 'Eden Tenenbaum',
+            imgUrl: sellerPfp,
+            username: 'eden',
             password: 'password',
             isAdmin: false,
             level: 'basic',
