@@ -180,6 +180,7 @@
 
                 span {
                     position: relative;
+
                     &:nth-child(1) {
                         display: flex;
                         align-items: center;
@@ -235,7 +236,7 @@
                     &:nth-child(4) {
 
                         p {
-                            
+
 
                             &:nth-child(2) {
                                 padding-inline: 0.5rem;
@@ -263,18 +264,9 @@
 
                     &:nth-child(5) {
                         color: $textclr8;
-                        
+
                         &:hover {
                             cursor: pointer;
-                        }
-                    }
-
-                    .tip {
-                        position: absolute;
-        
-                        &::after {
-                            @include tooltip-pointer(#fff, left, rem(16px), (655%, -130%), 1px solid #ccc);
-                            z-index: 100;
                         }
                     }
 
@@ -307,7 +299,7 @@
                                 cursor: pointer;
                                 color: $textclrwhite;
                                 background-color: red;
-                                
+
                                 &:first-of-type {
                                     background-color: $textclr8;
                                 }
@@ -315,6 +307,15 @@
                                 &:hover {
                                     opacity: 0.9;
                                 }
+                            }
+                        }
+
+                        .tip {
+                            position: relative;
+
+                            &::after {
+                                @include tooltip-pointer(#fff, left, rem(16px), (-844%, -110%), 1px solid #ccc);
+                                z-index: 100;
                             }
                         }
                     }

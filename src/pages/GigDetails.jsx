@@ -98,7 +98,7 @@ export function GigDetails() {
         </article>
         <section id="reviews" className="reviews grid">
           <h2 className="fs20">Reviews</h2>
-          <ReviewStatistics />
+          {/* <ReviewStatistics /> */}
           <ReviewList reviews={gig.reviews} />
         </section>
       </section>
