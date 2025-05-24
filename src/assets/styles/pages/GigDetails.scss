@@ -128,7 +128,44 @@
                 }
 
                 >.languages {
+                    position: relative;
                     grid-area: lang;
+
+                    .tooltip {
+                        position: absolute;
+                        bottom: 71%;
+                        right: -32%;
+                        transform: translateX(-50%);
+                        padding: rem(12px);
+                        opacity: 0;
+
+                        background: $clr5;
+                        color: $clr1;
+                        line-height: rem(21px);
+                        border-radius: rem(4px);
+
+                        &::after {
+                            @include tooltip-pointer($color: $clr5, $position: bottom, $size: rem(8px), $translate: (-50%, 50%));
+                        }
+
+                        p {
+                            margin-block: 0 rem(8px);
+                            font-weight: $weight2;
+                        }
+
+                        li {
+                            font-weight: $weight0;
+                        }
+                    }
+
+                    .value {
+                        &:hover+.tooltip {
+                            opacity: 0.9;
+                            transition: opacity .15s ease-in;
+                        }
+
+                    }
+
                 }
 
                 >* {

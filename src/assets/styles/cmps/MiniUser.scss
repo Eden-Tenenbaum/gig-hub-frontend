@@ -5,10 +5,8 @@
     color: $textclr2;
 
     .img-container {
-        border-radius: 50%;
         width: calc(4rem * var(--scale));
         height: calc(4rem * var(--scale));
-        overflow: hidden;
     }
 
     .fullname {

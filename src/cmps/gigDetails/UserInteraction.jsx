@@ -14,8 +14,6 @@ export function UserInteraction({ plan, onPurchase }) {
     setActivePlan(plan)
   }
 
-  console.log(activePlan)
-
   return (
     <aside className="user-interaction grid">
       <article className="interaction-bar">

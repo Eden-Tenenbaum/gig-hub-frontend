@@ -1,29 +1,34 @@
 .slideshow-container {
     position: relative;
     overflow: hidden;
-    min-height: clamp(150px, 190px, 400px); // ensure container shows image
+    height: 220px;
 
     .slides {
-        display: flex; // line up all slides side-by-side
-        width: 100%;
-        transition: transform 0.5s ease; // smooth slide animation
+        display: flex;
+        transition: transform 0.5s ease;
+        border-radius: 8px;
     }
 
     .slide {
-        flex: 0 0 100%; // each slide is full container width
-        position: relative; // in case you layer anything later
-        transition: opacity 0.5s ease; // fade-in on active
+        object-fit: cover;
+        flex: 0 0 100%;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: opacity 0.5s ease;
 
         &.active {
             opacity: 1;
         }
 
         img {
-            display: block;
             width: 100%;
-            border-radius: 8px;
-            min-height: clamp(150px, 190px, 400px);
+            // height: 100%;
+            object-fit: cover;
+            display: block;
             cursor: pointer;
+            overflow-clip-margin: content-box;
+            overflow: clip;
         }
     }
 
@@ -43,9 +48,11 @@
     .prev {
         left: 10px;
         transform: translate(-100%, -50%);
+        pointer-events: none;
     }
 
     .next {
+        pointer-events: none;
         right: 10px;
         transform: translate(100%, -50%);
     }
@@ -55,8 +62,9 @@
     img {
         display: block;
         width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 8px;
-        min-height: clamp(150px, 190px, 400px);
         cursor: pointer;
     }
 }
