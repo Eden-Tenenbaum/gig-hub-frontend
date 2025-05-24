@@ -1,11 +1,11 @@
 import logoImg1 from '../../../public/img/logo pictures/logo-img1.png'
 import logoImg2 from '../../../public/img/logo pictures/logo-img2.png'
-import logoImg3 from '../../../public/img/logo pictures/logo-img3.png' //not working
+// import logoImg3 from '../../../public/img/logo pictures/logo-img3.png' not working
 import logoImg4 from '../../../public/img/logo pictures/logo-img4.png'
 import logoImg5 from '../../../public/img/logo pictures/logo-img5.png'
-import logoImg6 from '../../../public/img/logo pictures/logo-img6.png'//not working
-import logoImg7 from '../../../public/img/logo pictures/logo-img7.png'//not working
-import logoImg8 from '../../../public/img/logo pictures/logo-img8.png'//not working
+// import logoImg6 from '../../../public/img/logo pictures/logo-img6.png' not working
+// import logoImg7 from '../../../public/img/logo pictures/logo-img7.png' not working
+// import logoImg8 from '../../../public/img/logo pictures/logo-img8.png' not working
 import logoImg9 from '../../../public/img/logo pictures/logo-img9.png'
 import logoImg10 from '../../../public/img/logo pictures/logo-img10.png'
 import logoImg11 from '../../../public/img/logo pictures/logo-img11.png'
@@ -23,6 +23,20 @@ import logoImg22 from '../../../public/img/logo pictures/logo-img22.png'
 import logoImg23 from '../../../public/img/logo pictures/logo-img23.png'
 import logoImg24 from '../../../public/img/logo pictures/logo-img24.png'
 import logoImg25 from '../../../public/img/logo pictures/logo-img25.png'
+import logoImg26 from '../../../public/img/logo pictures/logo-img26.png'
+import logoImg27 from '../../../public/img/logo pictures/logo-img27.png'
+import logoImg28 from '../../../public/img/logo pictures/logo-img28.png'
+import logoImg29 from '../../../public/img/logo pictures/logo-img29.png'
+import logoImg30 from '../../../public/img/logo pictures/logo-img30.png'
+import logoImg31 from '../../../public/img/logo pictures/logo-img31.png'
+import logoImg32 from '../../../public/img/logo pictures/logo-img32.png'
+import logoImg33 from '../../../public/img/logo pictures/logo-img33.png'
+import logoImg34 from '../../../public/img/logo pictures/logo-img34.png'
+import logoImg35 from '../../../public/img/logo pictures/logo-img35.png'
+import logoImg36 from '../../../public/img/logo pictures/logo-img36.png'
+import logoImg37 from '../../../public/img/logo pictures/logo-img37.png'
+import logoImg38 from '../../../public/img/logo pictures/logo-img38.png'
+import logoImg39 from '../../../public/img/logo pictures/logo-img39.png'
 import sellerPfp from '../../../public/img/profile.pictures/seller-pfp.jpg'
 import { gigDescriptions } from "./MockDesc"
 
@@ -3287,7 +3301,7 @@ export const mockGigs2 = [
     "title": "I will design a minimalist logo that defines your brand",
     "description": "Clean, modern, and scalable logos that make a lasting impression.",
     "imgUrl": [
-      { "src": logoImg13 },
+      { "src": logoImg39 },
       { "src": logoImg14 },
       { "src": logoImg15 },
       { "src": logoImg16 },
@@ -3475,5 +3489,651 @@ export const mockGigs2 = [
         "comment": "Totally nailed the character and vibe for my stream!"
       }
     ]
-  }
+  },
+  {
+    "_id": "g205",
+    "title": "I will craft a modern minimalist logo for your brand",
+    "description": "Sleek, timeless logos that communicate your vision clearly.",
+    "imgUrl": [
+      { "src": logoImg19 },
+      { "src": logoImg20 },
+      { "src": logoImg21 },
+      { "src": logoImg22 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19205",
+      "fullname": "Yuki Tanaka",
+      "imgUrl": "https://picsum.photos/550/250?random=1205",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 75,
+      "deliveryDay": 3,
+      "revisions": 3,
+      "content": "1 clean minimalist logo with full branding assets.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30205",
+          "fullname": "Elias Johansson",
+          "loc": "Sweden",
+          "imgUrl": "https://picsum.photos/550/250?random=1305"
+        },
+        "rating": 5.0,
+        "comment": "Clean and professional work. Highly recommended!"
+      }
+    ]
+  },
+  {
+    "_id": "g206",
+    "title": "I will design a vintage logo with character",
+    "description": "Retro-styled logo designs that evoke nostalgia and charm.",
+    "imgUrl": [
+      { "src": logoImg20 },
+      { "src": logoImg21 },
+      { "src": logoImg22 },
+      { "src": logoImg23 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19206",
+      "fullname": "Lina Abdallah",
+      "imgUrl": "https://picsum.photos/550/250?random=1206",
+      "level": 1
+    },
+    "purchasePlan": {
+      "price": 60,
+      "deliveryDay": 4,
+      "revisions": 2,
+      "content": "A hand-crafted vintage logo design with a timeless vibe.",
+      "includes": ["High-res PNG", "Vector file"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30206",
+          "fullname": "Noah Kim",
+          "loc": "South Korea",
+          "imgUrl": "https://picsum.photos/550/250?random=1306"
+        },
+        "rating": 5.0,
+        "comment": "Captured the retro aesthetic perfectly!"
+      }
+    ]
+  },
+  {
+    "_id": "g207",
+    "title": "I will design a handwritten logo for personal brands",
+    "description": "Elegant handwritten logos ideal for influencers, coaches, and creatives.",
+    "imgUrl": [
+      { "src": logoImg21 },
+      { "src": logoImg22 },
+      { "src": logoImg23 },
+      { "src": logoImg24 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19207",
+      "fullname": "Mateo Silva",
+      "imgUrl": "https://picsum.photos/550/250?random=1207",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 85,
+      "deliveryDay": 2,
+      "revisions": 2,
+      "content": "1 custom handwritten logo with transparent and vector formats.",
+      "includes": ["High-res PNG", "Vector file"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30207",
+          "fullname": "Chloe Dubois",
+          "loc": "France",
+          "imgUrl": "https://picsum.photos/550/250?random=1307"
+        },
+        "rating": 5.0,
+        "comment": "Soft, stylish, and elegant design—just what I needed!"
+      }
+    ]
+  },
+  {
+    "_id": "g208",
+    "title": "I will create a monogram logo with sophistication",
+    "description": "Premium monogram designs tailored for luxury brands and professionals.",
+    "imgUrl": [
+      { "src": logoImg22 },
+      { "src": logoImg23 },
+      { "src": logoImg24 },
+      { "src": logoImg25 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19208",
+      "fullname": "Rajeev Mishra",
+      "imgUrl": "https://picsum.photos/550/250?random=1208",
+      "level": 3
+    },
+    "purchasePlan": {
+      "price": 95,
+      "deliveryDay": 3,
+      "revisions": 3,
+      "content": "A sleek, branded monogram logo with polished visuals.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30208",
+          "fullname": "Anna Petrova",
+          "loc": "Russia",
+          "imgUrl": "https://picsum.photos/550/250?random=1308"
+        },
+        "rating": 5.0,
+        "comment": "Sophisticated and clean. Nailed the brief!"
+      }
+    ]
+  },
+  {
+    "_id": "g209",
+    "title": "I will deliver a luxury logo that elevates your brand",
+    "description": "High-end designs for premium businesses that need a refined touch.",
+    "imgUrl": [
+      { "src": logoImg23 },
+      { "src": logoImg24 },
+      { "src": logoImg25 },
+      { "src": logoImg26 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19209",
+      "fullname": "Isabelle Laurent",
+      "imgUrl": "https://picsum.photos/550/250?random=1209",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 120,
+      "deliveryDay": 4,
+      "revisions": 4,
+      "content": "A luxury-style logo with gold accents and full branding pack.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30209",
+          "fullname": "Ahmed Al-Mansoori",
+          "loc": "United Arab Emirates",
+          "imgUrl": "https://picsum.photos/550/250?random=1309"
+        },
+        "rating": 5.0,
+        "comment": "Exactly what we envisioned for our boutique. Stunning!"
+      }
+    ]
+  },
+  {
+    "_id": "g210",
+    "title": "I will make a tech startup logo with a future-ready look",
+    "description": "Clean and innovative logo design to position your tech brand ahead.",
+    "imgUrl": [
+      { "src": logoImg24 },
+      { "src": logoImg25 },
+      { "src": logoImg26 },
+      { "src": logoImg27 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19210",
+      "fullname": "Oliver Becker",
+      "imgUrl": "https://picsum.photos/550/250?random=1210",
+      "level": 1
+    },
+    "purchasePlan": {
+      "price": 100,
+      "deliveryDay": 2,
+      "revisions": 2,
+      "content": "Startup-inspired logo that works across modern platforms.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30210",
+          "fullname": "Fatima Zohra",
+          "loc": "Morocco",
+          "imgUrl": "https://picsum.photos/550/250?random=1310"
+        },
+        "rating": 5.0,
+        "comment": "Very crisp and innovative. Great for digital platforms."
+      }
+    ]
+  },
+  {
+    "_id": "g211",
+    "title": "I will create a fashion-forward logo design",
+    "description": "Logo design crafted for apparel, fashion, and lifestyle brands.",
+    "imgUrl": [
+      { "src": logoImg25 },
+      { "src": logoImg26 },
+      { "src": logoImg27 },
+      { "src": logoImg28 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19211",
+      "fullname": "Amina Diallo",
+      "imgUrl": "https://picsum.photos/550/250?random=1211",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 90,
+      "deliveryDay": 3,
+      "revisions": 3,
+      "content": "Trendy, bold logo design for your fashion label.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30211",
+          "fullname": "Jonathan Blake",
+          "loc": "United States",
+          "imgUrl": "https://picsum.photos/550/250?random=1311"
+        },
+        "rating": 5.0,
+        "comment": "Perfectly matched the vibe of our streetwear brand."
+      }
+    ]
+  },
+  {
+    "_id": "g212",
+    "title": "I will design a logo for your gaming or esports brand",
+    "description": "Bold and high-energy logos tailored for gaming clans, streamers, and tournaments.",
+    "imgUrl": [
+      { "src": logoImg26 },
+      { "src": logoImg27 },
+      { "src": logoImg28 },
+      { "src": logoImg29 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19212",
+      "fullname": "Carlos Menéndez",
+      "imgUrl": "https://picsum.photos/550/250?random=1212",
+      "level": 3
+    },
+    "purchasePlan": {
+      "price": 70,
+      "deliveryDay": 2,
+      "revisions": 3,
+      "content": "1 esports-themed logo with energetic style and source files.",
+      "includes": ["High-res PNG", "Vector file"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30212",
+          "fullname": "Emily Chen",
+          "loc": "Canada",
+          "imgUrl": "https://picsum.photos/550/250?random=1312"
+        },
+        "rating": 5.0,
+        "comment": "Captured our team's identity perfectly. Fast and pro work!"
+      }
+    ]
+  },
+  {
+    "_id": "g213",
+    "title": "I will make a minimalist black and white logo",
+    "description": "Aesthetic black and white logo ideal for clean, modern branding.",
+    "imgUrl": [
+      { "src": logoImg27 },
+      { "src": logoImg28 },
+      { "src": logoImg29 },
+      { "src": logoImg30 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19213",
+      "fullname": "Noura El-Sayed",
+      "imgUrl": "https://picsum.photos/550/250?random=1213",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 65,
+      "deliveryDay": 3,
+      "revisions": 2,
+      "content": "Modern minimalist logo in black and white with vector delivery.",
+      "includes": ["High-res PNG", "Vector file"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30213",
+          "fullname": "Lars Müller",
+          "loc": "Germany",
+          "imgUrl": "https://picsum.photos/550/250?random=1313"
+        },
+        "rating": 5.0,
+        "comment": "Classy and versatile design. Works beautifully everywhere!"
+      }
+    ]
+  },
+  {
+    "_id": "g214",
+    "title": "I will create a bold logo for sportswear and fitness brands",
+    "description": "Energetic and sharp logos crafted to inspire action and strength.",
+    "imgUrl": [
+      { "src": logoImg28 },
+      { "src": logoImg29 },
+      { "src": logoImg30 },
+      { "src": logoImg31 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19214",
+      "fullname": "Tariq Jabari",
+      "imgUrl": "https://picsum.photos/550/250?random=1214",
+      "level": 1
+    },
+    "purchasePlan": {
+      "price": 80,
+      "deliveryDay": 2,
+      "revisions": 3,
+      "content": "1 impactful logo tailored for athletic and fitness markets.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30214",
+          "fullname": "Grace Okafor",
+          "loc": "Nigeria",
+          "imgUrl": "https://picsum.photos/550/250?random=1314"
+        },
+        "rating": 5.0,
+        "comment": "Strong visual energy. Gave our fitness brand real punch!"
+      }
+    ]
+  },
+  {
+    "_id": "g215",
+    "title": "I will design a playful logo for kids or toy brands",
+    "description": "Fun and colorful logos with whimsical illustrations for children's brands.",
+    "imgUrl": [
+      { "src": logoImg29 },
+      { "src": logoImg30 },
+      { "src": logoImg31 },
+      { "src": logoImg32 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19215",
+      "fullname": "Ines Costa",
+      "imgUrl": "https://picsum.photos/550/250?random=1215",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 70,
+      "deliveryDay": 3,
+      "revisions": 2,
+      "content": "A cheerful logo design with playful shapes and bold colors.",
+      "includes": ["High-res PNG", "Vector file"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30215",
+          "fullname": "Jasper Lee",
+          "loc": "Singapore",
+          "imgUrl": "https://picsum.photos/550/250?random=1315"
+        },
+        "rating": 5.0,
+        "comment": "Colorful, adorable, and instantly memorable!"
+      }
+    ]
+  },
+  {
+    "_id": "g216",
+    "title": "I will design a script-style logo for beauty or lifestyle brands",
+    "description": "Soft and flowing script logo designs tailored for salons and influencers.",
+    "imgUrl": [
+      { "src": logoImg30 },
+      { "src": logoImg31 },
+      { "src": logoImg32 },
+      { "src": logoImg33 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19216",
+      "fullname": "Katerina Nikitina",
+      "imgUrl": "https://picsum.photos/550/250?random=1216",
+      "level": 3
+    },
+    "purchasePlan": {
+      "price": 85,
+      "deliveryDay": 2,
+      "revisions": 2,
+      "content": "Feminine and elegant script logo with branding delivery.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30216",
+          "fullname": "Daniel Whitehorse",
+          "loc": "United States",
+          "imgUrl": "https://picsum.photos/550/250?random=1316"
+        },
+        "rating": 5.0,
+        "comment": "Exactly the elegant style I needed for my salon!"
+      }
+    ]
+  },
+  {
+    "_id": "g217",
+    "title": "I will create a futuristic logo for sci-fi and tech brands",
+    "description": "Logos inspired by science fiction, digital aesthetics, and cyber themes.",
+    "imgUrl": [
+      { "src": logoImg31 },
+      { "src": logoImg32 },
+      { "src": logoImg33 },
+      { "src": logoImg34 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19217",
+      "fullname": "Ali Rezai",
+      "imgUrl": "https://picsum.photos/550/250?random=1217",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 95,
+      "deliveryDay": 3,
+      "revisions": 3,
+      "content": "Tech-forward logo design with bold forms and sharp contrast.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30217",
+          "fullname": "Sophia Nguyen",
+          "loc": "Vietnam",
+          "imgUrl": "https://picsum.photos/550/250?random=1317"
+        },
+        "rating": 5.0,
+        "comment": "The digital vibe was spot on. Clean and powerful!"
+      }
+    ]
+  },
+  {
+    "_id": "g218",
+    "title": "I will make a calligraphy-based logo for high-end products",
+    "description": "Graceful calligraphy-style logos perfect for packaging and luxury items.",
+    "imgUrl": [
+      { "src": logoImg32 },
+      { "src": logoImg33 },
+      { "src": logoImg34 },
+      { "src": logoImg35 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19218",
+      "fullname": "Fatemeh Hosseini",
+      "imgUrl": "https://picsum.photos/550/250?random=1218",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 110,
+      "deliveryDay": 4,
+      "revisions": 2,
+      "content": "Elegant logo with stylized lettering and high-end finish.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30218",
+          "fullname": "Antonio Romero",
+          "loc": "Mexico",
+          "imgUrl": "https://picsum.photos/550/250?random=1318"
+        },
+        "rating": 5.0,
+        "comment": "Beautiful script and very premium look."
+      }
+    ]
+  },
+  {
+    "_id": "g219",
+    "title": "I will design a geometric logo with minimalist shapes",
+    "description": "Mathematical precision meets modern style in these geometric designs.",
+    "imgUrl": [
+      { "src": logoImg33 },
+      { "src": logoImg34 },
+      { "src": logoImg35 },
+      { "src": logoImg36 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19219",
+      "fullname": "Dimitri Volkov",
+      "imgUrl": "https://picsum.photos/550/250?random=1219",
+      "level": 1
+    },
+    "purchasePlan": {
+      "price": 70,
+      "deliveryDay": 2,
+      "revisions": 2,
+      "content": "Crisp geometric logo design delivered in full resolution.",
+      "includes": ["High-res PNG", "Vector file"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30219",
+          "fullname": "Isla Thompson",
+          "loc": "United Kingdom",
+          "imgUrl": "https://picsum.photos/550/250?random=1319"
+        },
+        "rating": 5.0,
+        "comment": "Really clean lines, fit our architecture firm perfectly!"
+      }
+    ]
+  },
+  {
+    "_id": "g220",
+    "title": "I will create a cultural-inspired logo for niche markets",
+    "description": "Logos that embrace tradition, identity, and unique cultural elements.",
+    "imgUrl": [
+      { "src": logoImg34 },
+      { "src": logoImg35 },
+      { "src": logoImg36 },
+      { "src": logoImg37 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19220",
+      "fullname": "Nhlanhla Dube",
+      "imgUrl": "https://picsum.photos/550/250?random=1220",
+      "level": 2
+    },
+    "purchasePlan": {
+      "price": 85,
+      "deliveryDay": 3,
+      "revisions": 3,
+      "content": "A unique logo design inspired by cultural motifs and heritage.",
+      "includes": ["High-res PNG", "Vector file"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30220",
+          "fullname": "Mila Russo",
+          "loc": "Italy",
+          "imgUrl": "https://picsum.photos/550/250?random=1320"
+        },
+        "rating": 5.0,
+        "comment": "Really thoughtful and respectful use of traditional forms."
+      }
+    ]
+  },
+  {
+    "_id": "g221",
+    "title": "I will deliver a strong brand identity logo with extras",
+    "description": "Powerful logos built as the foundation for your entire brand system.",
+    "imgUrl": [
+      { "src": logoImg35 },
+      { "src": logoImg36 },
+      { "src": logoImg37 },
+      { "src": logoImg38 }
+    ],
+    "rating": 5.0,
+    "category": ["logo"],
+    "owner": {
+      "_id": "u19221",
+      "fullname": "Sakura Hayashi",
+      "imgUrl": "https://picsum.photos/550/250?random=1221",
+      "level": 3
+    },
+    "purchasePlan": {
+      "price": 130,
+      "deliveryDay": 5,
+      "revisions": 4,
+      "content": "Strategic brand identity logo with branding collateral.",
+      "includes": ["High-res PNG", "Vector file", "Brand guidelines"]
+    },
+    "reviews": [
+      {
+        "reviewer": {
+          "_id": "u30221",
+          "fullname": "Jacob Fitzgerald",
+          "loc": "Australia",
+          "imgUrl": "https://picsum.photos/550/250?random=1321"
+        },
+        "rating": 5.0,
+        "comment": "Professional and cohesive. Our brand looks incredible!"
+      }
+    ]
+  }   
 ]
