@@ -82,7 +82,7 @@ export function GigDetails() {
     <section className="gig-details grid">
       <UserInteraction plan={gig.purchasePlan} onPurchase={onPurchase} />
       <section className="gig-info grid">
-        <BreadCrumb path={['back to list']} />
+        <BreadCrumb path={['Logo']} />
         <h2 className="title fs28">{gig.title}</h2>
         <MiniUser gig={gig} showStars={true} reviewCount={{ underline: true, link: true }} />
         <ImgCarousel gig={gig} />

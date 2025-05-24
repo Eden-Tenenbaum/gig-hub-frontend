@@ -10,31 +10,21 @@ export function SlidesCarousel({ slides = [] }) {
         if (current >= length) setCurrent(0)
     }, [length, current])
 
-    if (!length) return 
-    if (length === 1) {
-        const { src } = slides[0]
-        return (
-            <div className="single-slide">
-                <img src={src} />
-            </div>
-        )
-    }
-
     const nextSlide = () => {
-        // const c = containerRef.current
-        // c.classList.add('dir-next')
-        // c.classList.remove('dir-prev')
+        const currentSlide = containerRef.current
+        currentSlide.classList.add('dir-next')
+        currentSlide.classList.remove('dir-prev')
         setCurrent(i => (i === length - 1 ? 0 : i + 1))
     }
 
     const prevSlide = () => {
-        // const c = containerRef.current
-        // c.classList.add('dir-prev')
-        // c.classList.remove('dir-next')
+        const currentSlide = containerRef.current
+        currentSlide.classList.add('dir-prev')
+        currentSlide.classList.remove('dir-next')
         setCurrent(i => (i === 0 ? length - 1 : i - 1))
     }
 
-    const handleClick = (e, isNext = true) => {
+    const goToNeighbor = (e, isNext = true) => {
         e.preventDefault()
         e.stopPropagation()
         isNext ? nextSlide() : prevSlide()
@@ -42,20 +32,23 @@ export function SlidesCarousel({ slides = [] }) {
 
     const goToSlide = idx => setCurrent(idx)
 
+    if (!length) return
+    if (length === 1) return <div className="single-slide"><img src={slides[0]} alt="img" /></div>
+    
     return <div className="slideshow-container" ref={containerRef}>
         <div className="slides" style={{ transform: `translateX(-${current * 100}%)` }} >
-            {slides.map((slide, idx) => 
+            {slides.map((slide, idx) =>
                 <div className="slide" key={idx}><img src={slide.src} /></div>
             )}
         </div>
 
         {current > 0 && (
-            <button type="button" className="prev grid place-center" onClick={e => handleClick(e, false)} >
+            <button type="button" className="prev grid place-center" onClick={e => goToNeighbor(e, false)} >
                 <CaretLeftIcon />
             </button>
         )}
         {current < length - 1 && (
-            <button className="next grid place-center" onClick={handleClick} >
+            <button className="next grid place-center" onClick={goToNeighbor} >
                 <CaretRightIcon />
             </button>
         )}
