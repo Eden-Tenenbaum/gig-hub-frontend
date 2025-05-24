@@ -24,6 +24,8 @@ import logoImg23 from '../../../public/img/logo pictures/logo-img23.png'
 import logoImg24 from '../../../public/img/logo pictures/logo-img24.png'
 import logoImg25 from '../../../public/img/logo pictures/logo-img25.png'
 import sellerPfp from '../../../public/img/profile.pictures/seller-pfp.jpg'
+import { gigDescriptions } from "./MockDesc"
+
 
 
 export const mockGigs2 = [
@@ -2276,7 +2278,7 @@ export const mockGigs2 = [
   {
     "_id": "g174",
     "title": "I will animate your logo with smooth 2D motion graphics",
-    "description": "Looking to elevate your brand presence with eye-catching motion graphics? I specialize in crafting smooth, professional 2D logo animations that bring your brand identity to life. Whether you're launching a YouTube channel, creating social media content, or producing a company intro video, a dynamic logo animation sets the tone and enhances viewer engagement. Each animation is custom-built to match your brand’s aesthetics, ensuring a unique and memorable impression. From subtle kinetic movements to more vibrant transitions, I’ll deliver a polished animation tailored to your needs and message. Let’s turn your static logo into a powerful visual signature."
+    "description": gigDescriptions.g101()
     ,
     "imgUrl": [
       { "src": logoImg1 },
