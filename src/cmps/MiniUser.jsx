@@ -11,7 +11,7 @@ export function MiniUser({ gig, scale = 1, showStars = false, fs = 18, includeUs
                 {gig.owner.fullname}
                 {!includeUserMsg && <RatingLevel className="fs14" level={gig.owner.level} />}
             </p>
-            {includeUserMsg && <p className="msg">this is a user msg</p>}
+            {includeUserMsg && <p className="msg">Logo designer</p>}
             <span className="info-svg flex">
                 <Stars rating={gig.rating} showStars={showStars} reviewCount={reviewCount} starProps={includeUserMsg && { viewBox: '0 0 16 15', width: '15', height: '15' }} />
                 {includeUserMsg &&
