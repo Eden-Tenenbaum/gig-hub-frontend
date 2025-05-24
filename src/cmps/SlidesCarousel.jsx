@@ -21,16 +21,16 @@ export function SlidesCarousel({ slides = [] }) {
     }
 
     const nextSlide = () => {
-        const c = containerRef.current
-        c.classList.add('dir-next')
-        c.classList.remove('dir-prev')
+        // const c = containerRef.current
+        // c.classList.add('dir-next')
+        // c.classList.remove('dir-prev')
         setCurrent(i => (i === length - 1 ? 0 : i + 1))
     }
 
     const prevSlide = () => {
-        const c = containerRef.current
-        c.classList.add('dir-prev')
-        c.classList.remove('dir-next')
+        // const c = containerRef.current
+        // c.classList.add('dir-prev')
+        // c.classList.remove('dir-next')
         setCurrent(i => (i === 0 ? length - 1 : i - 1))
     }
 
