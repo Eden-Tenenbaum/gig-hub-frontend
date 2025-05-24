@@ -3,14 +3,14 @@ export function DashboardMiniUser({ user }) {
 
     return (
         <div className="dashboard-mini-user">
-            <div className='user-btn'>
+            {/* <div className='user-btn'> */}
                 {user && (
                     <span
                         className='header-user-options-btn'>
                         <img src={user.imgUrl} alt={user.fullname}></img>
                     </span>
                 )}
-            </div>
+            {/* </div> */}
             <a>
                 <p>{user.fullname}</p>
                 <p>@{displayUsername}</p>
