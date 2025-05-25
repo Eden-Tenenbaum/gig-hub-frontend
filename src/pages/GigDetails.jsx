@@ -16,6 +16,8 @@ import { ImgCarousel } from '../cmps/gigDetails/ImgCarousel'
 import { ReviewStatistics } from '../cmps/gigDetails/ReviewStatistics'
 import { ReviewList } from '../cmps/ReviewList'
 
+import  buyerPfp  from '../../public/img/profile.pictures/buyer-pfp.jpg'
+
 export function GigDetails() {
   const navigate = useNavigate()
   const { gigId } = useParams()
@@ -59,7 +61,11 @@ export function GigDetails() {
 
     const newOrder = {
       _id: utilService.makeId(),
-      mockBuyer: utilService.getBuyer(),
+      // mockBuyer: utilService.getBuyer(),
+      mockBuyer: {
+        name: "Yonatan Keren",
+        imgUrl: buyerPfp
+      },
       timeLeft: utilService.getRandomIntInclusive(1,3),
       seller: gig.owner._id,
       gig: gigToBuy,

@@ -1592,7 +1592,7 @@ export const mockGigs2 = [
       "_id": "u97",
       "fullname": "Mia Roberts",
       "imgUrl": "https://picsum.photos/550/250?random=23",
-      "level": 2
+      "level": 3
     },
     "purchasePlan": {
       "price": 60,
@@ -1631,7 +1631,7 @@ export const mockGigs2 = [
       "_id": "u99",
       "fullname": "Liam Johnson",
       "imgUrl": "https://picsum.photos/550/250?random=27",
-      "level": 1
+      "level": 3
     },
     "purchasePlan": {
       "price": 50,
@@ -2193,7 +2193,7 @@ export const mockGigs2 = [
       "_id": "u141",
       "fullname": "Ella Martin",
       "imgUrl": "https://picsum.photos/550/250?random=3",
-      "level": 2
+      "level": 3
     },
     "purchasePlan": {
       "price": 55,
@@ -3313,7 +3313,7 @@ export const mockGigs2 = [
       { "src": logoImg39 },
       { "src": logoImg14 },
       { "src": logoImg15 },
-      { "src": logoImg16 },
+      { "src": logoImg36 },
     ],
     "rating": 5.0,
     "category": ["logo", "graphics-design"],
@@ -3351,8 +3351,8 @@ export const mockGigs2 = [
     "imgUrl": [
       { "src": logoImg14 },
       { "src": logoImg15 },
-      { "src": logoImg16 },
-      { "src": logoImg17 },
+      { "src": logoImg37 },
+      { "src": logoImg38 },
     ],
     "rating": 4.8,
     "category": ["logo"],
@@ -3360,7 +3360,7 @@ export const mockGigs2 = [
       "_id": "u201",
       "fullname": "Jared Singh",
       "imgUrl": "https://picsum.photos/550/250?random=151",
-      "level": 1
+      "level": 2
     },
     "purchasePlan": {
       "price": 60,
@@ -3389,8 +3389,8 @@ export const mockGigs2 = [
     "description": "Eye-catching logo animations tailored for video content creators.",
     "imgUrl": [
       { "src": logoImg15 },
-      { "src": logoImg16 },
-      { "src": logoImg17 },
+      { "src": logoImg36 },
+      { "src": logoImg37 },
       { "src": logoImg18 },
     ],
     "rating": 4.9,
@@ -3427,7 +3427,7 @@ export const mockGigs2 = [
     "title": "I will design luxury logos with elegant typography",
     "description": "Luxury brand logos with refined aesthetics and timeless style.",
     "imgUrl": [
-      { "src": logoImg17 },
+      { "src": logoImg27 },
       { "src": logoImg18 },
       { "src": logoImg19 },
       { "src": logoImg20 }
