@@ -41,7 +41,10 @@ import logoImg39 from '../../../public/img/logo pictures/logo-img39.png'
 import logoDiver1 from '../../../public/img/logo-diver26.png'
 import logoDiver2 from '../../../public/img/logo-diver29.png'
 import logoDiver3 from '../../../public/img/logo-diver28.png'
+import logoDiver7 from '../../../public/img/logo-diver30.png'
 import logoDiver4 from '../../../public/img/logo-diver27.png'
+import logoDiver6 from '../../../public/img/logo-diver31.png'
+import logoDiver5 from '../../../public/img/logo-diver32.png'
 import sellerPfp from '../../../public/img/profile.pictures/seller-pfp.jpg'
 import { gigDescriptions } from "./MockDesc"
 
@@ -2300,7 +2303,10 @@ export const mockGigs2 = [
     "description": gigDescriptions.g101()
     ,
     "imgUrl": [
+      { "src": logoDiver7 },
       { "src": logoDiver2 },
+      { "src": logoDiver5 },
+      { "src": logoDiver6 },
       { "src": logoDiver3 },
       { "src": logoDiver4 },
       { "src": logoDiver1 },
