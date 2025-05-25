@@ -37,6 +37,11 @@ import logoImg36 from '../../../public/img/logo pictures/logo-img36.png'
 import logoImg37 from '../../../public/img/logo pictures/logo-img37.png'
 import logoImg38 from '../../../public/img/logo pictures/logo-img38.png'
 import logoImg39 from '../../../public/img/logo pictures/logo-img39.png'
+
+import logoDiver1 from '../../../public/img/logo-diver26.png'
+import logoDiver2 from '../../../public/img/logo-diver29.png'
+import logoDiver3 from '../../../public/img/logo-diver28.png'
+import logoDiver4 from '../../../public/img/logo-diver27.png'
 import sellerPfp from '../../../public/img/profile.pictures/seller-pfp.jpg'
 import { gigDescriptions } from "./MockDesc"
 
@@ -2295,10 +2300,14 @@ export const mockGigs2 = [
     "description": gigDescriptions.g101()
     ,
     "imgUrl": [
+      { "src": logoDiver2 },
+      { "src": logoDiver3 },
+      { "src": logoDiver4 },
+      { "src": logoDiver1 },
       { "src": logoImg1 },
       { "src": logoImg2 },
       { "src": logoImg4 },
-      { "src": logoImg5 }
+      { "src": logoImg5 },
     ],
     "rating": 4.9,
     "category": ["video-animation", "graphics-design", "logo"],
@@ -4135,5 +4144,5 @@ export const mockGigs2 = [
         "comment": "Professional and cohesive. Our brand looks incredible!"
       }
     ]
-  }   
+  }
 ]
