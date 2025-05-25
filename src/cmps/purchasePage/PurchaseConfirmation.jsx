@@ -10,7 +10,6 @@ export function PurchaseConfirmation({ order, user }) {
         orderService.confirmOrder(order._id, user._id)
         showUserMsg({txt: 'Your order has been placed and sent to the seller'})
         navigate('/')
-
     }
 
     return (
