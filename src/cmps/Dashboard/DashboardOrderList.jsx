@@ -20,26 +20,7 @@ export function DashboardOrderList({ user }) {
         .catch(console.error)
     }
 
-    function updateOrderStatus(orderId, newStatus) {
-        orderService.getConfirmedById(orderId)
-            .then(order => {
-                const updatedOrder = { ...order, status: newStatus }
-                return orderService.saveConfirmed(updatedOrder)
-            })
-            .then(savedOrder => {
-                setOrders(prevOrders =>
-                    prevOrders.map(order =>
-                        order._id === savedOrder._id ? savedOrder : order
-                    )
-                )
-            })
-            .catch(err => {
-                console.error('Failed to update order status:', err)
-            })
-    }
-
-    function generateTimeLeft() {
-        const timeLeft = 3 - utilService.getRandomIntInclusive(0, 4)
+    function renderTimeLeft(timeLeft) {   
         if (timeLeft < 0) {
             return (
                 <p className='late-on-delivery'><ClockIcon />{Math.abs(timeLeft)} days late</p>
@@ -51,24 +32,23 @@ export function DashboardOrderList({ user }) {
         }
     }
 
-    function getRandomName() {
-        const firstNames = [
-          "Liam", "Olivia", "Noah", "Emma", "Elijah",
-          "Ava", "James", "Sophia", "William", "Isabella",
-          "Benjamin", "Mia", "Lucas", "Charlotte", "Henry"
-        ];
-      
-        const lastNames = [
-          "Smith", "Johnson", "Brown", "Taylor", "Anderson",
-          "Thomas", "Jackson", "White", "Harris", "Martin",
-          "Thompson", "Garcia", "Martinez", "Robinson", "Clark"
-        ];
-      
-        const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
-        const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
-      
-        return `${firstName} ${lastName}`;
-      }
+    function updateOrderStatus(orderId, newStatus) {
+        orderService.getConfirmedById(orderId)
+            .then(order => {
+                const updatedOrder = { ...order, status: newStatus }
+                return orderService.saveConfirmed(updatedOrder)
+            })
+            .then(savedOrder => {
+                setOrders(prevOrders =>
+                    prevOrders.map(order =>
+                        order._id === savedOrder._id ? savedOrder : order
+                    ) 
+                )
+            })
+            .catch(err => {
+                console.error('Failed to update order status:', err)
+            })
+    }
 
     function openOrderStatusModal(orderId) {
         setOpenModalOrderId(orderId)
@@ -105,8 +85,8 @@ export function DashboardOrderList({ user }) {
                         <li key={order._id} className="dashboard-order">
                             <span>
                                 <img src={order.gig.imgUrl} />
-                                {/* <img src={user.imgUrl} /> */} <img src={`https://picsum.photos/550/250?random=${utilService.getRandomIntInclusive(0,30)}`} />
-                                {/* <p>{user.fullname}</p> */} <p>{getRandomName()}</p>
+                                {/* <img src={user.imgUrl} /> */} <img src={`${order.mockBuyer.imgUrl}`} />
+                                {/* <p>{user.fullname}</p> */} <p>{order.mockBuyer.name}</p>
                             </span>
                             <span>
                                 <p>Price</p>
@@ -114,7 +94,7 @@ export function DashboardOrderList({ user }) {
                             </span>
                             <span>
                                 <p>Delivery Time</p>
-                                {generateTimeLeft()}
+                                {renderTimeLeft(order.timeLeft)}
                             </span>
                             <span className='dashboard-order-status'>
                                 <p>Status</p>
