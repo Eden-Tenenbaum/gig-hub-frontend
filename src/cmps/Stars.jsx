@@ -33,7 +33,7 @@ export function Stars({ rating, showStars = false, reviewCount = { isReview: fal
       
       {!reviewCount.isReview && (
         <span className="review-count" onClick={movesToReviews}>
-          {'('}<span className={reviewCount.underline ? 'underline' : ''}>19</span>{')'}
+          {'('}<span className={reviewCount.underline ? 'underline' : ''}>1109</span>{')'}
         </span>
       )}
     </section>

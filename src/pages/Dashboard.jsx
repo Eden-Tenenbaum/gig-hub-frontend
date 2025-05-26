@@ -15,7 +15,7 @@ export function Dashboard() {
                     <DashboardLevelOverview user={user}/>                   
                     <div className="monthly-earnings">
                         <p>Earned in {utilService.getCurrDate('month')}</p>
-                        <p>$1241</p>
+                        <p>$12041</p>
                     </div>
                 </div>
             </div>

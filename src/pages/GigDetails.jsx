@@ -61,12 +61,10 @@ export function GigDetails() {
 
     const newOrder = {
       _id: utilService.makeId(),
-      // mockBuyer: utilService.getBuyer(),
-      mockBuyer: {
-        name: "Yonatan Keren",
-        imgUrl: buyerPfp
-      },
+      mockBuyer: utilService.getBuyer(),
+      mockBuyer: { name: "Yonatan Keren", imgUrl: buyerPfp },
       timeLeft: utilService.getRandomIntInclusive(1,3),
+      timeLeft: 3,
       seller: gig.owner._id,
       gig: gigToBuy,
       status: 'pending',

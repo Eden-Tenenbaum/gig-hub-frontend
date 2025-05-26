@@ -65,7 +65,7 @@ export function PayFormContainer({ user }) {
                                 <input
                                     placeholder=''
                                     type="text"
-                                    value={'John Smith'}
+                                    value={'Yonatan Keren'}
                                     onChange={ev => handleChange(ev.target.value, 'no numbers')}
                                 ></input>
                             </div>

@@ -7,12 +7,12 @@ export function DashboardLevelOverview({ user }) {
             <section className="dashboard-level-details">
                 <div>
                     <p>My level</p>
-                    <p>Level 2</p>  {/* demo data */}
+                    <p>Level 3</p>  {/* demo data */}
 
                 </div>
                 <div>
                     <p>Success score</p>
-                    <p>9</p>  {/* demo data */}
+                    <p>9.6</p>  {/* demo data */}
                 </div>
                 <div>
                     <p>Rating</p>

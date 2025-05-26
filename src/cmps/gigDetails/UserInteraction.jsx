@@ -41,7 +41,11 @@ export function UserInteraction({ plan, onPurchase }) {
           <section className="content">
             <span className="content-text">{plan.content}</span>
             <section className="way-of-work flex fs14">
-              <section className="delivery-time flex"><ClockIcon />{plan.deliveryDay}-day delivery</section>
+              <section className="delivery-time flex"><ClockIcon />
+                {activePlan === 1 && '4-day delivery'}
+                {activePlan === 1.5 && `${plan.deliveryDay}-day delivery`}
+                {activePlan === 2 && '2-day delivery'}
+              </section>
               <section className="revisions flex"><LoopIcon /> {plan.revisions * (2 * activePlan - 1)} Revision{plan.revisions !== 1 && 's'}</section>
             </section>
             <ul className="whats-included grid">
